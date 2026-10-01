@@ -262,8 +262,8 @@ ol.falta i{color:var(--muted);font-style:normal;font-size:14.5px}
 .sw i{width:16px;height:16px;border-radius:50%}
 .sw[aria-pressed="true"]{border-color:var(--ink)}
 .go{width:100%;font-size:20px;padding:16px;font-family:var(--disp);font-weight:800;letter-spacing:.02em}
-.full{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#0B1725;color:#fff;cursor:pointer;padding:env(safe-area-inset-top,0px) 16px env(safe-area-inset-bottom,0px)}
-.full[hidden]{display:none}
+#full{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#0B1725;color:#fff;cursor:pointer;padding:env(safe-area-inset-top,0px) 16px env(safe-area-inset-bottom,0px)}
+#full[hidden]{display:none}
 .cue{font-family:var(--disp);font-weight:800;font-size:min(30vw,260px);line-height:1;text-align:center}
 .cue.big{font-size:min(62vw,62vh)}
 .hint{position:absolute;bottom:calc(18px + env(safe-area-inset-bottom,0px));font-size:15px;opacity:.75}
@@ -377,7 +377,7 @@ table.st td:first-child{font-weight:600}
   <p class="lead">O bloco mental muda todos os dias e é sempre sobre futebol.</p>
   <div class="fmt" id="fmt"></div>
   <h3>Diário</h3>
-  <p class="small muted">Dois minutos por noite. Jogadores jovens de elite distinguem-se por refletir mais e por se esforçarem mais. Fica guardado neste telemóvel.</p>
+  <p class="small muted">Dois minutos por noite. Jogadores jovens de elite distinguem-se por refletir mais e por se esforçarem mais. Fica guardado neste telemóvel: faz uma cópia de segurança ao domingo (Mais).</p>
   <div class="card">
     <div class="dform">
       <label>Esforço do treino (1 a 10)<input type="number" id="d-rpe" min="0" max="10" inputmode="numeric"></label>
@@ -442,6 +442,7 @@ table.st td:first-child{font-weight:600}
   <div class="idx">
     <button data-sub="sinal">🚦<b>Sinal</b><span>Cores, setas, números e metrónomo para treinar perceção sozinho</span></button>
     <button data-sub="atividades">🗂️<b>Atividades</b><span>A ficha de cada bloco, pronta para o planner</span></button>
+    <button data-sub="copia">💾<b>Cópia de segurança</b><span>Guarda o diário e os registos fora do telemóvel</span></button>
     <button data-sub="sono">😴<b>Sono</b><span>Quanto, quando, e porque não às 5 da manhã</span></button>
     <button data-sub="alimentacao">🍽️<b>Alimentação</b><span>Comer para treinar e crescer</span></button>
     <button data-sub="recuperacao">🧊<b>Recuperação</b><span>O que ajuda, o que atrapalha, os sinais de alarme</span></button>
@@ -483,6 +484,21 @@ table.st td:first-child{font-weight:600}
   <p class="muted">O que é, para que serve, frequência, duração, prioridade, dias e como adaptar. Pronto para passar para um planner.</p>
   <div class="fil" id="act-fil"></div>
   <div id="act-list"></div>
+</section>
+
+<section class="view" id="v-copia" hidden>
+  <button class="back" data-tab="mais">‹ Mais</button>
+  <h2>Cópia de segurança</h2>
+  <p class="lead">O diário, os blocos feitos e o nível de cada dia ficam só neste telemóvel. Uma cópia por semana chega para não perderes o ano.</p>
+  <div class="card" id="cp-estado"></div>
+  <h3>Fazer a cópia</h3>
+  <p>Cria um ficheiro com todos os teus registos. Guarda-o fora do telemóvel: no teu email, no Drive ou no WhatsApp.</p>
+  <button class="btn" id="cp-exp">Fazer cópia agora</button> <span class="small muted" id="cp-ok"></span>
+  <h3>Recuperar</h3>
+  <p>Num telemóvel novo, ou depois de apagar a app: instala-a, vem aqui e escolhe o ficheiro da última cópia. Os registos da cópia juntam-se aos que já tens. Se o mesmo dia tiver diário nos dois, fica o da cópia.</p>
+  <button class="btn" id="cp-pick">Escolher ficheiro</button>
+  <input type="file" id="cp-file" accept=".txt,.json,text/plain,application/json" hidden>
+  <p class="small muted" id="cp-imp"></p>
 </section>
 
 <section class="view" id="v-sono" hidden>
@@ -1233,6 +1249,7 @@ function dynNote(b,bi){
   if(r==='pais') return 'País desta semana: '+PAISES[weekIdx(bi,PAISES.length)]+'.';
   if(r==='escrita') return 'Tema desta semana: '+ESCRITA[weekIdx(bi,ESCRITA.length)]+'.';
   if(r==='leitura'){ const t=TRILHO[trilhoIdx(bi.d)]; return 'Livro do mês: '+t[1]+', de '+t[2]+'.'; }
+  if(r==='plano'){ const u=store.get('copia:ultima',null); const n=u?Math.round((parseYmd(dateFor(st.dia))-parseYmd(u))/86400000):null; return (n===null||n>=6)?'No fim, faz a cópia de segurança (Mais, Cópia de segurança).':''; }
   return '';
 }
 
@@ -1450,6 +1467,55 @@ function renderCrescer(){
   $('#biblio').innerHTML=BIBLIO.map(c=>'<h4>'+esc(c[0])+'</h4><ul class="plain">'+c[1].map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>').join('');
 }
 
+/* ---------- CÓPIA DE SEGURANÇA ---------- */
+const CP_KEYS=/^(feito|modo|diario):/;
+function dadosApp(){
+  const o={};
+  try{ for(let i=0;i<localStorage.length;i++){ const k=localStorage.key(i); if(CP_KEYS.test(k)) o[k]=JSON.parse(localStorage.getItem(k)); } }catch(e){}
+  Object.keys(MEM).forEach(k=>{ if(CP_KEYS.test(k)&&!(k in o)) o[k]=MEM[k]; });
+  return o;
+}
+function dm(s){ return s.slice(8,10)+'/'+s.slice(5,7)+'/'+s.slice(0,4); }
+function renderCopia(){
+  const d=dadosApp(), ks=Object.keys(d);
+  const nd=ks.filter(k=>k.indexOf('diario:')===0).length;
+  const nf=ks.filter(k=>k.indexOf('feito:')===0&&Array.isArray(d[k])&&d[k].length).length;
+  const u=store.get('copia:ultima',null);
+  let s='<b>'+nd+'</b> '+(nd===1?'dia':'dias')+' no diário e <b>'+nf+'</b> '+(nf===1?'dia':'dias')+' com blocos feitos.<br>';
+  if(u){ const n=Math.round((parseYmd(ymd(new Date()))-parseYmd(u))/86400000); s+='Última cópia: '+dm(u)+(n===0?' (hoje)':n===1?' (ontem)':' (há '+n+' dias)')+'.'; }
+  else s+='Ainda não fizeste nenhuma cópia.';
+  $('#cp-estado').innerHTML=s;
+}
+async function exportar(){
+  const d=new Date(), nome='rotina-copia-'+ymd(d)+'.txt';
+  const txt=JSON.stringify({app:'rotina-2026-27',versao:1,criada:ymd(d),dados:dadosApp()});
+  let feito=false;
+  try{ const f=new File([txt],nome,{type:'text/plain'}); if(navigator.canShare&&navigator.canShare({files:[f]})){ await navigator.share({files:[f],title:'Cópia da Rotina 2026/27'}); feito=true; } }
+  catch(e){ if(e&&e.name==='AbortError'){ $('#cp-ok').textContent='Cancelado.'; return; } }
+  if(!feito){ const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([txt],{type:'text/plain'})); a.download=nome; document.body.appendChild(a); a.click(); setTimeout(()=>{ URL.revokeObjectURL(a.href); a.remove(); },1000); }
+  store.set('copia:ultima',ymd(d)); $('#cp-ok').textContent='Cópia feita.'; renderCopia();
+}
+function valido(k,v){
+  if(k.indexOf('feito:')===0) return Array.isArray(v)&&v.every(x=>typeof x==='number');
+  if(k.indexOf('modo:')===0) return v==='g'||v==='y'||v==='r';
+  return !!v&&typeof v==='object'&&!Array.isArray(v);
+}
+function importar(file){
+  const rd=new FileReader();
+  rd.onload=()=>{
+    let j=null; try{ j=JSON.parse(rd.result); }catch(e){}
+    if(!j||j.app!=='rotina-2026-27'||!j.dados||typeof j.dados!=='object'){ $('#cp-imp').textContent='Este ficheiro não é uma cópia da Rotina.'; return; }
+    const ks=Object.keys(j.dados).filter(k=>CP_KEYS.test(k)&&/^\w+:\d{4}-\d{2}-\d{2}$/.test(k)&&valido(k,j.dados[k]));
+    if(!ks.length){ $('#cp-imp').textContent='A cópia não tem registos.'; return; }
+    if(!confirm('Recuperar '+ks.length+' registos da cópia'+(typeof j.criada==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(j.criada)?' de '+dm(j.criada):'')+'?')) return;
+    ks.forEach(k=>{ let v=j.dados[k]; if(k.indexOf('feito:')===0) v=Array.from(new Set(store.get(k,[]).concat(v))); store.set(k,v); });
+    $('#cp-imp').textContent=ks.length+' registos recuperados.';
+    st.modo=store.get('modo:'+dateFor(st.dia),biFor(dateFor(st.dia)).w0?'y':'g');
+    renderHoje(); renderCopia();
+  };
+  rd.readAsText(file);
+}
+
 /* ---------- navegação ---------- */
 const MAIN=['hoje','semana','treinos','mente','crescer','mais'];
 function show(tab){
@@ -1458,6 +1524,7 @@ function show(tab){
   const nav=MAIN.indexOf(tab)>=0?tab:'mais';
   $$('#tabs button').forEach(b=>b.setAttribute('aria-current',b.dataset.tab===nav?'page':'false'));
   if(tab==='mente') renderMente();
+  if(tab==='copia') renderCopia();
   window.scrollTo(0,0);
 }
 function openRef(ref){
@@ -1543,6 +1610,8 @@ document.addEventListener('click',e=>{
   const c=t.closest('[data-cor]'); if(c){ const k=c.dataset.cor; const p=sg.cores.indexOf(k); if(p>=0){ if(sg.cores.length>2) sg.cores.splice(p,1); } else sg.cores.push(k); renderSinal(); return; }
   if(t.closest('#sg-go')){ startSinal(); return; }
   if(t.closest('#full')){ stopSinal(); return; }
+  if(t.closest('#cp-exp')){ exportar(); return; }
+  if(t.closest('#cp-pick')){ $('#cp-file').click(); return; }
 });
 document.addEventListener('input',e=>{
   const id=e.target.id||'';
@@ -1553,7 +1622,7 @@ document.addEventListener('input',e=>{
   if(id==='sg-bpm'){ sg.bpm=+e.target.value; renderSinal(); }
   if(id==='sg-som'){ sg.som=e.target.checked; }
 });
-document.addEventListener('change',e=>{ const id=e.target.id||''; if(id.indexOf('o-')===0) calcCk(); if(id==='sg-som') sg.som=e.target.checked; if(id==='d-data') loadDiario(); });
+document.addEventListener('change',e=>{ const id=e.target.id||''; if(id.indexOf('o-')===0) calcCk(); if(id==='sg-som') sg.som=e.target.checked; if(id==='d-data') loadDiario(); if(id==='cp-file'&&e.target.files&&e.target.files[0]){ importar(e.target.files[0]); e.target.value=''; } });
 document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ if(!$('#full').hidden) stopSinal(); if(!$('#timer').hidden){ clearInterval(tm); $('#timer').hidden=true; } } });
 
 renderHoje(); renderCk(); renderSemana(); renderSess(); renderActs(); renderSinal(); renderCrescer();
