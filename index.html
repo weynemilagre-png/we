@@ -306,6 +306,8 @@ table.st td:first-child{font-weight:600}
 .install>div{flex:1}
 .install b{display:block}
 .install .btn{margin:0;padding:8px 14px}
+a.btn{display:inline-block;text-decoration:none}
+.cal-url code{font-size:14px;word-break:break-all}
 .install-x{background:none;border:0;font-size:24px;line-height:1;color:var(--muted);cursor:pointer;padding:4px 6px}
 </style>
 </head>
@@ -443,6 +445,7 @@ table.st td:first-child{font-weight:600}
     <button data-sub="sinal">🚦<b>Sinal</b><span>Cores, setas, números e metrónomo para treinar perceção sozinho</span></button>
     <button data-sub="atividades">🗂️<b>Atividades</b><span>A ficha de cada bloco, pronta para o planner</span></button>
     <button data-sub="copia">💾<b>Cópia de segurança</b><span>Guarda o diário e os registos fora do telemóvel</span></button>
+    <button data-sub="calendario">📅<b>Calendário</b><span>A semana no calendário do telemóvel, sempre atualizada</span></button>
     <button data-sub="sono">😴<b>Sono</b><span>Quanto, quando, e porque não às 5 da manhã</span></button>
     <button data-sub="alimentacao">🍽️<b>Alimentação</b><span>Comer para treinar e crescer</span></button>
     <button data-sub="recuperacao">🧊<b>Recuperação</b><span>O que ajuda, o que atrapalha, os sinais de alarme</span></button>
@@ -499,6 +502,25 @@ table.st td:first-child{font-weight:600}
   <button class="btn" id="cp-pick">Escolher ficheiro</button>
   <input type="file" id="cp-file" accept=".txt,.json,text/plain,application/json" hidden>
   <p class="small muted" id="cp-imp"></p>
+</section>
+
+<section class="view" id="v-calendario" hidden>
+  <button class="back" data-tab="mais">‹ Mais</button>
+  <h2>Calendário</h2>
+  <p class="lead">A semana normal no calendário do telemóvel. Subscreves uma vez e, quando a rotina mudar, o calendário muda sozinho.</p>
+  <div class="card"><b>O que entra:</b> os blocos do dia 🟢, de segunda, 5 de outubro, a domingo, 28 de março, o fim da fase de construção. Refeições, duches e tempo livre ficam de fora. Os dias 🟡 e 🔴 e o modo exame decidem-se aqui na app.</div>
+  <h3>Se já importaste o calendário antigo</h3>
+  <p>Apaga primeiro o calendário que criaste com o ficheiro rotina-semanal.ics. Se não, ficas com tudo a dobrar.</p>
+  <h3>iPhone</h3>
+  <p>Toca no botão e confirma "Subscrever".</p>
+  <a class="btn" id="cal-ios" href="rotina-semanal.ics">Subscrever no iPhone</a>
+  <h3>Google Calendar</h3>
+  <p>A app do Google Calendar não subscreve por link, por isso é mais fácil num computador: abre o botão, entra na tua conta Google e confirma "Adicionar". Depois aparece sozinho no telemóvel. Se não aparecer, no menu da app do Calendar ativa "Rotina 2026/27".</p>
+  <a class="btn" id="cal-google" href="https://calendar.google.com/" target="_blank" rel="noopener">Subscrever no Google Calendar</a>
+  <h3>Outra app de calendário</h3>
+  <p>Usa a opção de subscrever por endereço:</p>
+  <div class="card cal-url"><code id="cal-url"></code></div>
+  <button class="btn" id="cal-copy">Copiar endereço</button> <span class="small muted" id="cal-ok"></span>
 </section>
 
 <section class="view" id="v-sono" hidden>
@@ -1516,6 +1538,17 @@ function importar(file){
   rd.readAsText(file);
 }
 
+/* ---------- CALENDÁRIO ---------- */
+function renderCalendario(){
+  const u=new URL('rotina-semanal.ics',location.href).href, w=u.replace(/^https?:/,'webcal:');
+  $('#cal-url').textContent=u; $('#cal-ios').href=w;
+  $('#cal-google').href='https://calendar.google.com/calendar/render?cid='+encodeURIComponent(w);
+}
+function copiarCal(){
+  const sel=()=>{ try{ const r=document.createRange(); r.selectNodeContents($('#cal-url')); const s=getSelection(); s.removeAllRanges(); s.addRange(r); }catch(e){} $('#cal-ok').textContent='Endereço selecionado: copia-o.'; };
+  try{ navigator.clipboard.writeText($('#cal-url').textContent).then(()=>{ $('#cal-ok').textContent='Copiado.'; },sel); }catch(e){ sel(); }
+}
+
 /* ---------- navegação ---------- */
 const MAIN=['hoje','semana','treinos','mente','crescer','mais'];
 function show(tab){
@@ -1525,6 +1558,7 @@ function show(tab){
   $$('#tabs button').forEach(b=>b.setAttribute('aria-current',b.dataset.tab===nav?'page':'false'));
   if(tab==='mente') renderMente();
   if(tab==='copia') renderCopia();
+  if(tab==='calendario') renderCalendario();
   window.scrollTo(0,0);
 }
 function openRef(ref){
@@ -1612,6 +1646,7 @@ document.addEventListener('click',e=>{
   if(t.closest('#full')){ stopSinal(); return; }
   if(t.closest('#cp-exp')){ exportar(); return; }
   if(t.closest('#cp-pick')){ $('#cp-file').click(); return; }
+  if(t.closest('#cal-copy')){ copiarCal(); return; }
 });
 document.addEventListener('input',e=>{
   const id=e.target.id||'';

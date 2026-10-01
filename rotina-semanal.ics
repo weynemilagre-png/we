@@ -1,0 +1,1419 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Rotina 2026-27//PT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Rotina 2026/27
+X-WR-TIMEZONE:Europe/Lisbon
+X-WR-CALDESC:A semana normal da Rotina 2026/27. Atualiza-se sozinho.
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VTIMEZONE
+TZID:Europe/Lisbon
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0100
+TZNAME:WEST
+DTSTART:19700329T010000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0000
+TZNAME:WET
+DTSTART:19701025T020000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:seg-0640@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261005T064000
+DTEND;TZID=Europe/Lisbon:20261005T064500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:😴 Acordar\, água\, luz natural e cama feita
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Sono
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:seg-0645@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261005T064500
+DTEND;TZID=Europe/Lisbon:20261005T065700
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🏋️ Ativação da manhã A: acordar o corpo
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Força e físico
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:seg-0657@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261005T065700
+DTEND;TZID=Europe/Lisbon:20261005T070500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🙏 Fé da manhã
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Fé
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:seg-0705@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261005T070500
+DTEND;TZID=Europe/Lisbon:20261005T074000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:⚪ Sessão da manhã: toque diário longo
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Mastery Ball
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:seg-0845@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261005T084500
+DTEND;TZID=Europe/Lisbon:20261005T092000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:💡 Caminho para a escola: inglês nos ouvidos
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Saber e línguas
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:seg-0920@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261005T092000
+DTEND;TZID=Europe/Lisbon:20261005T162000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🏫 Escola: EDF\, Português\, almoço às 13:15\, Matemática A a
+ té às 16:20
+DESCRIPTION:Os 100 min de EDF contam como treino. Nos intervalos: scanning 
+ no corredor (ver As brechas).\n\nRotina 2026/27: https://weynemilagre-png.
+ github.io/we/
+CATEGORIES:Escola
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:seg-1705@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261005T170500
+DTEND;TZID=Europe/Lisbon:20261005T182000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:📚 Estudo: Matemática A de hoje e TPC
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Estudo
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:seg-1830@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261005T183000
+DTEND;TZID=Europe/Lisbon:20261005T185000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🏋️ Prevenção: Nordic\, Copenhagen e robustez
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Força e físico
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:seg-1850@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261005T185000
+DTEND;TZID=Europe/Lisbon:20261005T190000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🦶 Pés e tornozelos A: força
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Pés\, mobilidade e recuperação
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:seg-2040@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261005T204000
+DTEND;TZID=Europe/Lisbon:20261005T205000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🧠 Mente: congela e decide
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Mente
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:seg-2050@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261005T205000
+DTEND;TZID=Europe/Lisbon:20261005T210500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:💡 Saber: História
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Saber e línguas
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:seg-2105@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261005T210500
+DTEND;TZID=Europe/Lisbon:20261005T211500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🦶 Mobilidade e rolo curto
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Pés\, mobilidade e recuperação
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:seg-2115@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261005T211500
+DTEND;TZID=Europe/Lisbon:20261005T212000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🧠 Diário: esforço\, sono\, recordes e uma lição
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Mente
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:seg-2120@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261005T212000
+DTEND;TZID=Europe/Lisbon:20261005T213000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🧴 Ecrãs fora\, higiene\, Kegel e exercícios faciais
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Cuidados
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:seg-2130@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261005T213000
+DTEND;TZID=Europe/Lisbon:20261005T214000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🙏 Fé da noite
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Fé
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:seg-2140@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261005T214000
+DTEND;TZID=Europe/Lisbon:20261005T220000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🗣️ Leitura em papel
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Comunicação e leitura
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:seg-2200@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261005T220000
+DTEND;TZID=Europe/Lisbon:20261005T220500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:😴 Luzes apagadas
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Sono
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:ter-0640@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261006T064000
+DTEND;TZID=Europe/Lisbon:20261006T064500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:😴 Acordar\, água\, luz natural e cama feita
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Sono
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:ter-0645@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261006T064500
+DTEND;TZID=Europe/Lisbon:20261006T065700
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🏋️ Ativação da manhã B: pés e reação
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Força e físico
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:ter-0657@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261006T065700
+DTEND;TZID=Europe/Lisbon:20261006T070500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🙏 Fé da manhã
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Fé
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:ter-0705@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261006T070500
+DTEND;TZID=Europe/Lisbon:20261006T072500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:⚪ Sessão da manhã: pés rápidos e scanning
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Mastery Ball
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:ter-0755@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261006T075500
+DTEND;TZID=Europe/Lisbon:20261006T082500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:💡 Caminho para a escola: inglês nos ouvidos
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Saber e línguas
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:ter-0825@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261006T082500
+DTEND;TZID=Europe/Lisbon:20261006T131500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🏫 Escola: Economia C e Matemática A até às 13:15
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Escola
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:ter-1410@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261006T141000
+DTEND;TZID=Europe/Lisbon:20261006T143000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:😴 Descanso\, sesta opcional até 20 min
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Sono
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:ter-1430@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261006T143000
+DTEND;TZID=Europe/Lisbon:20261006T160000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:📚 Estudo: bloco principal (Matemática A e Economia C)
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Estudo
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:ter-1615@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261006T161500
+DTEND;TZID=Europe/Lisbon:20261006T162700
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🏋️ Mecânica de sprint
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Força e físico
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:ter-1627@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261006T162700
+DTEND;TZID=Europe/Lisbon:20261006T165200
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:⚪ Técnica A: cadeias\, porta das cadeiras e pé fraco
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Mastery Ball
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:ter-1652@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261006T165200
+DTEND;TZID=Europe/Lisbon:20261006T172200
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🏋️ Força B: tronco e potência de braços
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Força e físico
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:ter-1722@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261006T172200
+DTEND;TZID=Europe/Lisbon:20261006T173000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🧠 Reação com bola de ténis
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Mente
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:ter-1830@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261006T183000
+DTEND;TZID=Europe/Lisbon:20261006T185500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🧠 Estudo tático: vídeo com uma pergunta
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Mente
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:ter-1855@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261006T185500
+DTEND;TZID=Europe/Lisbon:20261006T190500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🗣️ Voz e dicção
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Comunicação e leitura
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:ter-2040@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261006T204000
+DTEND;TZID=Europe/Lisbon:20261006T205500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:💡 Saber: Ciência\, tecnologia e IA
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Saber e línguas
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:ter-2105@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261006T210500
+DTEND;TZID=Europe/Lisbon:20261006T211500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🦶 Pés e tornozelos B: estabilidade
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Pés\, mobilidade e recuperação
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:ter-2115@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261006T211500
+DTEND;TZID=Europe/Lisbon:20261006T212000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🧠 Diário: esforço\, sono\, recordes e uma lição
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Mente
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:ter-2120@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261006T212000
+DTEND;TZID=Europe/Lisbon:20261006T213000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🧴 Ecrãs fora\, higiene\, Kegel e exercícios faciais
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Cuidados
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:ter-2130@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261006T213000
+DTEND;TZID=Europe/Lisbon:20261006T214000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🙏 Fé da noite
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Fé
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:ter-2140@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261006T214000
+DTEND;TZID=Europe/Lisbon:20261006T220000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🗣️ Leitura em papel
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Comunicação e leitura
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:ter-2200@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261006T220000
+DTEND;TZID=Europe/Lisbon:20261006T220500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:😴 Luzes apagadas
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Sono
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qua-0640@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261007T064000
+DTEND;TZID=Europe/Lisbon:20261007T064500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:😴 Acordar\, água\, luz natural e cama feita
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Sono
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qua-0645@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261007T064500
+DTEND;TZID=Europe/Lisbon:20261007T065300
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🙏 Fé da manhã
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Fé
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qua-0653@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261007T065300
+DTEND;TZID=Europe/Lisbon:20261007T071500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🍽️ Pequeno-almoço\, 60 a 75 min antes do campo
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Refeições
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qua-0725@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261007T072500
+DTEND;TZID=Europe/Lisbon:20261007T073000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🧠 Mente: visualização do treino
+DESCRIPTION:Vê-te a fazer o bloco de velocidade e a primeira sequência\, 
+ na primeira pessoa.\n\nRotina 2026/27: https://weynemilagre-png.github.io/
+ we/
+CATEGORIES:Mente
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qua-0800@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261007T080000
+DTEND;TZID=Europe/Lisbon:20261007T102000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:⚽ Campo A: velocidade\, travagem\, 1v1 e motor 4×4
+DESCRIPTION:No campo das 08:15 às 10:05\, antes de chegar gente. Inclui id
+ a e volta.\n\nRotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Campo
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qua-1020@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261007T102000
+DTEND;TZID=Europe/Lisbon:20261007T104000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🦶 Protocolo pós-campo: comer\, beber e desligar
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Pés\, mobilidade e recuperação
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qua-1050@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261007T105000
+DTEND;TZID=Europe/Lisbon:20261007T124000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:📚 Estudo profundo: 2 blocos de 50 min\, cronometrados como no ex
+ ame
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Estudo
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qua-1530@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261007T153000
+DTEND;TZID=Europe/Lisbon:20261007T161000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🏋️ Força A: força e potência das pernas
+DESCRIPTION:Mais de 5 horas depois do campo.\n\nRotina 2026/27: https://wey
+ nemilagre-png.github.io/we/
+CATEGORIES:Força e físico
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qua-1625@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261007T162500
+DTEND;TZID=Europe/Lisbon:20261007T164500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:💡 Saber: inglês ativo
+DESCRIPTION:10 min a falar em inglês sobre o treino (grava) e 10 min de vo
+ cabulário.\n\nRotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Saber e línguas
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qua-1645@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261007T164500
+DTEND;TZID=Europe/Lisbon:20261007T165500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🗣️ Explica em 60 segundos
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Comunicação e leitura
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qua-2105@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261007T210500
+DTEND;TZID=Europe/Lisbon:20261007T211500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🦶 Rolo caseiro curto
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Pés\, mobilidade e recuperação
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qua-2115@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261007T211500
+DTEND;TZID=Europe/Lisbon:20261007T212000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🧠 Diário: esforço\, sono\, recordes e uma lição
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Mente
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qua-2120@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261007T212000
+DTEND;TZID=Europe/Lisbon:20261007T213000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🧴 Ecrãs fora\, higiene\, Kegel e exercícios faciais
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Cuidados
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qua-2130@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261007T213000
+DTEND;TZID=Europe/Lisbon:20261007T214000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🙏 Fé da noite
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Fé
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qua-2140@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261007T214000
+DTEND;TZID=Europe/Lisbon:20261007T220000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🗣️ Leitura em papel
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Comunicação e leitura
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qua-2200@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261007T220000
+DTEND;TZID=Europe/Lisbon:20261007T220500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:😴 Luzes apagadas
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Sono
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qui-0640@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261008T064000
+DTEND;TZID=Europe/Lisbon:20261008T064500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:😴 Acordar\, água\, luz natural e cama feita
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Sono
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qui-0645@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261008T064500
+DTEND;TZID=Europe/Lisbon:20261008T065700
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🦶 Ativação da manhã C: mobilidade suave
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Pés\, mobilidade e recuperação
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qui-0657@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261008T065700
+DTEND;TZID=Europe/Lisbon:20261008T070500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🙏 Fé da manhã
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Fé
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qui-0705@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261008T070500
+DTEND;TZID=Europe/Lisbon:20261008T072000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:⚪ Sessão da manhã: toque leve e visualização
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Mastery Ball
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qui-0755@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261008T075500
+DTEND;TZID=Europe/Lisbon:20261008T082500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:💡 Caminho para a escola: inglês nos ouvidos
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Saber e línguas
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qui-0825@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261008T082500
+DTEND;TZID=Europe/Lisbon:20261008T131500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🏫 Escola: Português\, opção e Matemática A até às 13:15
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Escola
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qui-1410@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261008T141000
+DTEND;TZID=Europe/Lisbon:20261008T143000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:😴 Descanso\, sesta opcional até 20 min
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Sono
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qui-1430@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261008T143000
+DTEND;TZID=Europe/Lisbon:20261008T160000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:📚 Estudo: Matemática A de hoje e preparação de testes
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Estudo
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qui-1615@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261008T161500
+DTEND;TZID=Europe/Lisbon:20261008T164000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🦶 Aeróbio leve Z2: trote a conversar
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Pés\, mobilidade e recuperação
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qui-1640@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261008T164000
+DTEND;TZID=Europe/Lisbon:20261008T165000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🦶 Pés e tornozelos A: força
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Pés\, mobilidade e recuperação
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qui-1650@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261008T165000
+DTEND;TZID=Europe/Lisbon:20261008T171500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🦶 Mobilidade em fluxo e rolo caseiro completo
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Pés\, mobilidade e recuperação
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qui-1830@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261008T183000
+DTEND;TZID=Europe/Lisbon:20261008T190500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🧠 Estudo tático e congela e decide
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Mente
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qui-1905@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261008T190500
+DTEND;TZID=Europe/Lisbon:20261008T191500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🗣️ Voz e dicção
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Comunicação e leitura
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qui-2040@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261008T204000
+DTEND;TZID=Europe/Lisbon:20261008T205500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:💡 Saber: Economia e finanças pessoais
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Saber e línguas
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qui-2055@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261008T205500
+DTEND;TZID=Europe/Lisbon:20261008T210500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🧠 Mente: respiração e visualização guiada
+DESCRIPTION:5 min de suspiro cíclico e 5 min a ver o teu sábado.\n\nRotin
+ a 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Mente
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qui-2115@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261008T211500
+DTEND;TZID=Europe/Lisbon:20261008T212000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🧠 Diário: esforço\, sono\, recordes e uma lição
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Mente
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qui-2120@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261008T212000
+DTEND;TZID=Europe/Lisbon:20261008T213000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🧴 Ecrãs fora\, higiene\, Kegel e exercícios faciais
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Cuidados
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qui-2130@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261008T213000
+DTEND;TZID=Europe/Lisbon:20261008T214000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🙏 Fé da noite
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Fé
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qui-2140@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261008T214000
+DTEND;TZID=Europe/Lisbon:20261008T220000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🗣️ Leitura em papel
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Comunicação e leitura
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:qui-2200@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261008T220000
+DTEND;TZID=Europe/Lisbon:20261008T220500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:😴 Luzes apagadas
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Sono
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sex-0640@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261009T064000
+DTEND;TZID=Europe/Lisbon:20261009T064500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:😴 Acordar\, água\, luz natural e cama feita
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Sono
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sex-0645@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261009T064500
+DTEND;TZID=Europe/Lisbon:20261009T065700
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🏋️ Ativação da manhã A: acordar o corpo
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Força e físico
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sex-0657@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261009T065700
+DTEND;TZID=Europe/Lisbon:20261009T070500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🙏 Fé da manhã
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Fé
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sex-0705@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261009T070500
+DTEND;TZID=Europe/Lisbon:20261009T072500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:⚪ Sessão da manhã: toque fino com bola de ténis
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Mastery Ball
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sex-0755@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261009T075500
+DTEND;TZID=Europe/Lisbon:20261009T082500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:💡 Caminho para a escola: inglês nos ouvidos
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Saber e línguas
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sex-0825@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261009T082500
+DTEND;TZID=Europe/Lisbon:20261009T131500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🏫 Escola: Economia C\, Português\, opção e EDF até às 13:15
+DESCRIPTION:O furo (10:30 ou 11:30\, conforme a opção) são 50 min de TPC
+  na biblioteca.\n\nRotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Escola
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sex-1410@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261009T141000
+DTEND;TZID=Europe/Lisbon:20261009T143000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:😴 Descanso\, sesta opcional até 20 min
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Sono
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sex-1430@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261009T143000
+DTEND;TZID=Europe/Lisbon:20261009T153000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:📚 Estudo (com o furo\, 1h50 no dia)
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Estudo
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sex-1550@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261009T155000
+DTEND;TZID=Europe/Lisbon:20261009T160000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🏋️ Ativação neural
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Força e físico
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sex-1600@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261009T160000
+DTEND;TZID=Europe/Lisbon:20261009T162000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:⚪ Técnica B: aéreo e cadeias rápidas
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Mastery Ball
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sex-1620@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261009T162000
+DTEND;TZID=Europe/Lisbon:20261009T164500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🏋️ Força D: potência e Copenhagen
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Força e físico
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sex-1700@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261009T170000
+DTEND;TZID=Europe/Lisbon:20261009T171000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🧠 Mente: memória de jogo e padrões
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Mente
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sex-1710@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261009T171000
+DTEND;TZID=Europe/Lisbon:20261009T172500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:💡 Saber: Psicologia e filosofia
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Saber e línguas
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sex-1725@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261009T172500
+DTEND;TZID=Europe/Lisbon:20261009T173500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🗣️ Explica em 60 segundos
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Comunicação e leitura
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sex-2145@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261009T214500
+DTEND;TZID=Europe/Lisbon:20261009T215000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🧠 Diário: esforço\, sono\, recordes e uma lição
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Mente
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sex-2150@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261009T215000
+DTEND;TZID=Europe/Lisbon:20261009T220000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🧴 Ecrãs fora\, higiene\, Kegel e exercícios faciais
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Cuidados
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sex-2200@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261009T220000
+DTEND;TZID=Europe/Lisbon:20261009T221000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🙏 Fé da noite
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Fé
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sex-2210@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261009T221000
+DTEND;TZID=Europe/Lisbon:20261009T223000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🗣️ Leitura em papel
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Comunicação e leitura
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sex-2230@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261009T223000
+DTEND;TZID=Europe/Lisbon:20261009T223500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:😴 Luzes apagadas
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Sono
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sab-0715@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261010T071500
+DTEND;TZID=Europe/Lisbon:20261010T072000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:😴 Acordar\, água\, luz natural e cama feita
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Sono
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sab-0720@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261010T072000
+DTEND;TZID=Europe/Lisbon:20261010T072800
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🙏 Fé da manhã
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Fé
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sab-0728@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261010T072800
+DTEND;TZID=Europe/Lisbon:20261010T075000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🍽️ Pequeno-almoço\, 75 min antes do campo
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Refeições
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sab-0800@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261010T080000
+DTEND;TZID=Europe/Lisbon:20261010T080500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🧠 Mente: rotina pré-treino (respiração e 3 palavras-chave)
+DESCRIPTION:A mesma rotina que vais usar antes de jogos.\n\nRotina 2026/27:
+  https://weynemilagre-png.github.io/we/
+CATEGORIES:Mente
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sab-0830@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261010T083000
+DTEND;TZID=Europe/Lisbon:20261010T105000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:⚽ Campo A′: extremo\, decisões e sprints repetidos
+DESCRIPTION:No campo das 08:45 às 10:35. Inclui ida e volta.\n\nRotina 202
+ 6/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Campo
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sab-1050@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261010T105000
+DTEND;TZID=Europe/Lisbon:20261010T112000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🏋️ Força C: robustez (em casa)
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Força e físico
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sab-1135@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261010T113500
+DTEND;TZID=Europe/Lisbon:20261010T121500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🦶 Almoço de recuperação (protocolo pós-campo)
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Pés\, mobilidade e recuperação
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sab-1530@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261010T153000
+DTEND;TZID=Europe/Lisbon:20261010T163000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:📚 Estudo
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Estudo
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sab-1630@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261010T163000
+DTEND;TZID=Europe/Lisbon:20261010T164000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🗣️ Voz e dicção
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Comunicação e leitura
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sab-1640@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261010T164000
+DTEND;TZID=Europe/Lisbon:20261010T170000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:💡 Saber: país da semana
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Saber e línguas
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sab-1700@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261010T170000
+DTEND;TZID=Europe/Lisbon:20261010T171500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:⚪ Pé fraco (quarto)
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Mastery Ball
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sab-2100@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261010T210000
+DTEND;TZID=Europe/Lisbon:20261010T211000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🦶 Rolo caseiro curto
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Pés\, mobilidade e recuperação
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sab-2145@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261010T214500
+DTEND;TZID=Europe/Lisbon:20261010T215000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🧠 Diário: esforço\, sono\, recordes e uma lição
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Mente
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sab-2150@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261010T215000
+DTEND;TZID=Europe/Lisbon:20261010T220000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🧴 Ecrãs fora\, higiene\, Kegel e exercícios faciais
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Cuidados
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sab-2200@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261010T220000
+DTEND;TZID=Europe/Lisbon:20261010T221000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🙏 Fé da noite
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Fé
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sab-2210@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261010T221000
+DTEND;TZID=Europe/Lisbon:20261010T223000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🗣️ Leitura em papel
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Comunicação e leitura
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:sab-2230@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261010T223000
+DTEND;TZID=Europe/Lisbon:20261010T223500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:😴 Luzes apagadas
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Sono
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:dom-0715@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261011T071500
+DTEND;TZID=Europe/Lisbon:20261011T072000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:😴 Acordar\, água\, luz natural e cama feita
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Sono
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:dom-0720@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261011T072000
+DTEND;TZID=Europe/Lisbon:20261011T072800
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🙏 Fé da manhã (e igreja\, se fizer parte do teu domingo)
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Fé
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:dom-0728@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261011T072800
+DTEND;TZID=Europe/Lisbon:20261011T075000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🍽️ Pequeno-almoço\, 75 min antes do campo
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Refeições
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:dom-0830@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261011T083000
+DTEND;TZID=Europe/Lisbon:20261011T104500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:⚽ Campo B: técnica\, criatividade\, pé fraco e motor 3×4
+DESCRIPTION:No campo das 08:45 às 10:30. Com amigos\, o jogo substitui as 
+ sequências 4 e 5 e o motor.\n\nRotina 2026/27: https://weynemilagre-png.g
+ ithub.io/we/
+CATEGORIES:Campo
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:dom-1045@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261011T104500
+DTEND;TZID=Europe/Lisbon:20261011T110500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🦶 Protocolo pós-campo e duche
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Pés\, mobilidade e recuperação
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:dom-1530@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261011T153000
+DTEND;TZID=Europe/Lisbon:20261011T163000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:📚 Estudo
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Estudo
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:dom-1630@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261011T163000
+DTEND;TZID=Europe/Lisbon:20261011T165500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:💡 Saber: escrita e pensamento crítico
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Saber e línguas
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:dom-1655@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261011T165500
+DTEND;TZID=Europe/Lisbon:20261011T170500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🧴 Cuidar dos pés e das chuteiras
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Cuidados
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:dom-1705@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261011T170500
+DTEND;TZID=Europe/Lisbon:20261011T173500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🗣️ Revisão da semana: diário\, recordes\, vídeo\, plano e e
+ ntrevista flash
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Comunicação e leitura
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:dom-2100@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261011T210000
+DTEND;TZID=Europe/Lisbon:20261011T211500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🦶 Mobilidade pós-campo
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Pés\, mobilidade e recuperação
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:dom-2115@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261011T211500
+DTEND;TZID=Europe/Lisbon:20261011T212000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🧠 Diário: esforço\, sono\, recordes e uma lição
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Mente
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:dom-2120@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261011T212000
+DTEND;TZID=Europe/Lisbon:20261011T213000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🧴 Ecrãs fora\, higiene e Kegel (domingo sem faciais)
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Cuidados
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:dom-2130@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261011T213000
+DTEND;TZID=Europe/Lisbon:20261011T214000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🙏 Fé da noite
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Fé
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:dom-2140@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261011T214000
+DTEND;TZID=Europe/Lisbon:20261011T220000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🗣️ Leitura em papel
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Comunicação e leitura
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:dom-2200@rotina-2026-27
+DTSTAMP:20261001T000000Z
+DTSTART;TZID=Europe/Lisbon:20261011T220000
+DTEND;TZID=Europe/Lisbon:20261011T220500
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:😴 Luzes apagadas
+DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
+CATEGORIES:Sono
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+END:VCALENDAR
