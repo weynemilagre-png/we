@@ -13,7 +13,7 @@ App de treino e rotina: sistema de desenvolvimento do extremo esquerdo, 12.º an
 
 ## Os teus dados
 
-O diário, os blocos feitos e o nível de cada dia ficam guardados só neste telemóvel (`localStorage`). Não vão para nenhum servidor. Instalada no ecrã principal, a app protege melhor estes dados do que um separador do browser.
+O diário, os blocos feitos, o nível de cada dia, os recordes e as sessões treinadas ficam guardados só neste telemóvel (`localStorage`). Não vão para nenhum servidor. Instalada no ecrã principal, a app protege melhor estes dados do que um separador do browser.
 
 Para não perder o ano se o telemóvel se estragar ou for trocado: **Mais → Cópia de segurança**. Cria um ficheiro com todos os registos para guardar no email, no Drive ou no WhatsApp, e recupera-o noutro telemóvel. A app lembra a cópia na revisão de domingo.
 
