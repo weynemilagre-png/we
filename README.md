@@ -1,6 +1,6 @@
 # Rotina 2026/27
 
-Projeto Weyne: sistema de desenvolvimento do extremo esquerdo, 12.º ano, 2026/27. Rotina, treino técnico, físico, tático e mental, ciclos de 4 semanas e revisão semanal. A jornada começa a 26/10/2026.
+Projeto Weyne: sistema de desenvolvimento do extremo esquerdo, 12.º ano, 2026/27. Uma sessão principal por dia, exercícios com níveis e critérios para subir ou descer, testes na semana 1 e na 4 de cada ciclo, revisão do jogo e revisão semanal com decisões. A jornada começa a 26/10/2026.
 
 É uma app web instalável (PWA): fica no ecrã do telemóvel com ícone próprio, abre em ecrã inteiro e funciona sem internet.
 
@@ -13,7 +13,7 @@ Projeto Weyne: sistema de desenvolvimento do extremo esquerdo, 12.º ano, 2026/2
 
 ## Os teus dados
 
-Os blocos feitos, o diário, os check-ins, as intenções, as revisões da semana, os recordes, as sessões treinadas e o perfil ficam guardados só neste telemóvel (`localStorage`). Não vão para nenhum servidor e não estão neste repositório. Instalada no ecrã principal, a app protege melhor estes dados do que um separador do browser.
+Os blocos feitos, o diário, os check-ins, as intenções, as revisões da semana, os recordes e testes, os níveis dos exercícios, as cargas da força, as revisões dos jogos, as sessões treinadas e o perfil ficam guardados só neste telemóvel (`localStorage`). Não vão para nenhum servidor e não estão neste repositório. Instalada no ecrã principal, a app protege melhor estes dados do que um separador do browser.
 
 Na primeira abertura da versão de 26/10/2026, os registos antigos vão para um arquivo no próprio telemóvel e a jornada começa limpa. O arquivo entra na cópia de segurança e pode ser reposto em **Mais → Cópia de segurança**.
 
