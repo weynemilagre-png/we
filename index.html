@@ -596,7 +596,7 @@ a.btn{display:inline-block;text-decoration:none}
   <p class="small muted">▲ leve · ▲▲ média · ▲▲▲ alta. A quinta é o dia da cabeça: o corpo recupera e a análise é a mais longa da semana.</p>
   <h3>O ciclo de 4 semanas</h3>
   <div class="blocks4" id="blocks4"></div>
-  <p>Avaliar, planear, fazer, medir, corrigir. A semana 1 serve para te adaptares e registares as referências (testes na quarta e no sábado); a 2 para consolidar; a 3 para progredir onde passaste 8 em 10 em duas sessões seguidas; a 4 para avaliar, com menos volume e os mesmos testes. As sessões de campo têm três versões que rodam com o ciclo, e a força mantém os exercícios 4 semanas para a carga poder subir.</p>
+  <p>Avaliar, planear, fazer, medir, corrigir. A semana 1 serve para te adaptares (no primeiro ciclo, com testes de referência na quarta e no sábado); a 2 para consolidar; a 3 para progredir onde passaste 8 em 10 em duas sessões seguidas; a 4 para avaliar, com menos volume e os mesmos testes, que ficam como referência do ciclo seguinte. As sessões de campo têm três versões que rodam com o ciclo, e a força mantém os exercícios 4 semanas para a carga poder subir.</p>
   <h3>As brechas: treino escondido no dia</h3>
   <p>Para treinares alguma coisa em todos os espaços do dia sem somar cansaço:</p>
   <ul class="plain">
@@ -673,7 +673,7 @@ a.btn{display:inline-block;text-decoration:none}
   <h3>Ainda por testar</h3>
   <ul class="plain">
     <li><b>Pé não dominante:</b> a nota de 1 a 5 é a tua opinião. A medida chega com os testes técnicos (passe a 10 m com o esquerdo, parede com o pé fraco).</li>
-    <li><b>Velocidade, salto, mudança de direção e resistência:</b> nos testes físicos da quarta da semana 1.</li>
+    <li><b>Velocidade, salto, mudança de direção e resistência:</b> nos testes físicos da quarta (semana 1 do primeiro ciclo e semana 4 de cada ciclo).</li>
     <li><b>Leitura de jogo:</b> avaliada pelos acertos no congela e decide, pela revisão do futsal e, quando houver, por vídeo. Sozinho, não há um número fiável para isto.</li>
     <li><b>Maturação:</b> ainda podes estar a crescer. A altura todos os meses diz se estás numa fase de crescimento rápido, em que os saltos e os sprints têm de baixar.</li>
   </ul>
@@ -786,7 +786,7 @@ a.btn{display:inline-block;text-decoration:none}
   </ul>
   <h3>Como se avalia</h3>
   <ul class="plain">
-    <li><b>Testes</b> na semana 1 e na 4 de cada ciclo, com regras fixas: físicos à quarta, técnicos ao sábado, em casa num dia à escolha.</li>
+    <li><b>Testes</b> na semana 4 de cada ciclo (e na semana 1 do primeiro), com regras fixas: físicos à quarta, técnicos ao sábado, em casa num dia à escolha. A marca da semana 4 é a referência do ciclo seguinte.</li>
     <li><b>Margem de erro:</b> uma melhoria só conta se passar a margem do teste, ou se se repetir no teste seguinte. Margens usadas: 10 m 0,05 s; 20 m 0,07 s; 5-0-5 0,08 s; salto 6 cm; Yo-Yo 80 m (dois percursos); testes em 10, 2 certos; parede 3 passes. São aproximações conservadoras ao erro de medição com telemóvel, não padrões de jogadores profissionais.</li>
     <li><b>Jogo:</b> revisão de cada futsal com números (1v1, remates, pressão em 5 s, falar, objetivo). Vê a tendência de 4 jogos.</li>
     <li><b>Consistência:</b> núcleo cumprido e fraquezas evitadas (força, pé fraco, análise, recuperação), todas as semanas.</li>
@@ -1567,11 +1567,11 @@ const ACTS = [
  p:'Receção orientada e passe com os dois pés são a base de todas as tuas posições; olhar antes de receber é o hábito que os junta à decisão.',
  ev:'Olhar à volta antes de receber associou-se a passes mais certos na Premier League, com efeito pequeno (Jordet et al., 2020). Treinar o pé não dominante melhorou os dois pés (Haaland e Hoff, 2003). A dificuldade deve acompanhar o nível: nem fácil demais, nem impossível (Guadagnoli e Lee, 2004).',
  freq:'Terça',d:'55 a 60 min',crit:'Repetição certa = direção certa, receção que não foge mais de 1 m, passe no alvo.',ind:'Parede 60 s, receção com decisão e passe a 10 m nos testes; níveis das sequências.',prog:'Níveis N1 a N4: primeiro precisão, depois velocidade, depois decisão, depois pé fraco ou cansaço. Muda uma coisa de cada vez.',ay:'Sem pliometria; as 3 primeiras sequências.',ar:'10 min de parede com os dois pés.'},
-{id:'testes',n:'Testes: semana 1 e semana 4 de cada ciclo',c:'campo',cat:1,f:'principal',
+{id:'testes',n:'Testes: no fim de cada ciclo de 4 semanas',c:'campo',cat:1,f:'principal',
  o:'Testes físicos à quarta (sprint 10 e 20 m, 5-0-5 para os dois lados, salto horizontal, Yo-Yo IR1), técnicos ao sábado (parede, receção com decisão, passe com os dois pés, slalom, finalização, duelo) e em casa (tornozelo, equilíbrio, flexões, altura).',
  p:'Sem medir, a sensação de evolução engana. Os testes dizem o que melhorou e o que não, e a revisão do ciclo decide o que mudar.',
  ev:'O Yo-Yo IR1 é um teste de campo validado para futebolistas (Bangsbo et al., 2008).',
- freq:'Semana 1 (referência) e semana 4 (comparação)',d:'60 + 50 + 15 min',crit:'Sempre as mesmas condições; 2 ou 3 tentativas; regista a melhor.',ind:'Uma melhoria só conta se passar a margem de erro de cada teste ou se se repetir no teste seguinte.',lim:'São testes sem adversário: medem capacidades, não o teu nível de jogo. O vídeo do telemóvel tem um erro de alguns centésimos.',jogo:'O jogo avalia-se na revisão do futsal.'},
+ freq:'Semana 4 de cada ciclo; no 1.º ciclo, também na semana 1 (referência)',d:'60 + 50 + 15 min',crit:'Sempre as mesmas condições; 2 ou 3 tentativas; regista a melhor.',ind:'Uma melhoria só conta se passar a margem de erro de cada teste ou se se repetir no teste seguinte.',lim:'São testes sem adversário: medem capacidades, não o teu nível de jogo. O vídeo do telemóvel tem um erro de alguns centésimos.',jogo:'O jogo avalia-se na revisão do futsal.'},
 {id:'plano',n:'Revisão da semana',c:'pessoal',cat:1,f:'analise',
  o:'Ao domingo à noite, na Evolução: números da semana, fraquezas evitadas, jogo, o que melhorou e a prova, o que não funcionou e a causa, a decisão e a prioridade da semana seguinte.',
  p:'É o momento em que o plano se corrige: avaliar, planear, executar, medir, corrigir.',
@@ -1699,7 +1699,7 @@ const SESS_CAMPO = [
  cap:'Aceleração, velocidade máxima, travagem e mudança de direção, 1v1 com bola e resistência intermitente.',
  obj:'Ganhar os 3 primeiros passos, com e sem bola, travar para mudar de direção e atacar o 1v1 no momento certo; e ter motor para o repetir.',
  mat:'Bola, corda de saltar, 10 a 16 pedras, a parede e a baliza do campo, telemóvel com o Sinal e o temporizador.',
- regra:'Ordem fixa: velocidade com o corpo fresco, depois travagem e 1v1, e o motor sempre no fim. Na velocidade, intensidade quer dizer 100% em cada repetição com descanso completo: se uma repetição sair visivelmente mais lenta, o bloco acaba. Nas semanas 1 e 4 do ciclo, a velocidade e a parte principal dão lugar aos testes físicos.',
+ regra:'Ordem fixa: velocidade com o corpo fresco, depois travagem e 1v1, e o motor sempre no fim. Na velocidade, intensidade quer dizer 100% em cada repetição com descanso completo: se uma repetição sair visivelmente mais lenta, o bloco acaba. Na semana 4 de cada ciclo (e na semana 1 do primeiro), a velocidade e a parte principal dão lugar aos testes físicos.',
  lim:'Sozinho, a pedra não reage: aqui treinas a execução, a velocidade e o momento da finta, não a leitura de um defesa a sério. A leitura treina-se no futsal e no 1v1 com amigos.',
  jogo:'Pergunta para o futsal: ataquei o 1v1 quando havia espaço nas costas do defesa, e acelerei logo depois da finta?',
  aq:{min:20,it:[AQ_ROT,AQ_CORDA,AQ_MOB,['Condução com mudanças de ritmo','3 min','Condução a 50%; a cada bip do Sinal (4 a 7 s), 5 m explosivos e volta a 50%.'],['Pliometria de ativação','3 min','Pogo 2 × 10, 4 saltos em frente com receção parada 2 s, 3 saltos a um pé × 2 por perna. Cerca de 40 contactos, curtos e silenciosos.','pogo jumps technique'],AQ_ACEL]},
@@ -1763,7 +1763,7 @@ const SESS_CAMPO = [
  fim:{min:5,it:[['Caminhar e respirar','3 min','1 min de suspiro cíclico.'],['Alongamentos leves','2 min','Os do Campo V.']]},
  depois:'Depois: a Robustez de 10 min ainda no campo, o almoço de recuperação, e amanhã o futsal.'},
 
-{id:'testes-f',onde:'campo',f:'principal',n:'Testes físicos (semana 1 e semana 4)',c:'campo',quando:'Quarta da semana 1 (referência) e da semana 4 (comparação), no lugar da velocidade e da parte principal do Campo V',dur:'60 min',int:'Máxima',rpe:'8',
+{id:'testes-f',onde:'campo',f:'principal',n:'Testes físicos (fim de cada ciclo)',c:'campo',quando:'Quarta da semana 4 de cada ciclo, e da semana 1 do primeiro ciclo (referência), no lugar da velocidade e da parte principal do Campo V',dur:'60 min',int:'Máxima',rpe:'8',
  cap:'Aceleração, velocidade, mudança de direção, potência e resistência intermitente.',
  obj:'Ter números fiáveis para comparar daqui a 4 semanas. O teste não é treino: é medir bem.',
  mat:'Telemóvel a filmar em câmara lenta (240 fotogramas por segundo, se der), pedras para marcar 10 e 20 m, fita métrica ou passos medidos, o áudio do Yo-Yo na app.',
@@ -1777,9 +1777,9 @@ const SESS_CAMPO = [
   ['Salto horizontal','3 tentativas','Dos dois pés, braços livres, receção estável sem dar um passo. Mede do risco ao calcanhar mais atrás.','standing long jump test','salto'],
   ['Yo-Yo IR1 (no fim)','Até falhares 2 vezes','Duas linhas a 20 m e uma terceira 5 m atrás da partida. Corres 20 m e voltas ao ritmo dos bips, e trotas 2 × 5 m nos 10 s de descanso. À primeira falha tens um aviso; à segunda acabou. Abre o áudio aqui e regista os metros.','yo-yo intermittent recovery test level 1','yoyo']],
  fim:{min:5,it:[['Caminhar e respirar','5 min','O Yo-Yo é máximo: caminha até a respiração acalmar.']]},
- depois:'Os números ficam na Evolução. Na semana 4, a revisão compara cada teste com a semana 1.'},
+ depois:'Os números ficam na Evolução. Na semana 4, a revisão compara cada teste com a marca do ciclo anterior (no primeiro ciclo, com a semana 1).'},
 
-{id:'testes-t',onde:'campo',f:'principal',n:'Testes técnicos (semana 1 e semana 4)',c:'campo',quando:'Sábado da semana 1 e da semana 4, no lugar da parte principal do Campo P',dur:'50 min',int:'Alta',rpe:'6',sinal:true,
+{id:'testes-t',onde:'campo',f:'principal',n:'Testes técnicos (fim de cada ciclo)',c:'campo',quando:'Sábado da semana 4 de cada ciclo, e da semana 1 do primeiro, no lugar da parte principal do Campo P',dur:'50 min',int:'Alta',rpe:'6',sinal:true,
  cap:'Passe com os dois pés, receção com decisão, condução, finalização e 1v1.',
  obj:'Medir a técnica com regras fixas, para a comparação de daqui a 4 semanas ser justa.',
  mat:'Bola, a parede, 6 pedras, giz ou duas pedras para o alvo de 1 m, telemóvel com o Sinal e o cronómetro.',
@@ -1796,7 +1796,7 @@ const SESS_CAMPO = [
   ['Duelo de 4 segundos','10 duelos','Do bip ao remate: ultrapassa a pedra-defesa e finaliza em 4 s.','','duelo']],
  fim:{min:5,it:[['Alongamentos leves','5 min','']]}},
 
-{id:'testes-c',onde:'quarto',f:'complementar',n:'Testes em casa (semana 1 e semana 4)',c:'recup',quando:'Qualquer dia da semana 1 e da semana 4, à mesma hora',dur:'15 min',int:'Moderada',
+{id:'testes-c',onde:'quarto',f:'complementar',n:'Testes em casa (fim de cada ciclo)',c:'recup',quando:'Qualquer dia da semana 4 de cada ciclo, e da semana 1 do primeiro, à mesma hora',dur:'15 min',int:'Moderada',
  cap:'Mobilidade do tornozelo, equilíbrio, força do tronco e crescimento.',
  obj:'Seguir o que muda devagar: a mobilidade, o equilíbrio e o crescimento.',
  mat:'Parede, fita métrica, cronómetro, chão.',
@@ -1984,7 +1984,7 @@ const GRID = [
 ];
 
 const FASES = [
- {n:'Fase 1: Fundação',d:'26 de outubro a 27 de dezembro de 2026',de:'2026-10-26',ate:'2026-12-27',foco:'Uma rotina que aguentas e números de referência: núcleo todos os dias, testes na semana 1 e na 4, técnica com critérios, força com técnica, prevenção. Posição principal: extremo esquerdo; secundária: médio ofensivo. Fora do treino, a prioridade é entrar num clube.',metas:['Núcleo cumprido em pelo menos 5 dias de cada 7, durante 4 semanas seguidas, antes de aumentar o volume.','Testes de referência na semana 1 e comparação na semana 4 de cada ciclo.','Pelo menos um treino à experiência num clube, ou a lista de clubes contactados.']},
+ {n:'Fase 1: Fundação',d:'26 de outubro a 27 de dezembro de 2026',de:'2026-10-26',ate:'2026-12-27',foco:'Uma rotina que aguentas e números de referência: núcleo todos os dias, testes de referência na semana 1 e no fim de cada ciclo, técnica com critérios, força com técnica, prevenção. Posição principal: extremo esquerdo; secundária: médio ofensivo. Fora do treino, a prioridade é entrar num clube.',metas:['Núcleo cumprido em pelo menos 5 dias de cada 7, durante 4 semanas seguidas, antes de aumentar o volume.','Testes de referência na semana 1 e comparação na semana 4 de cada ciclo; a semana 4 de um ciclo é a referência do seguinte.','Pelo menos um treino à experiência num clube, ou a lista de clubes contactados.']},
  {n:'Fase 2: Construção',d:'28 de dezembro de 2026 a 28 de março de 2027',de:'2026-12-28',ate:'2027-03-28',foco:'Subir o que os testes mostrarem: mais velocidade e 1v1, força com mais carga, e o módulo de ponta de lança ou de médio centro conforme o que um clube pedir. Sair da bolha: captações, clube, jogos.',metas:['Melhorar o 10 m e o Yo-Yo mais do que a margem de erro em relação à fase 1.','Vídeo com os teus 10 melhores lances, honesto e recente.','Estar inscrito num clube, ou com captações marcadas.']},
  {n:'Fase 3: Exames',d:'29 de março a 30 de junho de 2027',de:'2027-03-29',ate:'2027-06-30',foco:'Modo exame: manter o nível com o mínimo que mantém e fazer os exames nacionais a sério.',metas:['Testes de junho iguais ou melhores do que os de março.','Estudo de 3 a 4 horas por dia em maio e junho.']},
  {n:'Fase 4: Salto',d:'Julho a setembro de 2027',de:'2027-07-01',ate:'2027-09-30',foco:'Volume e competição: pré-época, captações, jogos. A escola deixa espaço e o treino sobe.',metas:['Estar num contexto competitivo na época 2027/28.','Os melhores testes do ano.']}
@@ -2081,12 +2081,14 @@ const CONE = '<svg viewBox="0 0 20 22" aria-hidden="true"><path d="M10 1.5 16.6 
 /* ---------- calendário do sistema ---------- */
 const START = new Date(2026,9,26);
 function biFor(ds){ const d=parseYmd(ds); const days=Math.round((d-START)/86400000); if(days<0) return {w0:true,wk:-1,bloco:0,sem:0,d:d}; const wk=Math.floor(days/7); return {w0:false,wk:wk,bloco:Math.floor(wk/4)+1,sem:wk%4+1,d:d}; }
+/* testes: semana 4 de cada ciclo; no 1.º ciclo também a semana 1 (referência). A semana 4 de um ciclo é a referência do seguinte. */
+function testeSemana(bi){ return !bi.w0&&(bi.sem===4||(bi.sem===1&&bi.bloco===1)); }
 function fieldVar(b){ if(b.w0) return 0; const p=(b.bloco-1)%3, s=b.bloco%3; return (b.sem===2||b.sem===4)?s:p; }
 function strVar(b){ return (b.w0||b.bloco%2===1)?'I':'P'; }
 function currIdx(d){ const map={9:0,10:1,11:2,0:3,1:4,2:5,3:6,4:7,5:8}; const m=d.getMonth(); return (m in map)?map[m]:-1; }
 function trilhoIdx(d){ const x=(d.getFullYear()-2026)*12+d.getMonth()-9; return x<0?0:x%12; }
 function weekIdx(b,len){ return b.w0?0:(b.wk+1)%len; }
-const SEMNOTE = {1:'Adaptação e referência: rotina nova, qualidade antes de velocidade, testes na quarta e no sábado.',2:'Consolidação: corrige o que a semana 1 mostrou.',3:'Progressão: sobe de nível onde passaste 8 em 10 em duas sessões seguidas.',4:'Avaliação: menos 30% de volume, testes na quarta e no sábado e revisão do ciclo.'};
+const SEMNOTE = {1:'Adaptação: rotina nova, qualidade antes de velocidade. No 1.º ciclo, testes de referência na quarta e no sábado.',2:'Consolidação: corrige o que a semana 1 e os últimos testes mostraram.',3:'Progressão: sobe de nível onde passaste 8 em 10 em duas sessões seguidas.',4:'Avaliação: menos 30% de volume, testes na quarta e no sábado e revisão do ciclo.'};
 function saberKey(dia,bi){ const odd=bi.w0||bi.wk%2===0; if(dia==='seg') return odd?'seg':'ter'; if(dia==='qui') return odd?'qui':'sex'; return dia; }
 function dynNote(b,bi){
   const r=b.ref||''; const ds=dateFor(st.dia);
@@ -2899,7 +2901,7 @@ function renderPainel(D,date,bi){
   if(tc==='treino') av.push('Dia de treino de equipa'+(p.hora?' às '+p.hora:'')+': o treino individual fica opcional, faz só o núcleo.');
   if(tc==='jogo') av.push('Dia de jogo: segue o protocolo de jogo (Treinos). O resto é núcleo leve.');
   if(tc==='posjogo') av.push('Dia a seguir ao jogo: começa em 🟡 e faz o check-in. Bola e força ficam opcionais: se estiveres fresco, joga leve.');
-  if(!bi.w0&&(k==='qua'||k==='sab')&&(bi.sem===1||bi.sem===4)) av.push('Hoje há testes '+(k==='qua'?'físicos':'técnicos')+' de '+(bi.sem===1?'referência (semana 1)':'comparação (semana 4)')+': abre o bloco do campo.');
+  if(testeSemana(bi)&&(k==='qua'||k==='sab')) av.push('Hoje há testes '+(k==='qua'?'físicos':'técnicos')+' de '+(bi.sem===1?'referência (semana 1)':'comparação (semana 4)')+': abre o bloco do campo.');
   if(k==='seg'&&dayIdx(date)>=7){ const ev=evitadas(addDays(mondayOf(date),-7)); if(ev.length) av.push('Na semana passada ficou para trás: '+ev.join(', ')+'. Esta semana começa por aí.'); }
   if(k==='dom'&&dayIdx(date)>=6&&!store.get('rev:'+mondayOf(date),null)) av.push('Revisão da semana por fazer (Evolução).');
   if(k==='seg'&&dayIdx(date)>=7&&!store.get('rev:'+addDays(mondayOf(date),-7),null)) av.push('Ficou por fazer a revisão da semana passada: 10 minutos na Evolução.');
@@ -2998,12 +3000,12 @@ function renderRevisao(){
   renderRevHist();
 }
 function cicloHTML(mon){
-  const c0=addDays(mon,-21), c1=addDays(mon,6); const out=[]; const sono=[]; let dor=0;
+  const c0=(function(){ const x=addDays(mon,-28), s0=ymd(START); return x<s0?s0:x; })(), c1=addDays(mon,6); const out=[]; const sono=[]; let dor=0;
   for(let ds=c0; ds<=c1; ds=addDays(ds,1)){ const ck=store.get('ck:'+ds,null); if(ck){ if(typeof ck.sono==='number') sono.push(ck.sono); if(ck.dor>0) dor++; } }
   const sm=sono.length?sono.reduce((a,b)=>a+b,0)/sono.length:null;
   REC.forEach(r=>{ const a=recGet(r.id).filter(x=>x.d>=c0&&x.d<=c1); if(a.length<2) return; const f=a[0], l=a[a.length-1]; const dg=diagTeste(r,f,l,c0,c1,sm,dor);
     out.push('<div class="rv-r"><span>'+esc(r.n)+'</span><b>'+fmtRec(f.v,r.u)+' → '+fmtRec(l.v,r.u)+' '+esc(r.u)+' ('+dg[0]+')</b></div><p class="small muted rv-dg">'+esc(dg[1])+'</p>'); });
-  return '<div class="rv-cy"><div class="rv-h">Testes do ciclo: semana 1 contra semana 4</div>'+(out.length?out.join(''):'<p class="small muted">Ainda não há duas marcas do mesmo teste neste ciclo. Regista os testes da quarta e do sábado.</p>')+'<p class="small muted">"Igual" quer dizer que a diferença ficou dentro da margem de erro do teste (Mais, O teu plano).</p></div>';
+  return '<div class="rv-cy"><div class="rv-h">Testes: a marca anterior contra a deste ciclo</div>'+(out.length?out.join(''):'<p class="small muted">Ainda não há duas marcas do mesmo teste neste ciclo. Regista os testes da quarta e do sábado.</p>')+'<p class="small muted">"Igual" quer dizer que a diferença ficou dentro da margem de erro do teste (Mais, O teu plano).</p></div>';
 }
 function saveRevisao(){
   const mon=revWeekShown(); const s=weekStats(mon); const dec=document.querySelector('input[name="rv-dec"]:checked');
@@ -3288,7 +3290,7 @@ function diagTeste(r,f,l,de,ate,ckSono,dorDias){
 
 /* ---------- semanas de testes ---------- */
 function testeHoje(b,bi){
-  if(bi.w0||(bi.sem!==1&&bi.sem!==4)) return null; const s=bi.sem===1?'referência':'comparação';
+  if(!testeSemana(bi)) return null; const s=bi.sem===1?'referência':'comparação (e referência do ciclo seguinte)';
   if(b.ref==='campo-v') return ['testes-f','Semana '+bi.sem+': testes físicos de '+s+' no lugar da velocidade e da parte principal. O aquecimento é o mesmo.'];
   if(b.ref==='campo-p') return ['testes-t','Semana '+bi.sem+': testes técnicos de '+s+' no lugar da parte principal.'];
   if(b.ref==='forca-1') return ['testes-c','Esta semana há testes em casa (15 min): faz hoje antes da Força 1, ou noutro dia à mesma hora.'];
