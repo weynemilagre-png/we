@@ -1,7 +1,9 @@
 /* Rotina 2026/27: funciona sem internet.
    A página vem sempre da rede quando há ligação (3 s no máximo) e fica guardada para quando não há.
-   Ícones e fontes vêm da cache: se mudarem, sobe a VERSION. */
-const VERSION = 'rotina-v1';
+   Ícones e fontes vêm da cache: se mudarem, sobe a VERSION.
+   football-iq/ é outra app com o seu próprio service worker: este não lhe toca. */
+const VERSION = 'rotina-v2';
+const OUTRAS = [new URL('football-iq/', self.location).pathname];
 const CORE = [
   './',
   'manifest.webmanifest',
@@ -24,14 +26,16 @@ self.addEventListener('install', e => {
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys()
-      .then(keys => Promise.all(keys.filter(k => k !== VERSION).map(k => caches.delete(k))))
+      .then(keys => Promise.all(keys.filter(k => k.startsWith('rotina-') && k !== VERSION).map(k => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });
 
 self.addEventListener('fetch', e => {
   const req = e.request;
-  if (req.method !== 'GET' || new URL(req.url).origin !== location.origin) return;
+  const url = new URL(req.url);
+  if (req.method !== 'GET' || url.origin !== location.origin) return;
+  if (OUTRAS.some(p => url.pathname.startsWith(p))) return;
   if (req.mode === 'navigate') { e.respondWith(page(e)); return; }
   e.respondWith(caches.match(req).then(hit => hit || fetch(req).then(res => {
     if (res.ok) { const copy = res.clone(); caches.open(VERSION).then(c => c.put(req, copy)); }
