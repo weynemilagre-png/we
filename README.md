@@ -39,10 +39,23 @@ node tools/gerar-calendario.mjs
 - O conteúdo está todo em `index.html`. Cada push para `main` chega ao telemóvel sozinho na abertura seguinte com internet.
 - Se mudares ícones ou fontes, sobe a `VERSION` em `sw.js`.
 
+## FOOTBALL IQ
+
+Outra app no mesmo site, em `football-iq/`: aprender a ler o jogo com dados dos 103 jogos do CAN 2023 e do Euro 2024. É instalável como a Rotina e funciona sem internet. Na primeira abertura guarda a app e todos os dados (cerca de 2 MB a descarregar).
+
+**Link:** https://weynemilagre-png.github.io/we/football-iq/
+
+- Instala-se da mesma forma que a Rotina. Os dados de cada uma ficam separados no telemóvel.
+- O original está no claude.ai. Fora do Claude, "Perguntar" responde sozinho a termos, notas e resultados, e as avaliações ficam guardadas no telemóvel.
+- **Dados:** StatsBomb Open Data, para uso não comercial e com atribuição (está em Perfil → Como funciona). A área "Agora" (Premier League e Liga dos Campeões, da Sportradar) não está aqui: esses dados não podem ser publicados abertamente. Não acrescentes `data/live.json`.
+- **Actualizar:** substitui `football-iq/index.html` e os ficheiros em `football-iq/data/` pelos novos. Mantém o bloco de fontes locais, o manifesto e o registo do `sw.js` no `<head>` e no fim do `<body>`. Os jogos novos entram sozinhos na cache porque a lista sai de `data/index.json`.
+- O `sw.js` da Rotina não toca em `football-iq/` e só apaga caches `rotina-*`. Se acrescentares outra app ao site, junta a pasta dela a `OUTRAS` nesse ficheiro.
+
 ## Ficheiros
 
 | Ficheiro | O que é |
 | --- | --- |
+| `football-iq/` | A app FOOTBALL IQ (página, dados, `sw.js` próprio, ícones e fontes) |
 | `index.html` | A app |
 | `manifest.webmanifest` | Nome, ícone e cores da app instalada |
 | `sw.js` | Guarda a app para funcionar sem internet |
