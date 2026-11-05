@@ -1,6 +1,6 @@
 # Rotina 2026/27
 
-Projeto Weyne: sistema de desenvolvimento do extremo esquerdo, 12.º ano, 2026/27. Uma sessão principal por dia, exercícios com níveis e critérios para subir ou descer, testes no fim de cada ciclo de 4 semanas (e também na semana 1 do primeiro), revisão do jogo e revisão semanal com decisões. A jornada começa a 26/10/2026.
+Projeto Weyne: sistema de desenvolvimento de um futebolista, 2026/27. Segunda a sábado de treino, cada dia no limite de uma qualidade diferente, e domingo de descanso e futsal. O dia divide-se em manhã (o indivíduo), tarde (o futebolista) e noite (a mente), com um só tempo livre. As 4 posições (médio centro, extremo esquerdo, médio ofensivo e ponta de lança) têm um dia cada. Biblioteca de exercícios com ficha completa, níveis e critérios para subir ou descer, plano de 12 semanas com critérios para avançar, testes no fim de cada ciclo de 4 semanas, revisão do jogo e revisão semanal com decisões. A jornada começou a 26/10/2026.
 
 É uma app web instalável (PWA): fica no ecrã do telemóvel com ícone próprio, abre em ecrã inteiro e funciona sem internet.
 
