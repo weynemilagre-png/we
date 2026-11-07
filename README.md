@@ -1,6 +1,8 @@
-# Rotina 2026/27
+# Project Weyne
 
-Projeto Weyne: sistema de desenvolvimento de um futebolista, 2026/27. Segunda a sábado de treino, cada dia no limite de uma qualidade diferente, e domingo de descanso e futsal. O dia divide-se em manhã (o indivíduo), tarde (o futebolista) e noite (a mente), com um só tempo livre. As 4 posições (médio centro, extremo esquerdo, médio ofensivo e ponta de lança) têm um dia cada. Biblioteca de exercícios com ficha completa, níveis e critérios para subir ou descer, plano de 12 semanas com critérios para avançar, testes no fim de cada ciclo de 4 semanas, revisão do jogo e revisão semanal com decisões. A jornada começou a 26/10/2026.
+Sistema integral de desenvolvimento: homem, pessoa e futebolista, 2026/27. Acordar às 05:00 todos os dias e luzes apagadas às 20:45. Quatro modos para cada dia (escola, sem escola, férias e feriado), com horários e sessões próprios: a app sugere o modo pelo calendário escolar e pelos feriados, e muda-se com um toque. Manhã do atleta (fé, ativação mental, força e técnica em silêncio, mobilidade), tarde do futebolista e do estudante, noite do homem interior (diário, avaliação do dia, leitura, exame de consciência). Cada dia tem uma missão principal, 3 objetivos, os blocos por períodos com o porquê de cada um, o progresso e a avaliação do dia. Segunda a sábado de treino, cada dia no limite de uma qualidade, domingo de descanso e futsal, um só tempo livre por dia.
+
+Também: as 4 posições (médio centro, extremo esquerdo, médio ofensivo e ponta de lança), 8 áreas do homem com 12 temas cada (finanças, comunicação e dicção, pensamento crítico e decisões, inteligência emocional, liderança, cultura geral, escrita, ciência), plano de leitura da Bíblia e 12 valores, 4 jogos cognitivos com registo (reação, decisão sob pressão, memória de trabalho e scanning), evolução em 9 dimensões com pontos fracos e ajustes, objetivos da semana, do mês e do trimestre, biblioteca de exercícios com ficha completa, plano de 12 semanas e testes no fim de cada ciclo de 4 semanas. A jornada começou a 26/10/2026.
 
 É uma app web instalável (PWA): fica no ecrã do telemóvel com ícone próprio, abre em ecrã inteiro e funciona sem internet.
 
@@ -13,7 +15,7 @@ Projeto Weyne: sistema de desenvolvimento de um futebolista, 2026/27. Segunda a 
 
 ## Os teus dados
 
-Os blocos feitos, o diário, os check-ins, as intenções, as revisões da semana, os recordes e testes, os níveis dos exercícios, as cargas da força, as revisões dos jogos, as sessões treinadas e o perfil ficam guardados só neste telemóvel (`localStorage`). Não vão para nenhum servidor e não estão neste repositório. Instalada no ecrã principal, a app protege melhor estes dados do que um separador do browser.
+Os blocos feitos, o modo de cada dia, os objetivos e as avaliações, o diário, os check-ins, as intenções, as revisões da semana, os recordes e testes, os resultados dos jogos cognitivos, os níveis dos exercícios, as cargas da força, as revisões dos jogos, as sessões treinadas e o perfil ficam guardados só neste telemóvel (`localStorage`). Não vão para nenhum servidor e não estão neste repositório. Instalada no ecrã principal, a app protege melhor estes dados do que um separador do browser.
 
 Na primeira abertura da versão de 26/10/2026, os registos antigos vão para um arquivo no próprio telemóvel e a jornada começa limpa. O arquivo entra na cópia de segurança e pode ser reposto em **Mais → Cópia de segurança**.
 
@@ -21,7 +23,7 @@ Para não perder o ano se o telemóvel se estragar ou for trocado: **Mais → C�
 
 ## Calendário
 
-`rotina-semanal.ics` tem a semana normal (blocos do dia 🟢, sem refeições, duches nem tempo livre) de 26/10/2026 a 28/03/2027, no fuso de Lisboa. Subscreve-se em **Mais → Calendário** e atualiza-se sozinho.
+`rotina-semanal.ics` tem a semana normal (escola à segunda, terça, quinta e sexta, sem escola à quarta e ao sábado; blocos do dia 🟢, sem refeições, duches nem tempo livre) de 26/10/2026 a 28/03/2027, no fuso de Lisboa. Subscreve-se em **Mais → Calendário** e atualiza-se sozinho.
 
 Se mudares horários em `index.html`, gera o calendário de novo antes do push:
 
@@ -41,15 +43,15 @@ node tools/gerar-calendario.mjs
 
 ## FOOTBALL IQ
 
-Outra app no mesmo site, em `football-iq/`: aprender a ler o jogo com dados dos 103 jogos do CAN 2023 e do Euro 2024. É instalável como a Rotina e funciona sem internet. Na primeira abertura guarda a app e todos os dados (cerca de 2 MB a descarregar).
+Outra app no mesmo site, em `football-iq/`: aprender a ler o jogo com dados dos 103 jogos do CAN 2023 e do Euro 2024. É instalável como o Project Weyne e funciona sem internet. Na primeira abertura guarda a app e todos os dados (cerca de 2 MB a descarregar).
 
 **Link:** https://weynemilagre-png.github.io/we/football-iq/
 
-- Instala-se da mesma forma que a Rotina. Os dados de cada uma ficam separados no telemóvel.
+- Instala-se da mesma forma que o Project Weyne. Os dados de cada uma ficam separados no telemóvel.
 - O original está no claude.ai. Fora do Claude, "Perguntar" responde sozinho a termos, notas e resultados, e as avaliações ficam guardadas no telemóvel.
 - **Dados:** StatsBomb Open Data, para uso não comercial e com atribuição (está em Perfil → Como funciona). A área "Agora" (Premier League e Liga dos Campeões, da Sportradar) não está aqui: esses dados não podem ser publicados abertamente. Não acrescentes `data/live.json`.
 - **Actualizar:** substitui `football-iq/index.html` e os ficheiros em `football-iq/data/` pelos novos. Mantém o bloco de fontes locais, o manifesto e o registo do `sw.js` no `<head>` e no fim do `<body>`. Os jogos novos entram sozinhos na cache porque a lista sai de `data/index.json`.
-- O `sw.js` da Rotina não toca em `football-iq/` e só apaga caches `rotina-*`. Se acrescentares outra app ao site, junta a pasta dela a `OUTRAS` nesse ficheiro.
+- O `sw.js` do Project Weyne não toca em `football-iq/` e só apaga caches `rotina-*`. Se acrescentares outra app ao site, junta a pasta dela a `OUTRAS` nesse ficheiro.
 
 ## Ficheiros
 
