@@ -5522,7 +5522,7 @@ function renderPro(){
   h+='<div class="g9"><div class="k">Estudo desta semana</div><ul class="pro-l">'+[t1,t2].filter(Boolean).map(t=>'<li><b>'+esc(t.t)+'</b> · '+esc(t.pos)+'<br><span class="small muted">Quem ver: '+esc(t.quem)+'</span></li>').join('')+'</ul><button class="linkbtn" data-run="analise">Abrir a tarefa de análise</button></div>';
   const J=jogosRecentes(1);
   h+='<div class="g9"><div class="k">Jogo</div>'+(J.length?'<p class="small">Último jogo, '+fmtDM(J[0][0])+': '+JOGO_N.filter(x=>J[0][1][x[0]]!=null).map(x=>x[1].toLowerCase()+' '+J[0][1][x[0]]).join(', ')+'.</p>':'<p class="small muted">Sem jogos registados: a revisão faz-se no fim do modo treino do futsal.</p>')+
-     '<p class="small">Pré-jogo: refeição 3 a 4 h antes segundo o plano, rotina mental, ativação de 5 min, o objetivo de comportamento escrito. Pós-jogo: revisão com números, água e lanche na primeira hora, mobilidade; na segunda, as 3 decisões.</p><button class="btn sm" data-run="jogo-prep">Rotina pré-jogo</button> <button class="linkbtn" data-sub="jogos">Ver os jogos</button></div>';
+     '<p class="small">Pré-jogo: refeição 3 a 4 h antes segundo o plano, rotina mental, ativação de 5 min, o objetivo de comportamento escrito. Pós-jogo: revisão com números, água e lanche na primeira hora, mobilidade; na segunda, as 3 decisões.</p><button class="btn sm" data-run="jogo-prep">Rotina pré-jogo</button> <button class="linkbtn" data-jogos10>Ver os jogos</button></div>';
   const sonos=lastDays(7).map(d=>(store.get('ck:'+d,null)||{}).sono).filter(x=>typeof x==='number');
   const sm=sonos.length?Math.round(sonos.reduce((a,b)=>a+b,0)/sonos.length*10)/10:null;
   h+='<h3>Corpo e saúde</h3><ul class="pro-l">'+
@@ -5619,6 +5619,13 @@ document.addEventListener('change',e=>{
   const t=e.target; if(!(t instanceof Element)) return;
   if(t.matches('[data-car10t]')){ const ds=dateFor(st.dia); const E=store.get('diario:'+ds,null)||{}; const v=parseInt(t.value,10); if(v>0) E.min=v; else delete E.min; store.set('diario:'+ds,E); renderAvalDia(ds); }
   if(t.matches('[data-av10]')){ const key=t.dataset.av10; const A=store.get(key,{}); A[t.dataset.k]=t.value.trim(); store.set(key,A); }
+});
+
+/* ---------- link para os jogos (Evolução, secção Jogos de futsal) ---------- */
+document.addEventListener('click',e=>{
+  const b=e.target&&e.target.closest&&e.target.closest('[data-jogos10]'); if(!b) return;
+  show('mente');
+  const j=$('#jogos'); if(j){ const h=j.previousElementSibling&&j.previousElementSibling.previousElementSibling; (h||j).scrollIntoView({block:'start'}); }
 });
 
 renderHoje(); renderCk(); renderSemana(); renderSess(); renderActs(); renderSinal(); renderCrescer(); renderRecs(); renderSlog();
