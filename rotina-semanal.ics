@@ -718,7 +718,8 @@ DTSTAMP:20261108T000000Z
 DTSTART;TZID=Europe/Lisbon:20261029T174500
 DTEND;TZID=Europe/Lisbon:20261029T181500
 RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
-SUMMARY:🗒️ Homem: pensamento crítico\, argumentação e decisões
+SUMMARY:🗒️ Homem: pensamento crítico\, raciocínio lógico e argument
+ ação
 DESCRIPTION:O tema desta semana aparece ao abrir a sessão: aprender\, apli
  car ao teu caso e escrever.\n\nRotina 2026/27: https://weynemilagre-png.gi
  thub.io/we/
@@ -1256,7 +1257,20 @@ BEGIN:VEVENT
 UID:dom-0810@rotina-2026-27
 DTSTAMP:20261108T000000Z
 DTSTART;TZID=Europe/Lisbon:20261101T081000
-DTEND;TZID=Europe/Lisbon:20261101T085000
+DTEND;TZID=Europe/Lisbon:20261101T084000
+RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
+SUMMARY:🗒️ Homem: caráter e princípios
+DESCRIPTION:O tema desta semana aparece ao abrir a sessão: aprender\, apli
+ car ao teu caso e escrever.\n\nRotina 2026/27: https://weynemilagre-png.gi
+ thub.io/we/
+CATEGORIES:Revisão e leitura
+URL:https://weynemilagre-png.github.io/we/
+END:VEVENT
+BEGIN:VEVENT
+UID:dom-0840@rotina-2026-27
+DTSTAMP:20261108T000000Z
+DTSTART;TZID=Europe/Lisbon:20261101T084000
+DTEND;TZID=Europe/Lisbon:20261101T092000
 RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
 SUMMARY:🗒️ Leitura e cultura geral
 DESCRIPTION:O livro do mês em papel e um artigo de história\, ciência\, 
@@ -1266,10 +1280,10 @@ CATEGORIES:Revisão e leitura
 URL:https://weynemilagre-png.github.io/we/
 END:VEVENT
 BEGIN:VEVENT
-UID:dom-0850@rotina-2026-27
+UID:dom-0920@rotina-2026-27
 DTSTAMP:20261108T000000Z
-DTSTART;TZID=Europe/Lisbon:20261101T085000
-DTEND;TZID=Europe/Lisbon:20261101T093000
+DTSTART;TZID=Europe/Lisbon:20261101T092000
+DTEND;TZID=Europe/Lisbon:20261101T100000
 RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
 SUMMARY:💡 Inglês: um episódio em inglês\, legendas em inglês
 DESCRIPTION:Série\, documentário ou jogo comentado em inglês. 5 palavras
@@ -1279,10 +1293,10 @@ CATEGORIES:Línguas e saber
 URL:https://weynemilagre-png.github.io/we/
 END:VEVENT
 BEGIN:VEVENT
-UID:dom-0930@rotina-2026-27
+UID:dom-1000@rotina-2026-27
 DTSTAMP:20261108T000000Z
-DTSTART;TZID=Europe/Lisbon:20261101T093000
-DTEND;TZID=Europe/Lisbon:20261101T100000
+DTSTART;TZID=Europe/Lisbon:20261101T100000
+DTEND;TZID=Europe/Lisbon:20261101T103000
 RRULE:FREQ=WEEKLY;UNTIL=20270328T225959Z
 SUMMARY:🗒️ Organização: o plano da próxima semana
 DESCRIPTION:Rotina 2026/27: https://weynemilagre-png.github.io/we/
