@@ -2,7 +2,7 @@
 // Uso: node tools/gerar-calendario.mjs   (corre sempre que mudares horários na app)
 import fs from 'node:fs';
 
-const INICIO = '2026-10-26';            // segunda em que começa a jornada
+const INICIO = '2026-11-10';            // terça, dia 1 da jornada: cada dia da semana começa na primeira data a partir daqui
 const UNTIL = '20270328T225959Z';       // fim da fase 2 (28/03/2027); a fase 3 é o modo exame
 const TZ = 'Europe/Lisbon';
 const APP = 'https://weynemilagre-png.github.io/we/';
@@ -44,7 +44,7 @@ const L = [
 ];
 let n = 0;
 DIAS.forEach((k, i) => {
-  const d = new Date(INICIO + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() + i);
+  const d = new Date(INICIO + 'T00:00:00Z'); const dow = (d.getUTCDay() + 6) % 7; d.setUTCDate(d.getUTCDate() + ((i - dow + 7) % 7));
   for (const b of WEEK[k].blocos) {
     if (b.m.indexOf('g') < 0 || b.c === 'livre' || b.k === 0) continue;
     const desc = (b.n ? b.n + '\n\n' : '') + 'Rotina 2026/27: ' + APP;
