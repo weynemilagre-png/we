@@ -753,6 +753,10 @@ svg.loadc .lc-l{font:500 10.5px var(--body);fill:var(--muted)}
 /* v10.1 · lema */
 .mote10{font-family:var(--disp);font-weight:800;font-size:13px;line-height:1.5;letter-spacing:.14em;text-transform:uppercase;color:var(--court);text-align:center;margin:26px 8px 10px}
 .mote10-l{text-align:left;margin:6px 0 12px;font-size:12px}
+/* v11 · a jornada no topo do Hoje */
+.jr11{font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--court);margin:0 2px 10px}
+.jr11.eve{letter-spacing:normal;text-transform:none;font-weight:400;font-size:14.5px;line-height:1.45;color:var(--ink);background:color-mix(in srgb,var(--court) 12%,var(--surface));border:1px solid color-mix(in srgb,var(--court) 45%,var(--line));border-radius:14px;padding:12px 14px;margin:0 0 12px}
+.jr11.eve b{display:block;font-family:var(--disp);font-weight:800;font-size:20px;line-height:1.1;letter-spacing:.03em;text-transform:uppercase;color:var(--court);margin-bottom:6px}
 /* INSTALAR */
 .install{display:flex;gap:10px;align-items:center;background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--court);border-radius:10px;padding:10px 8px 10px 12px;margin:0 0 12px;font-size:15px}
 .install[hidden]{display:none}
@@ -803,7 +807,7 @@ a.btn{display:inline-block;text-decoration:none}
 
 <section class="view" id="v-semana" hidden>
   <h2>A jornada</h2>
-  <p class="lead">Um ano, quatro fases, ciclos de 4 semanas, e cada dia conta. A jornada recomeçou a 26 de outubro.</p>
+  <p class="lead">Um ano, quatro fases, ciclos de 4 semanas, e cada dia conta. Dia 1: terça, 10 de novembro de 2026.</p>
   <div class="card" id="jr-prog"></div>
   <h3>Recordes</h3>
   <p class="small muted">Os quatro principais; o quadro completo tem 19 testes, todos com regras fixas.</p>
@@ -1119,7 +1123,7 @@ a.btn{display:inline-block;text-decoration:none}
   <button class="back" data-tab="mais">‹ Mais</button>
   <h2>Calendário</h2>
   <p class="lead">A semana normal no calendário do telemóvel. Subscreves uma vez e, quando a rotina mudar, o calendário muda sozinho.</p>
-  <div class="card"><b>O que entra:</b> os blocos do dia 🟢, de segunda, 26 de outubro, a domingo, 28 de março, o fim da fase de construção. Refeições, duches e tempo livre ficam de fora. Os dias 🟡 e 🔴 e o modo exame decidem-se aqui na app.</div>
+  <div class="card"><b>O que entra:</b> os blocos do dia 🟢, de terça, 10 de novembro, a domingo, 28 de março, o fim da fase de construção. Refeições, duches e tempo livre ficam de fora. Os dias 🟡 e 🔴 e o modo exame decidem-se aqui na app.</div>
   <p class="small muted">Se já subscreveste, os horários novos (acordar às 05:00, luzes às 20:30, campo às 08:45 à quarta e ao sábado, futsal ao domingo) aparecem sozinhos. Pode demorar até um dia.</p>
   <h3>Se já importaste o calendário antigo</h3>
   <p>Apaga primeiro o calendário que criaste com o ficheiro rotina-semanal.ics. Se não, ficas com tudo a dobrar.</p>
@@ -3228,7 +3232,7 @@ X('biblia-dia', {n:'Bíblia e reflexão', cat:'mente', pos:'Todas',
  prog:'Depois dos Evangelhos, Atos e as cartas, pela ordem.', alt:'Sem tempo: só o versículo sublinhado e a linha.', q:'', ev:''});
 
 /* ---------- plano bíblico, valores e currículos ---------- */
-const BIB_START = new Date(2026,10,8);
+const BIB_START = new Date(2026,10,10);
 const BIB_LIVROS = [['Mateus',28],['Marcos',16],['Lucas',24],['João',21],['Atos',28],['Romanos',16],['1 Coríntios',16],['2 Coríntios',13],['Gálatas',6],['Efésios',6],['Filipenses',4],['Colossenses',4],['1 Tessalonicenses',5],['2 Tessalonicenses',3],['1 Timóteo',6],['2 Timóteo',4],['Tito',3],['Filémon',1],['Hebreus',13],['Tiago',5],['1 Pedro',5],['2 Pedro',3],['1 João',5],['2 João',1],['3 João',1],['Judas',1],['Apocalipse',22]];
 function bibliaDia(ds){
   const d=parseYmd(ds); let i=Math.round((d-BIB_START)/86400000); if(i<0) i=0;
@@ -3676,8 +3680,10 @@ function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').rep
 const CONE = '<svg viewBox="0 0 20 22" aria-hidden="true"><path d="M10 1.5 16.6 18H3.4Z" fill="currentColor"/><rect x="1" y="18.2" width="18" height="3" rx="1.2" fill="currentColor"/></svg>';
 
 /* ---------- calendário do sistema ---------- */
-const START = new Date(2026,9,26);
-function biFor(ds){ const d=parseYmd(ds); const days=Math.round((d-START)/86400000); if(days<0) return {w0:true,wk:-1,bloco:0,sem:0,d:d}; const wk=Math.floor(days/7); return {w0:false,wk:wk,bloco:Math.floor(wk/4)+1,sem:wk%4+1,d:d}; }
+/* dia 1 da jornada: terça, 10 de novembro de 2026. As semanas contam de segunda a domingo: a semana 1 começa na segunda, 9, e tem 6 dias. */
+const START = new Date(2026,10,10);
+const SEM1 = new Date(2026,10,9);
+function biFor(ds){ const d=parseYmd(ds); if(Math.round((d-START)/86400000)<0) return {w0:true,wk:-1,bloco:0,sem:0,d:d}; const wk=Math.floor(Math.round((d-SEM1)/86400000)/7); return {w0:false,wk:wk,bloco:Math.floor(wk/4)+1,sem:wk%4+1,d:d}; }
 /* testes: semana 4 de cada ciclo; no 1.º ciclo também a semana 1 (referência). A semana 4 de um ciclo é a referência do seguinte. */
 function testeSemana(bi){ return !bi.w0&&(bi.sem===4||(bi.sem===1&&bi.bloco===1)); }
 function fieldVar(b){ if(b.w0) return 0; const p=(b.bloco-1)%3, s=b.bloco%3; return (b.sem===2||b.sem===4)?s:p; }
@@ -3715,7 +3721,7 @@ function renderHoje(){
   const st_=streak(); const dj=Math.round((parseYmd(date)-START)/86400000)+1;
   const jv=store.get('jornada:v6',null); const arqNote=(jv&&jv.arq>0&&store.get('arquivo',null)&&(bi.w0||dj<=2))?'<br><span class="small">Os registos antigos ficaram guardados no arquivo (Mais, Cópia de segurança). Nada se perdeu.</span>':'';
   $('#h-banner').innerHTML = (bi.w0
-    ? (dj===0?'<b>A jornada recomeça amanhã, segunda-feira: dia 1.</b> Hoje conhece a app, faz o check-in e prepara a semana.':'<b>A jornada começa na segunda, 26 de outubro.</b> Até lá, conhece a app nova.')
+    ? (dj===0?'<b>A jornada começa amanhã, terça-feira, 10 de novembro: dia 1.</b> Hoje prepara o material e a mochila, deixa o despertador nas 05:00 e apaga as luzes às 20:30.':'<b>A jornada começa na terça, 10 de novembro.</b> Até lá, conhece a app.')
     : '<b>Dia '+dj+' da jornada · ciclo '+bi.bloco+', semana '+bi.sem+' de 4.</b> '+SEMNOTE[bi.sem])+(st_>0?'<br>🔥 '+(st_===1?'1 dia com o núcleo cumprido. Amanhã são 2.':st_+' dias seguidos com o núcleo cumprido.'):'')+arqNote;
   renderPainel(D,date,bi); renderExplorar(date);
   $('#h-desafio').innerHTML=D.desafio?'🎯 <b>Desafio de hoje:</b> '+esc(D.desafio):''; $('#h-desafio').hidden=!D.desafio;
@@ -3768,7 +3774,7 @@ function renderJornada(){
   const today=new Date(); const t0=new Date(today.getFullYear(),today.getMonth(),today.getDate());
   const dj=Math.round((t0-START)/86400000)+1; const pct=Math.max(0,Math.min(100,Math.round(dj/365*100)));
   $('#jr-prog').innerHTML = dj<1
-    ? '<div class="jbig">'+(dj===0?'Começa amanhã':'Faltam '+(1-dj)+' dias')+'</div><p class="small muted">A jornada começa na segunda, 26 de outubro de 2026: dia 1.</p>'
+    ? '<div class="jbig">'+(dj===0?'Começa amanhã':'Faltam '+(1-dj)+' dias')+'</div><p class="small muted">A jornada começa na terça, 10 de novembro de 2026, às 05:00: dia 1.</p>'
     : '<div class="jbig">Dia '+dj+' de 365</div><div class="jbar"><i style="width:'+pct+'%"></i></div><p class="small muted">🔥 '+(function(n){return n===0?'Ainda sem dias com o núcleo cumprido: começa hoje':(n===1?'1 dia com o núcleo cumprido':n+' dias seguidos com o núcleo cumprido');})(streak())+'.</p>';
   const ts=ymd(t0);
   $('#jr-fases').innerHTML=FASES.map(f=>'<div class="fase'+(ts>=f.de&&ts<=f.ate?' now':'')+'"><div class="fn">'+esc(f.n)+'</div><div class="fd">'+esc(f.d)+'</div><p style="margin:6px 0 0">'+esc(f.foco)+'</p><ul>'+f.metas.map(m=>'<li>'+esc(m)+'</li>').join('')+'</ul></div>').join('');
@@ -4269,13 +4275,15 @@ document.addEventListener('keydown',e=>{ if(!RN.s||!$('#full').hidden) return; i
 
 
 /* ---------- CÓPIA DE SEGURANÇA ---------- */
-const CP_KEYS=/^(feito|modo|diario|rec|sess|ck|rev|int|lic|mov|exp|niv|carga|jogo):|^(sesslog|perfil|arquivo)$/;
+const CP_KEYS=/^(feito|modo|diario|rec|sess|ck|rev|int|lic|mov|exp|niv|carga|jogo|tipo|obj9d|aval9d|aval9w|obj9|pro10|aval10m|aval10t):|^(sesslog|perfil|arquivo|saude)$/;
 const CP_FMT={
   feito:/^feito:\d{4}-\d{2}-\d{2}$/, modo:/^modo:\d{4}-\d{2}-\d{2}$/, diario:/^diario:\d{4}-\d{2}-\d{2}$/,
   rec:/^rec:[a-z0-9]+$/, sess:/^sess:\d{4}-\d{2}-\d{2}:[a-z0-9-]+$/, sesslog:/^sesslog$/,
-  ck:/^ck:\d{4}-\d{2}-\d{2}$/, rev:/^rev:\d{4}-\d{2}-\d{2}$/, int:/^int:\d{4}-\d{2}-\d{2}$/, lic:/^lic:\d{4}-\d{2}-\d{2}$/, mov:/^mov:\d{4}-\d{2}-\d{2}$/, exp:/^exp:\d{4}-\d{2}-\d{2}$/, perfil:/^perfil$/, arquivo:/^arquivo$/, niv:/^niv:[a-z0-9-]+$/, carga:/^carga:[a-z0-9-]+$/, jogo:/^jogo:\d{4}-\d{2}-\d{2}$/
+  ck:/^ck:\d{4}-\d{2}-\d{2}$/, rev:/^rev:\d{4}-\d{2}-\d{2}$/, int:/^int:\d{4}-\d{2}-\d{2}$/, lic:/^lic:\d{4}-\d{2}-\d{2}$/, mov:/^mov:\d{4}-\d{2}-\d{2}$/, exp:/^exp:\d{4}-\d{2}-\d{2}$/, perfil:/^perfil$/, arquivo:/^arquivo$/, niv:/^niv:[a-z0-9-]+$/, carga:/^carga:[a-z0-9-]+$/, jogo:/^jogo:\d{4}-\d{2}-\d{2}$/,
+  tipo:/^tipo:\d{4}-\d{2}-\d{2}$/, obj9d:/^obj9d:\d{4}-\d{2}-\d{2}$/, aval9d:/^aval9d:\d{4}-\d{2}-\d{2}$/, pro10:/^pro10:\d{4}-\d{2}-\d{2}$/,
+  aval9w:/^aval9w:\d{1,3}$/, obj9:/^obj9:[smt]:\d{1,3}$/, aval10m:/^aval10m:\d{1,3}$/, aval10t:/^aval10t:\d{1,2}$/, saude:/^saude$/
 };
-function cpTipo(k){ return (k==='sesslog'||k==='perfil'||k==='arquivo')?k:k.split(':')[0]; }
+function cpTipo(k){ return (k==='sesslog'||k==='perfil'||k==='arquivo'||k==='saude')?k:k.split(':')[0]; }
 function dadosApp(){
   const o={};
   try{ for(let i=0;i<localStorage.length;i++){ const k=localStorage.key(i); if(CP_KEYS.test(k)) o[k]=JSON.parse(localStorage.getItem(k)); } }catch(e){}
@@ -4297,7 +4305,8 @@ function renderCopia(){
   else s+='Ainda não fizeste nenhuma cópia.';
   if(na) s+='<br>No arquivo: '+pl(na,'registo antigo','registos antigos')+(arq.ate?', arrumados a '+dm(arq.ate):'')+'.';
   $('#cp-estado').innerHTML=s;
-  if($('#arq-box')){ $('#arq-box').hidden=!na; if(na) $('#arq-txt').textContent='Os registos de antes do recomeço estão guardados no arquivo ('+na+(na===1?' registo':' registos')+'). Não contam para a jornada nova. Se quiseres voltar a vê-los no diário, nos recordes e nas sessões, repõe-nos.'; }
+  const nrep=typeof repoKeys==='function'?repoKeys(arq).length:na;
+  if($('#arq-box')){ $('#arq-box').hidden=!nrep; if(nrep) $('#arq-txt').textContent='Os registos de antes do recomeço estão guardados no arquivo ('+na+(na===1?' registo':' registos')+'). Não contam para a jornada nova. '+(nrep===na?'Se quiseres voltar a vê-los no diário, nos recordes e nas sessões, repõe-nos.':'Podes repor '+nrep+' (diário, recordes e sessões); as avaliações e os objetivos da contagem antiga ficam só no arquivo.'); }
 }
 async function exportar(){
   const d=new Date(), nome='rotina-copia-'+ymd(d)+'.txt';
@@ -4317,6 +4326,8 @@ function valido(k,v){
   if(t==='sesslog') return Array.isArray(v)&&v.every(x=>typeof x==='string'&&CP_FMT.sess.test(x));
   if(t==='int') return typeof v==='string'&&v.length<300;
   if(t==='lic'||t==='mov'||t==='exp') return typeof v==='boolean';
+  if(t==='tipo') return v===null||(typeof v==='string'&&/^(escola|livre|ferias|feriado)$/.test(v));
+  if(t==='obj9d') return Array.isArray(v)&&v.length<=3&&v.every(x=>typeof x==='boolean');
   if(t==='arquivo') return !!v&&typeof v==='object'&&!!v.dados&&typeof v.dados==='object'&&!Array.isArray(v.dados);
   return !!v&&typeof v==='object'&&!Array.isArray(v);
 }
@@ -4552,12 +4563,12 @@ function calcCk(){
 function saveCk(){ const ds=dateFor(st.dia); if(ckData){ const o=Object.assign({},ckData,{modo:ckModo}); store.set('ck:'+ds,o); } return ckModo; }
 
 /* ---------- revisão da semana (Evolução) ---------- */
-function revWeekShown(){ const today=ymd(new Date()); const dow=(new Date().getDay()+6)%7; return (dow===0&&dayIdx(today)>=7&&!store.get('rev:'+addDays(mondayOf(today),-7),null))?addDays(mondayOf(today),-7):mondayOf(today); }
+function revWeekShown(){ const today=ymd(new Date()); const dow=(new Date().getDay()+6)%7; return (dow===0&&dayIdx(addDays(mondayOf(today),-1))>=0&&!store.get('rev:'+addDays(mondayOf(today),-7),null))?addDays(mondayOf(today),-7):mondayOf(today); }
 function renderRevisao(){
   const el=$('#rev'); if(!el) return;
   const mon=revWeekShown(); const s=weekStats(mon); const saved=store.get('rev:'+mon,null)||{};
-  const bi=biFor(mon); const sem=bi.w0?0:bi.sem;
-  if(dayIdx(addDays(mon,6))<0){ el.innerHTML='<p class="muted">A primeira revisão é no domingo, 1 de novembro, no fim da semana 1.</p>'; return; }
+  const bi=biFor(mon<ymd(START)?ymd(START):mon); const sem=bi.w0?0:bi.sem;
+  if(dayIdx(addDays(mon,6))<0){ el.innerHTML='<p class="muted">A primeira revisão é no domingo, 15 de novembro, no fim da semana 1.</p>'; return; }
   const ckA=s.ck.length?('sono médio '+fmtNum(avg(s.ck,'sono'))+' h, energia '+fmtNum(avg(s.ck,'en'))+', vontade '+fmtNum(avg(s.ck,'mot'))+(s.dor?', dor em '+plt(s.dor,'dia','dias'):'')):'sem check-ins';
   const sessAcc=s.sess.filter(x=>x.acc!=null); const accM=sessAcc.length?Math.round(sessAcc.reduce((p,x)=>p+x.acc,0)/sessAcc.length):null;
   const top=Object.keys(s.causas).sort((a,b)=>s.causas[b]-s.causas[a])[0];
@@ -4659,13 +4670,13 @@ function savePerfil(){
 
 /* ---------- recomeçar do zero ---------- */
 /* ---------- recomeço: o passado vai para o arquivo, nada se perde ---------- */
-const PROG_RE=/^(feito|modo|diario|rec|sess|ck|rev|int|lic|mov|exp|niv|carga|jogo):|^sesslog$/;
+const PROG_RE=/^(feito|modo|diario|rec|sess|ck|rev|int|lic|mov|exp|niv|carga|jogo|tipo|obj9d|aval9d|aval9w|obj9|pro10|aval10m|aval10t):|^sesslog$/;
 function progKeys(){
   const ks=[]; try{ for(let i=0;i<localStorage.length;i++){ const k=localStorage.key(i); if(PROG_RE.test(k)) ks.push(k); } }catch(e){}
   Object.keys(MEM).forEach(k=>{ if(PROG_RE.test(k)&&ks.indexOf(k)<0) ks.push(k); }); return ks;
 }
-function arquivar(){
-  const ks=progKeys(); if(!ks.length) return 0;
+function arquivar(lista){
+  const ks=lista||progKeys(); if(!ks.length) return 0;
   const dados={}; ks.forEach(k=>{ const v=store.get(k,null); if(v!==null) dados[k]=v; });
   store.set('arquivo',mergeVal('arquivo',store.get('arquivo',null),{ate:ymd(new Date()),dados:dados}));
   if(!store.get('arquivo',null)) return 0;
@@ -4678,18 +4689,31 @@ function recomecar(){
   const n=arquivar(); reRender();
   if($('#rz-ok')) $('#rz-ok').textContent=n?'Feito: começas do zero. '+n+(n===1?' registo foi':' registos foram')+' para o arquivo.':'Não havia registos para arrumar.';
 }
+/* avaliações e objetivos numerados por semana, ciclo ou fase são da contagem antiga: ficam no arquivo e não voltam, para não ocuparem as semanas novas */
+const PER_RE=/^(aval9w|obj9|aval10m|aval10t):/;
+function repoKeys(arq){ return arq&&arq.dados?Object.keys(arq.dados).filter(k=>PROG_RE.test(k)&&!PER_RE.test(k)):[]; }
 function reporArquivo(){
   const arq=store.get('arquivo',null); if(!arq||!arq.dados) return;
-  const ks=Object.keys(arq.dados).filter(k=>PROG_RE.test(k));
-  if(!confirm('Repor '+ks.length+(ks.length===1?' registo antigo':' registos antigos')+'? Juntam-se aos de agora. As contas da jornada continuam a começar a 26 de outubro.')) return;
+  const ks=repoKeys(arq); if(!ks.length) return;
+  if(!confirm('Repor '+ks.length+(ks.length===1?' registo antigo':' registos antigos')+'? Juntam-se aos de agora. As contas da jornada continuam a começar a 10 de novembro.')) return;
   ks.forEach(k=>{ store.set(k,juntar(k,arq.dados[k])); });
-  try{ localStorage.removeItem('arquivo'); }catch(e){} delete MEM.arquivo;
+  const resto={}; Object.keys(arq.dados).forEach(k=>{ if(ks.indexOf(k)<0) resto[k]=arq.dados[k]; });
+  if(Object.keys(resto).length) store.set('arquivo',{ate:arq.ate||'',dados:resto}); else { try{ localStorage.removeItem('arquivo'); }catch(e){} delete MEM.arquivo; }
   reRender(); if($('#arq-ok')) $('#arq-ok').textContent=ks.length+' registos repostos.';
 }
 /* primeira abertura desta versão: a jornada recomeça limpa */
 (function(){
   if(store.get('jornada:v6',null)) return;
   const n=arquivar(); store.set('jornada:v6',{em:ymd(new Date()),arq:n});
+  if(n) st.modo=store.get('modo:'+dateFor(st.dia),biFor(dateFor(st.dia)).w0?'y':'g');
+})();
+/* recomeço de 10 de novembro de 2026: tudo o que é de antes vai para o arquivo, uma vez.
+   Fica o perfil, o protocolo de saúde, o tema e os modos já escolhidos para dias a partir de 10/11. */
+(function(){
+  if(store.get('jornada:v11',null)) return;
+  const d1=ymd(START);
+  const ks=progKeys().filter(k=>{ const m=k.match(/\d{4}-\d{2}-\d{2}/); return !m||m[0]<d1; });
+  const n=arquivar(ks); store.set('jornada:v11',{em:ymd(new Date()),arq:n,inicio:d1});
   if(n) st.modo=store.get('modo:'+dateFor(st.dia),biFor(dateFor(st.dia)).w0?'y':'g');
 })();
 
@@ -4904,7 +4928,7 @@ function renderNiveis(){
 function renderPlano(){
   const el=$('#plano-dyn'); if(!el) return; const ds=ymd(new Date()); const bi=biFor(ds); const f=FASES.find(x=>ds>=x.de&&ds<=x.ate)||FASES[0];
   const P=papelFor(ds);
-  el.innerHTML='<div class="card"><div class="rv-r"><span>Fase</span><b>'+esc(f.n)+'</b></div><div class="rv-r"><span>Semana do ciclo</span><b>'+(bi.w0?'a jornada começa a 26 de outubro':'ciclo '+bi.bloco+', semana '+bi.sem+' de 4')+'</b></div><div class="rv-r"><span>Posição principal</span><b>Extremo esquerdo</b></div><div class="rv-r"><span>Secundária em foco</span><b>'+esc(FOCO2[foco2()])+'</b></div><div class="rv-r"><span>Papel no futsal esta semana</span><b>'+esc(P[0])+'</b></div></div>';
+  el.innerHTML='<div class="card"><div class="rv-r"><span>Fase</span><b>'+esc(f.n)+'</b></div><div class="rv-r"><span>Semana do ciclo</span><b>'+(bi.w0?'a jornada começa a 10 de novembro':'ciclo '+bi.bloco+', semana '+bi.sem+' de 4')+'</b></div><div class="rv-r"><span>Posição principal</span><b>Extremo esquerdo</b></div><div class="rv-r"><span>Secundária em foco</span><b>'+esc(FOCO2[foco2()])+'</b></div><div class="rv-r"><span>Papel no futsal esta semana</span><b>'+esc(P[0])+'</b></div></div>';
 }
 
 /* ================= v8: semana nova, limite do dia, protocolo de saúde, plano de 12 semanas e biblioteca ================= */
@@ -4963,22 +4987,22 @@ function renderRecs(){
 }
 
 /* ---------- fases e plano de 12 semanas ---------- */
-Object.assign(FASES[0],{n:'Fase 1: Fundação (as primeiras 12 semanas)',d:'26 de outubro de 2026 a 17 de janeiro de 2027',de:'2026-10-26',ate:'2027-01-17',
+Object.assign(FASES[0],{n:'Fase 1: Fundação (as primeiras 12 semanas)',d:'10 de novembro de 2026 a 31 de janeiro de 2027',de:'2026-11-10',ate:'2027-01-31',
  foco:'O plano de 12 semanas em três blocos de 4 (base, desenvolvimento e transferência). Segunda a sábado de treino, cada dia no limite de uma qualidade diferente; domingo de descanso e futsal. As 4 posições: médio centro à terça, extremo esquerdo à quarta, médio ofensivo à quinta, ponta de lança à sexta, criatividade ao sábado. Fora do treino, a prioridade é entrar num clube.',
  metas:['Núcleo cumprido em pelo menos 5 dias de cada 7.','Testes de referência na semana 1 e no fim de cada bloco (semanas 4, 8 e 12).','Passar de bloco pelos critérios do plano de 12 semanas.','Pelo menos um treino à experiência num clube, ou a lista de clubes contactados.']});
-Object.assign(FASES[1],{d:'18 de janeiro a 28 de março de 2027',de:'2027-01-18'});
+Object.assign(FASES[1],{d:'1 de fevereiro a 28 de março de 2027',de:'2027-02-01'});
 FASES[1].metas=FASES[1].metas.map(m=>m.replace('o Yo-Yo','as voltas do motor 4×4'));
 const PLANO12=[
- {b:1,n:'Bloco 1: Base',sem:'Semanas 1 a 4',datas:'26/10 a 22/11/2026',
+ {b:1,n:'Bloco 1: Base',sem:'Semanas 1 a 4',datas:'10/11 a 06/12/2026',
   obj:['A rotina inteira cumprida: núcleo em 5 de cada 7 dias','Técnica limpa nos níveis N1 e N2 de todas as sequências','Força com técnica aprovada em vídeo: agachamento, peso morto romeno, búlgaro e Nordic','Pliometria a dois pés com receções paradas; velocidade sempre com descanso completo','Testes de referência na semana 1 e de comparação na semana 4'],
   crit:['Núcleo cumprido em 5 de 7 dias em pelo menos 3 das 4 semanas','Pelo menos metade das sequências no N2 com 8 em 10','Técnica de força aprovada no vídeo de lado (ou pelo professor de EDF)','Nenhuma dor que dure mais de 3 dias'],
   senao:'Repetes o bloco 1 mais 2 semanas, com a mesma carga, e corriges o critério que falhou.'},
- {b:2,n:'Bloco 2: Desenvolvimento',sem:'Semanas 5 a 8',datas:'23/11 a 20/12/2026',
+ {b:2,n:'Bloco 2: Desenvolvimento',sem:'Semanas 5 a 8',datas:'07/12/2026 a 03/01/2027, com as férias de Natal',
   obj:['Decisão: N3 nas sequências, com o Sinal a decidir no último momento','Força: 3 séries e mais 10% de carga com a mesma técnica','Potência: saltos a um pé e saltos seguidos','Velocidade: 20 m lançados e partidas ao sinal','Mente: visualização todos os sábados e pressão nos duelos (dizer antes quantos)'],
   crit:['Pelo menos metade das sequências no N3 com 8 em 10','Carga mais alta em 3 exercícios de força, com a técnica igual','10 m e 20 m iguais ou melhores do que no bloco 1','Voltas do motor iguais ou mais, com as pedras mais afastadas','Adesão às sessões principais de 80% ou mais'],
   senao:'Ficas no bloco 2 mais 2 semanas e mudas uma variável no que não evoluiu (diagnóstico do ciclo).'},
- {b:3,n:'Bloco 3: Transferência',sem:'Semanas 9 a 12',datas:'21/12/2026 a 17/01/2027, com as férias de Natal',
-  obj:['N4 nas sequências: pressão de tempo, cansaço controlado e pé fraco','Jogo com amigos sempre que der nas férias: 1v1 e jogo reduzido contra pessoas','Finalização e 1v1 com consequência','Força: manter a carga; potência com mudança de direção','O teu vídeo de 2 a 4 minutos para clubes'],
+ {b:3,n:'Bloco 3: Transferência',sem:'Semanas 9 a 12',datas:'04/01 a 31/01/2027',
+  obj:['N4 nas sequências: pressão de tempo, cansaço controlado e pé fraco','Jogo com amigos sempre que der (fins de semana e dias sem escola): 1v1 e jogo reduzido contra pessoas','Finalização e 1v1 com consequência','Força: manter a carga; potência com mudança de direção','O teu vídeo de 2 a 4 minutos para clubes'],
   crit:['Pelo menos 3 testes melhores do que a margem em relação ao bloco 1','Tendência positiva em 4 jogos: 1v1 ganhos, remates no alvo e pressão em 5 s','O vídeo para clubes pronto','Novo plano de 12 semanas desenhado a partir dos testes'],
   senao:'O plano seguinte começa pelo bloco que ficou para trás.'}];
 const NATAL='Férias de Natal: nos dias 24, 25 e 31 de dezembro e 1 de janeiro, só a fé, a rotina da manhã e uma caminhada. Nos outros dias de férias, o treino de campo passa para as 10:00 e o estudo para a tarde.';
@@ -5037,7 +5061,7 @@ function renderPlano(){
   const el=$('#plano-dyn'); if(!el) return; const ds=ymd(new Date()); const bi=biFor(ds); const f=FASES.find(x=>ds>=x.de&&ds<=x.ate)||FASES[0];
   const P=papelFor(ds); const blk=bi.w0?1:Math.min(3,bi.bloco); const k=keyOf(ds);
   let h='<div class="card"><div class="rv-r"><span>Fase</span><b>'+esc(f.n)+'</b></div>'+
-   '<div class="rv-r"><span>Semana</span><b>'+(bi.w0?'a jornada começa a 26 de outubro':(bi.wk<12?'semana '+(bi.wk+1)+' de 12, ':'')+'ciclo '+bi.bloco+', semana '+bi.sem+' de 4')+'</b></div>'+
+   '<div class="rv-r"><span>Semana</span><b>'+(bi.w0?'a jornada começa a 10 de novembro':(bi.wk<12?'semana '+(bi.wk+1)+' de 12, ':'')+'ciclo '+bi.bloco+', semana '+bi.sem+' de 4')+'</b></div>'+
    '<div class="rv-r"><span>Bloco do plano de 12 semanas</span><b>'+(bi.wk<12?esc(PLANO12[blk-1].n):'Novo plano de 12 semanas')+'</b></div>'+
    '<div class="rv-r"><span>Limite de hoje</span><b>'+esc(WEEK[k].limite||'')+'</b></div>'+
    '<div class="rv-r"><span>Papel no futsal esta semana</span><b>'+esc(P[0])+'</b></div></div>';
@@ -5174,8 +5198,9 @@ function renderHoje(){
   $('#h-tema').textContent=D.tema;
   $('#h-escola').hidden=true;
   const st_=streak(); const dj=Math.round((parseYmd(date)-START)/86400000)+1;
-  $('#h-banner').innerHTML = (bi.w0?'<b>A jornada começa na segunda, 26 de outubro.</b>'
-    : '<b>Dia '+dj+' da jornada · ciclo '+bi.bloco+', semana '+bi.sem+' de 4.</b> '+SEMNOTE[bi.sem])+(st_>0?'<br>'+(st_===1?'1 dia com o núcleo cumprido. Amanhã são 2.':st_+' dias seguidos com o núcleo cumprido.'):'');
+  const jv11=store.get('jornada:v11',null), arqN=(jv11&&jv11.arq>0&&dj<=2&&store.get('arquivo',null))?'<br><span class="small">Os registos de antes de 10 de novembro estão no arquivo (Mais, Cópia de segurança). Nada se perdeu.</span>':'';
+  $('#h-banner').innerHTML = (bi.w0?(dj===0?'<b>A jornada começa amanhã, terça-feira, 10 de novembro: dia 1.</b> Hoje: material e mochila prontos, despertador nas 05:00 e luzes apagadas às 20:30.':'<b>A jornada começa na terça, 10 de novembro.</b>')
+    : '<b>Dia '+dj+' da jornada · ciclo '+bi.bloco+', semana '+bi.sem+' de 4.</b> '+SEMNOTE[bi.sem])+(st_>0?'<br>'+(st_===1?'1 dia com o núcleo cumprido. Amanhã são 2.':st_+' dias seguidos com o núcleo cumprido.'):'')+arqN;
   renderPainel(D,date,bi); renderExplorar(date);
   $('#h-desafio').innerHTML=D.desafio?'<b>Desafio de hoje:</b> '+esc(D.desafio):''; $('#h-desafio').hidden=!D.desafio;
   renderPil(D);
@@ -5337,7 +5362,7 @@ function lastDays(n){ const out=[]; const t=new Date(); for(let i=0;i<n;i++){ co
 function refRate(refs,n){ const days=lastDays(n); let T=0,F=0; days.forEach(ds=>{ const D=dayFor(ds); const done=new Set(store.get('feito:'+ds,[])); D.blocos.forEach(b=>{ if(b.id&&refs.indexOf(b.ref)>=0){ T++; if(done.has(b.id)) F++; } }); }); return T?{T:T,F:F,p:Math.round(F/T*100)}:null; }
 function recTrend(ids){ const out=[]; (ids||[]).forEach(id=>{ const r=recDef(id), a=recGet(id); if(!r||!a.length) return; const f=a[0], l=a[a.length-1]; const better=a.length>1&&(r.low?l.v<f.v:l.v>f.v), worse=a.length>1&&(r.low?l.v>f.v:l.v<f.v);
   out.push({id:id,t:r.n+': '+(a.length>1?fmtRec(f.v,r.u)+' → ':'')+fmtRec(l.v,r.u)+(r.u?' '+r.u:''),s:better?'up':(worse?'down':'eq')}); }); return out; }
-function semKey(ds){ const bi=biFor(ds); return bi.w0?0:bi.wk+1; }
+function semKey(ds){ const bi=biFor(ds); return bi.w0?1:bi.wk+1; }
 function avalW(w){ return store.get('aval9w:'+w,null); }
 function dimInfo(D){
   const lines=[]; let weak=false;
@@ -5404,7 +5429,7 @@ function renderHomem(){
   h+='<h3>As 9 áreas</h3><p class="small muted">Semana '+(wi+1)+' de 12 desta fase. O tema da semana está a negrito.</p>';
   h+=Object.keys(CURR9).map(a=>{ const C=CURR9[a]; return '<details class="box"><summary><b>'+esc(C.n)+'</b> · '+esc(DIA_A[a]||'')+'</summary><p class="small">'+esc(C.obj)+'</p><ol class="hm-t">'+C.temas.map((t,i)=>'<li'+(i===wi?' class="now"':'')+'><b>'+esc(t.t)+'</b><br><span class="small muted">'+esc(t.a)+'</span></li>').join('')+'</ol></details>'; }).join('');
   h+='<h3>Os 12 valores</h3><ol class="hm-t">'+VALORES9.map((v,i)=>'<li'+(i===wi?' class="now"':'')+'><b>'+esc(v[0])+'</b> · '+esc(v[1])+'<br><span class="small muted">'+esc(v[2])+'</span></li>').join('')+'</ol>';
-  h+='<h3>Plano da Bíblia</h3><p class="small">Um capítulo do Novo Testamento por dia, pela ordem, a começar em Mateus 1 a 8 de novembro, e o capítulo de Provérbios com o número do dia do mês. Hoje: <b>'+esc(B.ev)+'</b>.</p>';
+  h+='<h3>Plano da Bíblia</h3><p class="small">Um capítulo do Novo Testamento por dia, pela ordem, a começar em Mateus 1 a 10 de novembro, o dia 1 da jornada, e o capítulo de Provérbios com o número do dia do mês. Hoje: <b>'+esc(B.ev)+'</b>.</p>';
   h+='<h3>Projeto das próximas férias</h3><p class="small"><b>'+esc(P.n)+':</b> '+esc(P.a)+'</p>';
   el.innerHTML=h;
 }
@@ -5601,11 +5626,11 @@ function av10Form(key,tit,sub,auto){
     const infos=DIM9.map(D=>Object.assign({D:D},dimInfo(D)));
     const fortes=infos.filter(x=>!x.weak&&((x.nota&&x.nota>=4)||x.lines.some(l=>l.indexOf('class="up"')>=0)||(x.lines.join('').match(/\((\d+)%\)/)&&+x.lines.join('').match(/\((\d+)%\)/)[1]>=85)));
     let h='<h3>Pontos fortes</h3><p class="small">'+(fortes.length?fortes.map(x=>'<b>'+esc(x.D.n)+'</b>').join(', ')+': protege-os, sem lhes tirar tempo.':'Ainda sem dados suficientes: aparecem com as notas de domingo, os testes e a consistência.')+'</p>';
-    const ini=addDays(ymd(START),(bloco-1)*28); let ok=0,n=0; for(let i=0;i<28;i++){ const d=addDays(ini,i); if(d>hoje) break; n++; if(nucleoOk(d)) ok++; }
-    let lw=0; for(let i=0;i<4;i++){ const m=addDays(ini,7*i); if(m>hoje) break; let s=0; for(let j=0;j<7;j++) s+=loadDay(addDays(m,j)); lw+=s; }
+    const ini=addDays(ymd(SEM1),(bloco-1)*28), d1=ymd(START); let ok=0,n=0; for(let i=0;i<28;i++){ const d=addDays(ini,i); if(d>hoje) break; if(d<d1) continue; n++; if(nucleoOk(d)) ok++; }
+    let lw=0; for(let i=0;i<4;i++){ const m=addDays(ini,7*i); if(m>hoje) break; let s=0; for(let j=0;j<7;j++){ const dj=addDays(m,j); if(dj>=d1) s+=loadDay(dj); } lw+=s; }
     const auto='<li>Núcleo cumprido em '+ok+' de '+n+' dias deste ciclo</li>'+recTrend(['sp10','sp20','salto','parede60f']).map(x=>'<li class="'+x.s+'">'+esc(x.t)+'</li>').join('')+'<li>Carga total do ciclo: '+lw+'</li>';
     h+='<h3>Avaliação do mês</h3>'+av10Form('aval10m:'+bloco,'Ciclo '+bloco+(sem===4?' · é esta semana, depois dos testes':' · na semana 4 ('+fmtDM(addDays(ini,21))+')'),'Os números do ciclo e a tua leitura: pontos fortes, limitações e o que muda.',auto);
-    const iniT=addDays(ymd(START),(fase-1)*84);
+    const iniT=addDays(ymd(SEM1),(fase-1)*84);
     h+='<h3>Avaliação do trimestre</h3>'+av10Form('aval10t:'+fase,'Fase '+fase+' · semana 12 ('+fmtDM(addDays(iniT,77))+')','As 12 semanas: o que mudou no atleta, no homem e na pessoa, e o plano da fase seguinte.','');
     el.insertAdjacentHTML('beforeend',h);
   };
@@ -5674,6 +5699,30 @@ document.addEventListener('click',e=>{
 }
 { const _v10dynL=dynNote;
   dynNote=function(b,bi){ const base=_v10dynL(b,bi); return b.ref==='dev-pensar'?(base?base+' ':'')+'No fim: o problema de lógica da semana (8 min).':base; };
+}
+
+/* ================= v11: a jornada recomeça na terça, 10 de novembro de 2026 =================
+   O início (START), as semanas de segunda a domingo (SEM1) e o arquivo dos registos antigos estão em build_app.js e 11_v6.js.
+   A semana 1 não tem segunda: os testes em casa, que são à segunda, passam para a quinta, antes da técnica silenciosa. */
+{ const _v11teste=testeHoje;
+  testeHoje=function(b,bi){
+    const r=_v11teste.apply(this,arguments); if(r) return r;
+    if(bi&&!bi.w0&&bi.wk===0&&b.ref==='casa-pf'&&keyOf(ymd(bi.d))==='qui') return ['testes-c','Semana 1 (começou na terça): os testes em casa (15 min) são hoje, antes da técnica silenciosa, ou noutro dia desta semana à mesma hora.'];
+    return null;
+  };
+}
+
+/* Hoje: a jornada no topo. Na véspera, o que preparar à noite; depois, o dia, o ciclo e a semana. */
+{ const _v11hero=renderHero;
+  renderHero=function(D,date,bi,c){
+    _v11hero.apply(this,arguments);
+    const el=$('#h9'); if(!el) return;
+    const dj=Math.round((parseYmd(date)-START)/86400000)+1;
+    const h=dj===0?'<div class="jr11 eve"><b>A jornada começa amanhã, às 05:00</b><span>Terça, 10 de novembro: dia 1, ciclo 1, semana 1 de 4. Esta noite: material e mochila prontos, despertador nas 05:00 e luzes apagadas às 20:30.</span></div>'
+      :(dj<0?'<div class="jr11">A jornada começa na terça, 10 de novembro</div>'
+      :'<div class="jr11">Dia '+dj+' da jornada · ciclo '+bi.bloco+' · semana '+bi.sem+' de 4</div>');
+    el.insertAdjacentHTML('afterbegin',h);
+  };
 }
 
 renderHoje(); renderCk(); renderSemana(); renderSess(); renderActs(); renderSinal(); renderCrescer(); renderRecs(); renderSlog();
