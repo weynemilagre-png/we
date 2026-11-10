@@ -757,6 +757,25 @@ svg.loadc .lc-l{font:500 10.5px var(--body);fill:var(--muted)}
 .jr11{font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--court);margin:0 2px 10px}
 .jr11.eve{letter-spacing:normal;text-transform:none;font-weight:400;font-size:14.5px;line-height:1.45;color:var(--ink);background:color-mix(in srgb,var(--court) 12%,var(--surface));border:1px solid color-mix(in srgb,var(--court) 45%,var(--line));border-radius:14px;padding:12px 14px;margin:0 0 12px}
 .jr11.eve b{display:block;font-family:var(--disp);font-weight:800;font-size:20px;line-height:1.1;letter-spacing:.03em;text-transform:uppercase;color:var(--court);margin-bottom:6px}
+/* v12 · tempo mau */
+:root{--rain:#6AB7F5}
+:root[data-theme="light"]{--rain:#1C6DB5}
+.h9-tempo{display:grid;grid-template-columns:24px minmax(0,1fr) auto;align-items:center;gap:12px;width:100%;margin:6px 0 0;padding:10px 12px 10px 14px;min-height:56px;background:var(--surface);border:1px solid var(--line);border-radius:14px;color:var(--ink);text-align:left;cursor:pointer;font:inherit}
+.h9-tempo svg{width:24px;height:24px;fill:none;stroke:var(--muted);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.h9-tempo b{display:block;font:700 15px/1.2 var(--body)}
+.h9-tempo small{display:block;margin-top:2px;font-size:13px;line-height:1.35;color:var(--muted)}
+.h9-tempo .sw{position:relative;width:42px;height:26px;border-radius:99px;background:var(--surface2);border:1px solid var(--line)}
+.h9-tempo .sw::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:var(--muted)}
+.h9-tempo[aria-pressed="true"]{border-color:color-mix(in srgb,var(--rain) 60%,var(--line));background:color-mix(in srgb,var(--rain) 12%,var(--surface))}
+.h9-tempo[aria-pressed="true"] svg{stroke:var(--rain)}
+.h9-tempo[aria-pressed="true"] small{color:var(--ink)}
+.h9-tempo[aria-pressed="true"] .sw{background:var(--rain);border-color:var(--rain)}
+.h9-tempo[aria-pressed="true"] .sw::after{left:19px;background:var(--bg)}
+.h9-modo-d .tm-d{display:block;margin-top:6px;color:var(--ink)}
+.days button .chv{position:absolute;top:6px;left:7px;width:7px;height:7px;border-radius:0 50% 50% 50%;transform:rotate(45deg);background:var(--rain)}
+.days button[aria-pressed="true"] .chv{background:var(--court-ink)}
+.ttl .tag.chv{color:var(--rain);border:1px solid currentColor;background:transparent}
+.sr12{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 /* INSTALAR */
 .install{display:flex;gap:10px;align-items:center;background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--court);border-radius:10px;padding:10px 8px 10px 12px;margin:0 0 12px;font-size:15px}
 .install[hidden]{display:none}
@@ -1332,14 +1351,17 @@ a.btn{display:inline-block;text-decoration:none}
   <h3>Planos se-então</h3>
   <p>Escreve-os e relê-os ao domingo. Planos neste formato aumentam bastante a probabilidade de cumprir.</p>
   <ul class="plain">
-    <li>Se chover num dia de campo, então faço o plano B em casa.</li>
+    <li>Se a previsão der chuva forte num dia de campo, então ligo o Tempo mau no Hoje e treino em casa.</li>
     <li>Se tiver teste amanhã, então o dia é 🟡 e estudo 2 horas.</li>
     <li>Se acordar sem vontade, então faço só o aquecimento e decido depois.</li>
     <li>Se o telemóvel me puxar à noite, então às 21:45 fica a carregar fora do quarto.</li>
     <li>Se falhar um dia, então amanhã faço pelo menos o 🔴.</li>
   </ul>
-  <h3>Plano B: chuva ou campo ocupado</h3>
-  <p>Sem campo ou sem parede: em casa, em silêncio. A técnica silenciosa (20 min), o pé fraco em casa (15 min) e a força do dia; se o dia era de campo, junta Nordic, Copenhagen e prancha. Os sprints, os saltos e a parede ficam para o próximo dia lá fora. As regras estão em Mais, Em casa.</p>
+  <h3>Tempo mau</h3>
+  <p>Com chuva forte, trovoada, vento forte ou o campo alagado, liga <b>Tempo mau</b> no Hoje, por baixo dos modos do dia: no próprio dia ou na véspera (escolhe o dia em cima). Os treinos de rua e de campo desse dia passam para casa, em silêncio, sem passes à parede e sem saltos, à hora a que seriam lá fora; os minutos da ida e do regresso vão para o estudo. A escola, as refeições, o tempo livre e a noite não mudam. O jogo de domingo é o que o clube decidir.</p>
+  <p>Cada treino de campo tem a sua versão em casa, com o mesmo objetivo: quarta, o dia máximo (pés à velocidade máxima, reação e isometrias); quinta, o motor em silêncio; sexta, a rapidez e o primeiro toque; sábado, a criatividade em 1 m²; terça, a receção com olhar, sem parede. Os sprints, os saltos e a parede não se substituem em casa: voltam no próximo dia lá fora. Se os testes de campo calharem num dia de tempo mau, a app passa-os para o próximo dia de campo sem chuva.</p>
+  <h3>Plano B: campo ocupado</h3>
+  <p>Sem campo ou sem parede, mas sem chuva: em casa, em silêncio. A técnica silenciosa (20 min), o pé fraco em casa (15 min) e a força do dia; se o dia era de campo, junta Nordic, Copenhagen e prancha. Os sprints, os saltos e a parede ficam para o próximo dia lá fora. As regras estão em Mais, Em casa.</p>
   <h3>Modo exame</h3>
   <p>A partir de maio e nas semanas de exames nacionais: campo 2 × 60 min (quarta e sábado), força 2 × 20 min, bola em casa 3 × 15 min, estudo 3 a 4 horas por dia. O objetivo do treino passa a ser manter e aliviar a cabeça. Uma sessão de força por semana é o mínimo que mantém.</p>
   <h3>Se jogares num clube</h3>
@@ -4275,12 +4297,12 @@ document.addEventListener('keydown',e=>{ if(!RN.s||!$('#full').hidden) return; i
 
 
 /* ---------- CÓPIA DE SEGURANÇA ---------- */
-const CP_KEYS=/^(feito|modo|diario|rec|sess|ck|rev|int|lic|mov|exp|niv|carga|jogo|tipo|obj9d|aval9d|aval9w|obj9|pro10|aval10m|aval10t):|^(sesslog|perfil|arquivo|saude)$/;
+const CP_KEYS=/^(feito|modo|diario|rec|sess|ck|rev|int|lic|mov|exp|niv|carga|jogo|tipo|tempo|obj9d|aval9d|aval9w|obj9|pro10|aval10m|aval10t):|^(sesslog|perfil|arquivo|saude)$/;
 const CP_FMT={
   feito:/^feito:\d{4}-\d{2}-\d{2}$/, modo:/^modo:\d{4}-\d{2}-\d{2}$/, diario:/^diario:\d{4}-\d{2}-\d{2}$/,
   rec:/^rec:[a-z0-9]+$/, sess:/^sess:\d{4}-\d{2}-\d{2}:[a-z0-9-]+$/, sesslog:/^sesslog$/,
   ck:/^ck:\d{4}-\d{2}-\d{2}$/, rev:/^rev:\d{4}-\d{2}-\d{2}$/, int:/^int:\d{4}-\d{2}-\d{2}$/, lic:/^lic:\d{4}-\d{2}-\d{2}$/, mov:/^mov:\d{4}-\d{2}-\d{2}$/, exp:/^exp:\d{4}-\d{2}-\d{2}$/, perfil:/^perfil$/, arquivo:/^arquivo$/, niv:/^niv:[a-z0-9-]+$/, carga:/^carga:[a-z0-9-]+$/, jogo:/^jogo:\d{4}-\d{2}-\d{2}$/,
-  tipo:/^tipo:\d{4}-\d{2}-\d{2}$/, obj9d:/^obj9d:\d{4}-\d{2}-\d{2}$/, aval9d:/^aval9d:\d{4}-\d{2}-\d{2}$/, pro10:/^pro10:\d{4}-\d{2}-\d{2}$/,
+  tipo:/^tipo:\d{4}-\d{2}-\d{2}$/, tempo:/^tempo:\d{4}-\d{2}-\d{2}$/, obj9d:/^obj9d:\d{4}-\d{2}-\d{2}$/, aval9d:/^aval9d:\d{4}-\d{2}-\d{2}$/, pro10:/^pro10:\d{4}-\d{2}-\d{2}$/,
   aval9w:/^aval9w:\d{1,3}$/, obj9:/^obj9:[smt]:\d{1,3}$/, aval10m:/^aval10m:\d{1,3}$/, aval10t:/^aval10t:\d{1,2}$/, saude:/^saude$/
 };
 function cpTipo(k){ return (k==='sesslog'||k==='perfil'||k==='arquivo'||k==='saude')?k:k.split(':')[0]; }
@@ -4327,6 +4349,7 @@ function valido(k,v){
   if(t==='int') return typeof v==='string'&&v.length<300;
   if(t==='lic'||t==='mov'||t==='exp') return typeof v==='boolean';
   if(t==='tipo') return v===null||(typeof v==='string'&&/^(escola|livre|ferias|feriado)$/.test(v));
+  if(t==='tempo') return v===null||v==='mau';
   if(t==='obj9d') return Array.isArray(v)&&v.length<=3&&v.every(x=>typeof x==='boolean');
   if(t==='arquivo') return !!v&&typeof v==='object'&&!!v.dados&&typeof v.dados==='object'&&!Array.isArray(v.dados);
   return !!v&&typeof v==='object'&&!Array.isArray(v);
@@ -4670,7 +4693,7 @@ function savePerfil(){
 
 /* ---------- recomeçar do zero ---------- */
 /* ---------- recomeço: o passado vai para o arquivo, nada se perde ---------- */
-const PROG_RE=/^(feito|modo|diario|rec|sess|ck|rev|int|lic|mov|exp|niv|carga|jogo|tipo|obj9d|aval9d|aval9w|obj9|pro10|aval10m|aval10t):|^sesslog$/;
+const PROG_RE=/^(feito|modo|diario|rec|sess|ck|rev|int|lic|mov|exp|niv|carga|jogo|tipo|tempo|obj9d|aval9d|aval9w|obj9|pro10|aval10m|aval10t):|^sesslog$/;
 function progKeys(){
   const ks=[]; try{ for(let i=0;i<localStorage.length;i++){ const k=localStorage.key(i); if(PROG_RE.test(k)) ks.push(k); } }catch(e){}
   Object.keys(MEM).forEach(k=>{ if(PROG_RE.test(k)&&ks.indexOf(k)<0) ks.push(k); }); return ks;
@@ -5576,7 +5599,7 @@ function renderPro(){
   const L=loadRatio(ds); let msg='Ainda sem 4 semanas de registos: regista o esforço e os minutos todas as noites.';
   if(L.r!==null){ const p=Math.round(L.r*100)/100; msg='Rácio '+fmtNum(p)+' (últimos 7 dias '+L.a+' · média semanal das 4 anteriores '+L.c+'). '+(L.r>1.3?'Subiu mais de 30%: na próxima semana mantém a carga, não acrescentes treinos.':L.r<0.8?'Abaixo do normal: volta ao plano completo se o corpo estiver bem.':'Dentro do intervalo de segurança.'); }
   h+='<h3>Carga de treino</h3><p class="small muted">Esforço da sessão (1 a 10) × minutos, registado na avaliação do dia ou no fim do modo treino.</p>'+loadChart(ds)+'<p class="small">'+esc(msg)+'</p>';
-  const W=[['Planeamento semanal',['organizar']],['Estudo tático e jogadores de referência',['analise','futebol-saber']],['Prevenção de lesões',['robustez','forca-1','forca-2']],['Preparação mental',['visual','jogo-prep','cognitivo']],['Análise individual do jogo',['decisoes','video']],['Recuperação',['mob','sesta','caminhada']],['Avaliação de desempenho',['diario','plano']]];
+  const W=[['Planeamento semanal',['organizar']],['Estudo tático e jogadores de referência',['analise','futebol-saber']],['Prevenção de lesões',['robustez','forca-1','forca-2']],['Preparação mental',['visual','jogo-prep','cognitivo']],['Análise individual do jogo',['decisoes','video']],['Recuperação',['mob','sesta','caminhada','chuva-rec']],['Avaliação de desempenho',['diario','plano']]];
   h+='<h3>A semana de um profissional</h3><ul class="pro-w">'+W.map(([t,refs])=>{ const [f,T]=weekDone(ds,refs); return '<li><span>'+esc(t)+'</span><b class="'+(T&&f===T?'ok':'')+'">'+(T?f+' de '+T:'—')+'</b></li>'; }).join('')+'</ul>';
   const t1=analiseTask(dateFor('ter')), t2=analiseTask(dateFor('qui'));
   h+='<div class="g9"><div class="k">Estudo desta semana</div><ul class="pro-l">'+[t1,t2].filter(Boolean).map(t=>'<li><b>'+esc(t.t)+'</b> · '+esc(t.pos)+'<br><span class="small muted">Quem ver: '+esc(t.quem)+'</span></li>').join('')+'</ul><button class="linkbtn" data-run="analise">Abrir a tarefa de análise</button></div>';
@@ -5724,6 +5747,306 @@ document.addEventListener('click',e=>{
     el.insertAdjacentHTML('afterbegin',h);
   };
 }
+
+/* ================= v12: modo tempo mau =================
+   No Hoje, por baixo dos quatro modos do dia, o botão Tempo mau, para o dia escolhido (hoje ou um dos próximos).
+   Ligado, os treinos de rua e de campo desse dia passam para casa: em silêncio, sem passes à parede, sem saltos e sem
+   sprints, à hora a que seriam lá fora. A escola, as refeições, o único tempo livre e a noite ficam iguais; os minutos da
+   ida e do regresso do campo vão para o estudo. Os testes de campo que calharem num dia de tempo mau passam para o
+   próximo dia de campo sem chuva. */
+
+function tempoMau(ds){ return store.get('tempo:'+ds,null)==='mau'; }
+const _v12dayFor = dayFor;   /* o dia tal como está, sem tempo mau */
+
+/* ---------- as sessões em casa ---------- */
+(function(){
+  const S=o=>Object.assign({onde:'quarto',f:'principal',c:'tecnica'},o);
+  const NOVAS=[
+   S({id:'chuva-v',n:'Tempo mau: dia máximo em casa',quando:'Quarta com tempo mau, à hora do campo',dur:'60 min',
+    int:'Máxima na velocidade de execução e na intenção: séries curtas a 100%, recuperação completa, sem saltos nem barulho',rpe:'7 a 8',
+    limite:'Limite de velocidade de execução',sinal:true,max:true,
+    cap:'Velocidade dos pés, reação ao Sinal, intenção máxima na posição de arranque e 1v1 em espaço curto, em silêncio.',
+    obj:'Manter o estímulo do dia máximo quando não dá para sair: o sistema nervoso a 100% na velocidade de execução e na intenção, sem sprints, sem saltos e sem barulho.',
+    mat:'Bola meio vazia ou bola de meias, tapete ou toalha, uma parede para apoiar as mãos, o telemóvel com o Sinal e o temporizador, água.',
+    regra:'Máxima quer dizer 100% em cada série curta, com recuperação completa: 10 s de trabalho e pelo menos 50 s de pausa. A série acaba quando os pés abrandarem ou houver barulho. Os sprints, os saltos e a parede não se substituem em casa: voltam na próxima sessão máxima lá fora.',
+    lim:'Em casa não há sprint, nem salto, nem travagem a alta velocidade: esta sessão mantém a velocidade de execução e a intenção, não substitui o campo.',
+    sup:'Um adulto em casa sabe o plano e a hora. Telemóvel, água e o kit da saúde à mão.',
+    paragem:['Os pés abrandam ou a bola começa a fugir do tapete','Há barulho: é sinal de que perdeste o controlo','Dor aguda, tontura, ou um sinal do teu protocolo de saúde'],
+    depois:'A recuperação planeada logo a seguir, em casa, a refeição seguinte segundo o plano da tua equipa de saúde, a sesta e as luzes às 20:30.',
+    it:[NT('Preparação','3 min','O protocolo da tua equipa de saúde feito, 2 × 2 m livres (afasta o que se pode partir), água à mão, o Sinal sem som e o objetivo de hoje lido em voz alta.','max-prep'),
+     NT('Aquecimento em silêncio','8 min','Joelho à parede, 90/90 e open book; marcha alta lenta no sítio; 2 × 10 s de pés rápidos sem bola, a 70% e a 90%; 3 × 3 s a empurrar a parede na posição de arranque.','aq-forca'),
+     IT('pes-rapidos','6 × 10 s à velocidade máxima, 50 s de pausa','Sola alternada e interior-interior, a bola rente ao chão. Conta os toques de cada série: quando a contagem cair 2 abaixo da melhor, a série seguinte é a última.'),
+     NT('Reação às setas do Sinal','5 × 4 reações, 60 s entre séries','Bola nos pés, o Sinal em setas: a cada seta, um toque de sola para esse lado e volta ao meio o mais depressa possível. Conta as certas.','pes-rapidos'),
+     NT('Isometria de aceleração na parede','4 × 5 s por perna, 60 s de pausa','Mãos na parede, tronco inclinado, o joelho da frente à altura da anca: empurra o chão com a perna de trás com toda a força, como no primeiro passo do sprint, sem te mexeres. 100% de intenção, em silêncio.','split-iso'),
+     NT('1v1 em 1 m²: finta e saída','6 × 20 s, 40 s de pausa','Bola de meias num quadrado de 1 m: finta de tronco, toque de sola e dois passos rápidos para fora do quadrado, na ponta dos pés; volta e repete para o outro lado, com uma finta diferente.','rececao-1m2'),
+     IT('pes-rapidos','4 × 10 s só com o pé fraco, 50 s de pausa','A mesma velocidade máxima, só com o pé fraco.'),
+     NT('O 1v1 dos melhores','8 min','Vê 10 duelos de um extremo de referência, com a câmara no jogador: a finta, o momento e para que lado sai. Escolhe 2 para o próximo dia lá fora.','analise'),
+     IT('visual','5 min','Olhos fechados, à velocidade real: os 3 primeiros passos do sprint, a travagem e o 1v1 da próxima sessão lá fora.'),
+     NT('Respiração e registo','3 min','Respiração 4-6; depois regista as séries, as reações certas e o esforço (1 a 10).','respiracao')]}),
+
+   S({id:'chuva-d',n:'Tempo mau: motor e decisão em casa',quando:'Quinta com tempo mau, à hora do campo',dur:'55 min',
+    int:'Exigente: o motor a 85 a 90% em silêncio e a técnica do médio ofensivo à velocidade máxima sem barulho',rpe:'7 a 8',
+    limite:'Limite aeróbio',sinal:true,
+    cap:'Receção de meio-giro e decisão em espaço curto, e o motor 4 × 4 em silêncio, sem saltos.',
+    obj:'Manter o motor e a decisão do médio ofensivo quando não dá para sair: receções de meio-giro com a saída que o Sinal escolhe e 4 séries de 4 minutos a 85 a 90%, sem barulho.',
+    mat:'Bola meio vazia ou bola de meias, tapete, uma cadeira encostada à parede, o telemóvel com o Sinal e o temporizador, água.',
+    regra:'Técnica primeiro, com o corpo fresco; o motor sempre no fim, ao ritmo mais alto que aguentas os 4 minutos (só consegues dizer 2 ou 3 palavras). Sem saltos e sem bater os pés: se houver barulho, muda o movimento, não a intensidade. A 4.ª série tem de ter tantas voltas como a 1.ª.',
+    lim:'O motor em casa sobe o coração, mas não treina a corrida nem as mudanças de direção do campo: o motor de corrida volta na próxima quinta lá fora.',
+    it:[NT('Preparação','2 min','O protocolo da tua equipa de saúde feito, 2 × 2 m livres, água à mão e o Sinal sem som.','pre-treino'),
+     NT('Aquecimento em silêncio','6 min','Joelho à parede, 90/90, marcha alta lenta no sítio e 2 × 30 s de pés rápidos com bola, a 70%.','aq-forca'),
+     NT('Receção de meio-giro às setas','4 × 10 receções, 1 min de pausa','Atira a bola de meias ao ar, baixa; enquanto ela cai, olha para o Sinal em setas e recebe de meio-giro para esse lado, num toque. Conta as certas em 10.','rececao-1m2'),
+     IT('pes-rapidos','3 × 45 s, a última só com o pé fraco, 30 s de pausa'),
+     ['Motor 4 × 4 em silêncio','4 × 4 min, 3 min de pausa','Circuito sem parar, sem saltos e sem bater os pés: 10 agachamentos rápidos, 10 avanços para trás alternados, 5 burpees sem salto (desce e sobe a passo), 20 escaladores com as mãos na cadeira encostada à parede e 20 s de pés rápidos com bola. Ritmo a que só dizes 2 ou 3 palavras. Conta as voltas de cada série.','','','240,180,4','',''],
+     NT('O médio ofensivo de referência','6 min','Vê 5 receções entre linhas de um médio ofensivo de referência: onde olha antes de receber e para que lado roda.','analise'),
+     NT('Respiração e registo','3 min','Respiração 4-6; regista as voltas de cada série e o esforço (1 a 10).','respiracao')]}),
+
+   S({id:'chuva-r',n:'Tempo mau: rapidez e primeiro toque em casa',quando:'Sexta com tempo mau, à hora do campo',dur:'45 min',
+    int:'Exigente: reação a 100% em séries curtas e o primeiro toque com os dois pés, sem barulho',rpe:'6 a 7',
+    limite:'Limite de rapidez',sinal:true,
+    cap:'Reação ao Sinal, primeiro toque orientado com os dois pés, proteção de bola de costas e o gesto do remate, em silêncio.',
+    obj:'A dois dias do jogo, manter a rapidez e o primeiro toque do ponta de lança quando não dá para sair, com as pernas frescas para domingo.',
+    mat:'Bola meio vazia ou bola de meias, a bola de ténis, tapete, uma cadeira, o telemóvel com o Sinal.',
+    regra:'Séries curtas e descanso completo: a dois dias do jogo, rapidez sim, cansaço não. Dentro de casa não se remata: o remate treina-se no gesto, devagar e perfeito, e a finalização volta no próximo dia lá fora.',
+    lim:'Sem baliza e sem remate a sério, esta sessão treina a reação, o primeiro toque e o gesto, não a finalização.',
+    it:[NT('Preparação','2 min','O protocolo da tua equipa de saúde feito, 2 × 2 m livres, a cadeira a fazer de defesa e o Sinal sem som.','pre-treino'),
+     NT('Aquecimento em silêncio','5 min','Joelho à parede, open book, marcha alta lenta e 2 × 20 s de pés rápidos com bola.','aq-forca'),
+     NT('Primeiro toque às setas','5 × 4 reações, 60 s entre séries','Bola nos pés, o Sinal em setas: a cada seta, primeiro toque orientado para esse lado com o pé desse lado, e volta. As séries 2 e 4 só com o pé fraco. Conta as certas.','pes-rapidos'),
+     NT('De costas: proteger e rodar','4 × 30 s, 30 s de pausa','De costas para a cadeira, a bola de meias debaixo da sola: protege com o tronco e os braços, finta com o ombro e roda para o outro lado num toque.','protecao'),
+     IT('pes-rapidos','4 × 10 s à velocidade máxima, 50 s de pausa','Rapidez curta: a série acaba quando os pés abrandarem.'),
+     NT('O gesto do remate, em câmara lenta','3 × 6 por pé','Com a bola de meias parada: pé de apoio ao lado da bola, tronco por cima, contacto com o peito do pé e a perna a acompanhar. Devagar e perfeito, com os dois pés.',''),
+     IT('tenis','5 min, metade com o pé fraco'),
+     NT('Os avançados de referência','6 min','Vê 10 finalizações ao primeiro toque de um ponta de lança de referência: o pé de apoio, a superfície e o canto. Escolhe uma para o próximo dia lá fora.','analise'),
+     IT('visual','4 min','Olhos fechados, à velocidade real: 3 finalizações ao primeiro toque, uma com o pé fraco.'),
+     NT('Registo','2 min','Regista as reações certas e o esforço (1 a 10).','')]}),
+
+   S({id:'chuva-c',n:'Tempo mau: criatividade em casa',quando:'Sábado com tempo mau, à hora do campo',dur:'45 min',
+    int:'Exigente na execução e na decisão, volume curto e em silêncio (amanhã há jogo)',rpe:'5 a 6',
+    limite:'Limite criativo',
+    cap:'Frases de drible em 1 m², saídas inventadas, receção para os dois lados e o jogo-sombra da posição, em silêncio.',
+    obj:'Véspera do jogo: criar soluções novas em espaço curto e chegar a domingo fresco e com a cabeça rápida.',
+    mat:'Bola meio vazia ou bola de meias, a bola de ténis, tapete, um quadrado de 1 m marcado no chão.',
+    regra:'Inventa: a mesma solução duas vezes seguidas conta como falhada. Repetições curtas, descanso completo e nenhum barulho. As bolas paradas ficam para o próximo campo.',
+    lim:'Sem adversário e sem espaço, a criatividade é contra regras e contra o tempo. Contra pessoas treina-se amanhã, no futsal.',
+    it:[NT('Preparação','2 min','O protocolo da tua equipa de saúde feito, 2 × 2 m livres e o quadrado de 1 m marcado.','pre-treino'),
+     NT('Aquecimento em silêncio','5 min','Mobilidade de ancas e tornozelos e 2 × 30 s de pés rápidos com bola.','aq-forca'),
+     NT('Frases de drible em 1 m²','6 × 30 s, 30 s de pausa','Encadeia 3 gestos (sola, interior, exterior, finta de corpo) sem repetir a frase e sem a bola sair do quadrado. Conta as frases diferentes.','pes-rapidos'),
+     IT('rececao-1m2','6 min, uma saída diferente de cada vez, metade com o pé fraco'),
+     NT('Restrições','4 × 1 min','Só o pé fraco; só a sola; só o exterior; dois toques e saída. A criatividade dentro da regra.','pes-rapidos'),
+     IT('tenis','5 min'),
+     IT('sombra','8 min, devagar e em silêncio','A posição do papel de amanhã: onde deves estar em cada momento do jogo, a andar pela casa.'),
+     IT('equilibrio','2 × 30 s por pé, a rodar a cabeça','Como quem procura colegas antes de receber.'),
+     NT('Ativação curta','4 × 10 s de pés rápidos a 100%, 50 s de pausa','Véspera do jogo: rapidez, não cansaço.','pes-rapidos'),
+     NT('Registo','2 min','Regista as frases diferentes e o esforço (1 a 10).','')]}),
+
+   S({id:'chuva-parede',n:'Tempo mau: receção e olhar em casa',quando:'Terça com tempo mau, à hora da parede',dur:'45 min',
+    int:'Exigente na técnica e na perceção, sem barulho e sem passes à parede',rpe:'5 a 6',
+    limite:'Limite de receção',sinal:true,
+    cap:'Olhar antes de receber, receção orientada para os dois lados, toque fino e meio-giro, em silêncio e sem parede.',
+    obj:'Manter o hábito do médio centro quando não dá para ir à parede: olhar por cima dos dois ombros antes de receber e orientar a receção para o lado livre.',
+    mat:'Bola meio vazia ou bola de meias, a bola de ténis, tapete, o telemóvel com o Sinal.',
+    regra:'Dentro de casa não há passes à parede: a bola é atirada com as mãos, baixa. Antes de cada receção, olha por cima dos dois ombros. Conta as receções certas em 10; abaixo de 6 em 10 duas séries seguidas, simplifica.',
+    lim:'Sem parede não há passe nem bola rápida: treinas o olhar, a orientação e o toque. O passe volta na próxima parede.',
+    it:[NT('Preparação','2 min','2 × 2 m livres, a bola de meias e o Sinal sem som.','pre-treino'),
+     NT('Aquecimento em silêncio','5 min','Mobilidade de ancas e tornozelos e 2 × 30 s de pés rápidos com bola.','aq-forca'),
+     NT('Olhar antes de receber','3 × 10 receções, 1 min de pausa','Atira a bola ao ar, baixa; enquanto sobe, olha por cima do ombro esquerdo e do direito; recebe orientado para o lado mais livre. Conta as certas em 10.','rececao-1m2'),
+     NT('Receção às setas do Sinal','3 × 10 receções, 1 min de pausa','O Sinal em setas: atira a bola e olha para o ecrã enquanto ela está no ar; recebe e sai para o lado da seta num toque, com o pé mais longe.','rececao-1m2'),
+     NT('Meio-giro','3 × 8 por lado','Bola lançada ao lado do tronco: recebe de lado com o interior do pé de trás e roda para a frente num toque.','rececao-1m2'),
+     IT('tenis','6 min, metade com o pé fraco','Toque fino e receção da bola de ténis lançada à mão.'),
+     IT('pes-rapidos','3 × 45 s, a levantar o olhar a cada 3 toques, 30 s de pausa'),
+     NT('O médio centro de referência','6 min','Vê 10 receções de um médio centro de referência: conta quantas vezes olha antes de receber e para que lado orienta.','analise'),
+     IT('visual','4 min','Olhos fechados, à velocidade real: 10 receções orientadas à parede, com o olhar antes de cada uma.'),
+     NT('Registo','2 min','Regista as receções certas e o esforço (1 a 10).','')]}),
+
+   S({id:'chuva-tec',f:'complementar',n:'Tempo mau: treino 2 em casa',quando:'Dias sem escola e férias com tempo mau, à hora do treino 2',dur:'40 a 45 min',
+    int:'Exigente na técnica: pé fraco, receção e proteção de bola, sem barulho',rpe:'6',
+    cap:'Contacto com a bola, pé fraco, receção em espaço curto e proteção de bola, em silêncio.',
+    obj:'O segundo treino do dia sem sair de casa: técnica nos pontos fracos, com a mesma exigência e sem barulho.',
+    mat:'Bola meio vazia ou bola de meias, a bola de ténis, tapete, uma cadeira.',
+    regra:'Descalço ou de meias, bola meio vazia, nenhum "toc". Metade do tempo com o pé fraco.',
+    lim:'Em casa não há passe longo nem remate: o gesto treina-se devagar e o resto volta no próximo campo.',
+    it:[NT('Preparação','2 min','2 × 2 m livres, a bola de meias, a bola de ténis e uma cadeira.','pre-treino'),
+     NT('Aquecimento em silêncio','4 min','Mobilidade de ancas e tornozelos e 1 min de pés rápidos com bola.','aq-forca'),
+     IT('pes-rapidos','4 × 45 s, a última só com o pé fraco, 30 s de pausa'),
+     IT('rececao-1m2','8 min, metade com o pé fraco'),
+     IT('tenis','8 min, metade com o pé fraco'),
+     NT('Proteção de bola com a cadeira','4 × 30 s por lado, 30 s de pausa','De costas para a cadeira, protege com o tronco e roda para o lado contrário num toque.','protecao'),
+     NT('O gesto do passe longo e do remate, em câmara lenta','3 × 6 por pé','Com a bola de meias parada: pé de apoio, tronco por cima e contacto, devagar e perfeito.',''),
+     NT('Registo','2 min','O teu melhor de toques seguidos com a bola de ténis e o esforço (1 a 10).','')]}),
+
+   S({id:'chuva-rec',c:'recup',f:'recuperacao',n:'Tempo mau: recuperação em casa',quando:'Com tempo mau, no lugar da caminhada ao sol',dur:'25 a 30 min',
+    int:'Recuperação: amplitude, respiração e luz do dia',rpe:'—',
+    cap:'Amplitude das ancas e dos tornozelos, respiração e luz do dia.',
+    obj:'Recuperação ativa sem sair de casa: soltar o corpo, acalmar a respiração e apanhar luz do dia à janela.',
+    mat:'Tapete ou toalha, uma parede, uma janela.',
+    regra:'Sem dor e sem pressa: não é treino, é recuperação com objetivo.',
+    it:[IT('respiracao','2 min'),IT('joelho-parede','10 por lado'),IT('noventa','2 min'),IT('couch','60 s por lado'),IT('adutores4','10 por lado'),IT('openbook','8 por lado'),
+     NT('Pernas na parede','4 min','Deitado de costas, as pernas apoiadas na parede, respiração lenta pelo nariz.','respiracao'),
+     IT('equilibrio','2 × 30 s por pé'),IT('gemeos','2 × 12 por perna, 3 s a descer'),
+     NT('Luz do dia','5 min','À janela, com a luz do dia na cara, mesmo com o céu nublado: ajuda o relógio do sono.','')]})
+  ];
+  NOVAS.forEach(s=>{ if(!SESS.some(x=>x.id===s.id)) SESS.push(s); if(typeof SESS_CASA!=='undefined'&&!SESS_CASA.some(x=>x.id===s.id)) SESS_CASA.push(s); });
+
+  Object.assign(PROG10,{
+   'chuva-v':['6 séries de pés a 100% e as isometrias de 5 s.','Mais uma série de pés e metade das reações com o pé fraco.','Às setas, a finta escolhida só no último momento.','Menos uma série de cada, a mesma intensidade.'],
+   'chuva-d':['Motor 4 × 4 a 85% e receções em 10.','Mais uma volta ao circuito por série, a mesma técnica.','As setas só quando a bola já cai: decide mais tarde.','Menos uma série de motor, a mesma intensidade.'],
+   'chuva-r':['Reações às setas e o gesto do remate com os dois pés.','Metade das reações só com o pé fraco.','Primeiro toque e meia-volta em menos de 1 s.','Menos uma série, a mesma rapidez.'],
+   'chuva-c':['6 frases de drible diferentes, limpas.','8 frases diferentes, sem repetir.','Frases com restrição: só o pé fraco ou só a sola.','Menos volume, a mesma criatividade.'],
+   'chuva-parede':['Olhar por cima dos dois ombros em todas as receções.','Mais 20% de receções com o pé fraco.','As setas só no último momento: decide mais tarde.','Menos uma série, o mesmo critério.'],
+   'chuva-tec':['O teu melhor de toques com a bola de ténis.','Mais tempo com o pé fraco.','Proteção com saída para o lado contrário num toque.','Menos volume, a mesma precisão.']});
+  Object.assign(ACT10,{
+   'chuva-v':{crit:'Cada série de pés a 100%: paras quando a contagem cair; nenhum toque com barulho.',ind:'Toques por série de 10 s e reações certas às setas.'},
+   'chuva-d':{crit:'A 4.ª série do motor com tantas voltas como a 1.ª e 8 em 10 receções de meio-giro certas.',ind:'Voltas por série e receções certas em 10.'},
+   'chuva-r':{crit:'8 em 10 reações certas com o primeiro toque para o lado da seta, 4 com o pé fraco.',ind:'Reações certas em 10.'},
+   'chuva-c':{crit:'8 frases de drible diferentes, sem repetir e sem barulho.',ind:'Frases diferentes por série.'},
+   'chuva-parede':{crit:'8 em 10 receções com o olhar antes e a saída certa.',ind:'Receções certas em 10.'},
+   'chuva-tec':{crit:'A bola nunca sai do tapete e nenhum toque faz barulho.',ind:'Toques seguidos com a bola de ténis.'},
+   'chuva-rec':{crit:'Respiração lenta, sem dor, e 5 min de luz do dia.'}});
+  if(typeof GRUPOS!=='undefined'){
+    if(GRUPOS.campo) GRUPOS.campo[1].push('chuva-v','chuva-d','chuva-r','chuva-c','chuva-parede','chuva-tec');
+    if(GRUPOS.recup) GRUPOS.recup[1].push('chuva-rec');
+  }
+})();
+
+/* ---------- o dia com tempo mau: a mesma hora, outro sítio ---------- */
+const TM_REF={'campo-v':'chuva-v','campo-d':'chuva-d','campo-r':'chuva-r','campo-c':'chuva-c','parede':'chuva-parede','tec-campo':'chuva-tec','caminhada':'chuva-rec'};
+const TM_DUR={'chuva-v':60,'chuva-d':55,'chuva-r':45,'chuva-c':45,'chuva-parede':45};
+const TM_BL={
+ 'chuva-v':{ti:'Dia máximo em casa: pés, reação e 1v1 em 1 m²',n:'Em silêncio, descalço ou de meias: bola meio vazia ou de meias, 2 × 2 m livres e o Sinal sem som.',pq:'Com tempo mau, o dia máximo fica em casa: séries curtas a 100% na velocidade dos pés e na intenção, sem sprints nem saltos.'},
+ 'chuva-d':{ti:'Motor e decisão em casa: médio ofensivo',n:'Técnica primeiro; o motor 4 × 4 em silêncio no fim.',pq:'À hora do campo: a técnica do médio ofensivo com o corpo fresco e o motor no fim, sem barulho.'},
+ 'chuva-r':{ti:'Rapidez e primeiro toque em casa: ponta de lança',n:'Séries curtas e descanso completo; o remate só no gesto, devagar.',pq:'A dois dias do jogo: rapidez curta e primeiro toque, com as pernas frescas para domingo.'},
+ 'chuva-c':{ti:'Criatividade em 1 m² e ativação: véspera do jogo',n:'Frases de drible sem repetir, em silêncio; as bolas paradas ficam para o próximo campo.',pq:'Véspera do jogo: criatividade em espaço curto e rapidez sem cansaço.'},
+ 'chuva-parede':{ti:'Receção e olhar em casa: médio centro',n:'Sem passes à parede: a bola é atirada com as mãos, baixa.',pq:'Sem parede, o hábito do médio centro continua: olhar antes de receber e orientar a receção.'},
+ 'chuva-tec':{ti:'Treino 2 em casa: técnica, pé fraco e proteção',n:'Descalço ou de meias, bola meio vazia, nenhum "toc".',pq:'O segundo treino do dia sem sair de casa: técnica nos pontos fracos, em silêncio.'},
+ 'chuva-rec':{ti:'Recuperação em casa: mobilidade e respiração',n:'Mobilidade, respiração e 5 min de luz do dia à janela.',pq:'Com tempo mau, a recuperação ativa fica em casa, com o mesmo objetivo: pernas soltas e luz do dia.'}};
+/* o que muda no topo do dia (missão, desafio, limite) quando o treino principal passa para casa */
+const TM_DIA={
+ ter:{tema:'Limite de força e de receção, em casa: médio centro',desafio:'Receção com olhar, em casa: 8 em 10 com a saída certa, e todas as séries da Força A com 2 repetições na reserva e técnica limpa.',det:'Contar os olhares antes de receber: em cada receção, olha por cima dos dois ombros enquanto a bola está no ar.'},
+ qua:{tema:'Dia máximo em casa: velocidade dos pés, reação e 1v1 em espaço curto (extremo esquerdo)',limite:'Limite de velocidade de execução',foco:'Velocidade de execução, reação e 1v1',
+  desafio:'Pés à velocidade máxima: em cada série de 10 s, tantos toques como na melhor e sem barulho; 8 em 10 reações certas ao Sinal; as isometrias de aceleração a 100% de intenção.',
+  det:'Os sprints, os saltos e a parede não se fazem em casa: voltam na próxima sessão máxima lá fora.',missao9:'Dia máximo em casa: os pés mais rápidos que já tiveste, cada série a 100% e paragem quando a velocidade cair.'},
+ qui:{tema:'Limite aeróbio em casa: médio ofensivo',desafio:'Motor em silêncio: a 4.ª série com tantas voltas ao circuito como a 1.ª, e 8 em 10 receções de meio-giro com a saída que o Sinal escolhe.',det:'Pé fraco todos os dias: 15 min em casa e metade das receções com o pé fraco.'},
+ sex:{tema:'Limite de rapidez em casa: ponta de lança',desafio:'Rapidez em casa: 8 em 10 reações certas ao Sinal com o primeiro toque para o lado certo, 4 delas com o pé fraco, e o gesto do remate perfeito com os dois pés.',det:'Escolhe o lado antes de tocar, em todas as reações.',missao9:'Reagir antes de todos e preparar o primeiro toque para finalizar com os dois pés.'},
+ sab:{tema:'Limite criativo em casa: todas as posições, véspera do jogo',desafio:'Frases de drible em 1 m²: 8 frases diferentes sem repetir nenhuma e sem barulho, e o jogo-sombra da posição de amanhã.',det:'As bolas paradas ficam para o próximo campo; hoje, o jogo-sombra da posição em casa, devagar.'}};
+
+function tmBloco(r,b,d){ const T=TM_BL[r], S=SESS.find(s=>s.id===r)||{};
+  return {d:d,ti:T.ti,c:S.c||b.c,m:b.m||'gyr',ref:r,cm:b.cm||'c',f:b.f||S.f,n:T.n,pq:T.pq,id:r,chuva:1,orig:b.ref}; }
+function tmBlocos(bl){
+  const mins=t=>{ const p=t.split(':'); return +p[0]*60+(+p[1]); };
+  const hm=x=>String(Math.floor(x/60)).padStart(2,'0')+':'+String(x%60).padStart(2,'0');
+  const out=[]; let i=0;
+  while(i<bl.length){
+    const b=bl[i];
+    if(b.ref==='pre-treino'){
+      let j=i+1; const mid=[];
+      while(j<bl.length&&bl[j].ref!=='pos-treino'){ mid.push(bl[j]); j++; }
+      const main=mid.find(x=>TM_REF[x.ref]);
+      if(j>=bl.length||!main){ out.push(b); i++; continue; }
+      const pos=bl[j], du=(bl[j+1]&&bl[j+1].ti==='Duche')?bl[j+1]:null, end=du?j+1:j;
+      const t0=mins(b.t), W=mins(bl[end].t)+bl[end].d-t0;
+      const nb=[Object.assign({},b,{d:5,ti:'Pré-treino em casa: protocolo de saúde, água e espaço livre',n:'O protocolo da tua equipa de saúde, água à mão, 2 × 2 m livres (afasta o que se pode partir) e o objetivo da sessão lido.',pq:'Com tempo mau não há ida para o campo: em 5 minutos estás pronto para treinar em casa.'})];
+      let mi=-1;
+      mid.forEach(x=>{
+        if(x===main){ const r=TM_REF[x.ref]; mi=nb.length; nb.push(tmBloco(r,x,TM_DUR[r]||x.d)); return; }
+        if(x.ref==='robustez'){ nb.push(Object.assign({},x,{ti:'Prevenção em casa: pés, tornozelos e anca',pq:'Logo a seguir ao treino, em casa: os tecidos que mais se lesionam no futsal, trabalhados com controlo.'})); return; }
+        if(x.ref==='mob'){ nb.push(Object.assign({},x,{n:'5 min a respirar devagar, 8 min de mobilidade (gémeos, posteriores, adutores e ancas) e 2 min a registar o esforço.',pq:'Depois do dia máximo, a recuperação faz parte do treino: começa logo a seguir, continua na sesta e acaba no sono.'})); return; }
+        nb.push(Object.assign({},x));
+      });
+      nb.push(Object.assign({},pos,{d:10,ti:'Pós-treino: água, protocolo de saúde e registo',n:'Água na primeira meia hora, o protocolo da tua equipa de saúde e, no Hoje, o esforço (1 a 10), os minutos e uma nota técnica.',pq:'Sem regresso a pé: o registo faz-se logo, enquanto está fresco.'}));
+      if(du) nb.push(Object.assign({},du));
+      const R=W-nb.reduce((s,x)=>s+x.d,0);
+      if(R>=10) nb.push({d:R,ti:'Estudo: o tempo da ida ao campo',c:'estudo',m:'gyr',ref:'estudo',cm:'c',f:'vida',n:'Sem telemóvel: a matéria mais atrasada da semana ou o trabalho de amanhã.',pq:'Com tempo mau não há ida nem regresso do campo: esses minutos vão para o estudo.',id:'estudo-chuva',chuva:1});
+      else if(R>0) nb[mi].d+=R;
+      let t=t0; nb.forEach(x=>{ x.t=hm(t); t+=x.d; });
+      out.push(...nb); i=end+1; continue;
+    }
+    if(TM_REF[b.ref]){ out.push(Object.assign(tmBloco(TM_REF[b.ref],b,b.d),{t:b.t})); i++; continue; }
+    out.push(b); i++;
+  }
+  return out;
+}
+const TM_WM=new WeakMap();
+function chuvaDia(D,k){
+  if(!D||D.chuva||!Array.isArray(D.blocos)) return D;
+  if(TM_WM.has(D)) return TM_WM.get(D);
+  const bl=tmBlocos(D.blocos); let X=D;
+  if(bl.some(b=>b.chuva)){
+    X=Object.assign({},D,{blocos:bl,chuva:true});
+    const M=TM_DIA[k]; if(M){ Object.assign(X,M); if(M.desafio) X.obj9=[M.desafio].concat((D.obj9||[]).slice(1)); }
+  }
+  TM_WM.set(D,X); return X;
+}
+function temFora(ds){ const B=_v12dayFor(ds); return !!(B&&B.blocos&&B.blocos.some(b=>TM_REF[b.ref])); }
+dayFor=function(ds){ const D=_v12dayFor(ds); return tempoMau(ds)?chuvaDia(D,keyOf(ds)):D; };
+syncWeek=function(){ DIAS.forEach(k=>{ const ds=dateFor(k), B=TIPOS9[tipoOf(ds)]&&TIPOS9[tipoOf(ds)][k]; if(B) WEEK[k]=tempoMau(ds)?chuvaDia(B,k):B; }); };
+
+/* intensidade: o dia máximo continua máximo em casa */
+{ const _v12ix=ixFor; ixFor=function(b){ const r=b.ref||''; if(r==='chuva-v') return 'max'; if(r==='chuva-rec') return 'rec'; return _v12ix.apply(this,arguments); }; }
+
+/* ---------- testes de campo num dia de tempo mau ---------- */
+const TM_TF=['sp10','sp20','s505e','s505d','salto'], TM_TT=['parede60','parede60f','recdec','pass10d','pass10e','slalom','final10','duelo'];
+const TM_DN={seg:'segunda',ter:'terça',qua:'quarta',qui:'quinta',sex:'sexta',sab:'sábado',dom:'domingo'};
+function tmRecDesde(ids,ds){ return ids.some(id=>recGet(id).some(x=>x&&x.d>=ds)); }
+function testesPendentes(ds){
+  const P={};
+  for(let i=1;i<=7;i++){ const d=addDays(ds,-i); if(!tempoMau(d)) continue; const bi=biFor(d); if(bi.w0||!testeSemana(bi)) continue;
+    const B=_v12dayFor(d); if(!B||!B.blocos) continue;
+    if(!P.f&&B.blocos.some(b=>b.ref==='campo-v')&&!tmRecDesde(TM_TF,d)) P.f=d;
+    if(!P.t&&B.blocos.some(b=>b.ref==='campo-c')&&!tmRecDesde(TM_TT,d)) P.t=d; }
+  return (P.f||P.t)?P:null;
+}
+{ const _v12dyn=dynNote;
+  dynNote=function(b,bi){
+    const r=b.ref||'';
+    if(r==='chuva-v') return (bi&&!bi.w0&&testeSemana(bi))?'Esta semana há testes físicos: com tempo mau não se fazem em casa. Passam para o próximo dia de campo sem chuva (quinta ou sexta), no lugar da parte principal.':'Os sprints e os saltos não se substituem em casa: voltam na próxima sessão máxima lá fora.';
+    if(r==='chuva-c'&&bi&&!bi.w0&&testeSemana(bi)) return 'Esta semana há testes técnicos: com tempo mau passam para o próximo dia de campo sem chuva (terça, na parede), no lugar da parte principal.';
+    return _v12dyn.apply(this,arguments);
+  };
+}
+{ const _v12teste=testeHoje;
+  testeHoje=function(b,bi){
+    const r=_v12teste.apply(this,arguments); if(r) return r;
+    if(!bi||bi.w0||!b||!b.ref) return null;
+    const ds=ymd(bi.d); if(tempoMau(ds)) return null;
+    const P=testesPendentes(ds); if(!P) return null;
+    if(P.f&&['campo-v','campo-d','campo-r'].indexOf(b.ref)>=0) return ['testes-f','Os testes físicos de '+TM_DN[keyOf(P.f)]+', '+fmtDM(P.f)+', ficaram por fazer com o tempo mau: faz hoje o aquecimento e depois os testes, no lugar '+(b.ref==='campo-d'?'da parte principal e do motor':'da velocidade e da parte principal')+'.'];
+    if(P.t&&['parede','campo-d','campo-r','campo-c'].indexOf(b.ref)>=0) return ['testes-t','Os testes técnicos de '+TM_DN[keyOf(P.t)]+', '+fmtDM(P.t)+', ficaram por fazer com o tempo mau: faz hoje o aquecimento e depois os testes, no lugar da parte principal.'];
+    return null;
+  };
+}
+
+/* ---------- Hoje: o botão, a marca nos dias e nos blocos ---------- */
+const TM_SVG='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 15.5h9a3.5 3.5 0 0 0 .4-6.98A5.5 5.5 0 0 0 6.3 9.6a3 3 0 0 0 1.2 5.9z"/><path d="M9 18.5l-.8 2.2M13 18.5l-.8 2.2M17 18.5l-.8 2.2"/></svg>';
+{ const _v12hero=renderHero;
+  renderHero=function(D,date,bi,c){
+    _v12hero.apply(this,arguments);
+    const el=$('#h9'); if(!el) return; const g=el.querySelector('.h9-modo'); if(!g) return;
+    const on=tempoMau(date), fora=temFora(date);
+    const sub=on?(fora?'Ligado: os treinos de rua e de campo deste dia são em casa.':'Ligado: este dia não tem treino lá fora, por isso fica igual.'):'Chuva forte, trovoada ou campo alagado: os treinos passam para casa.';
+    g.insertAdjacentHTML('afterend','<button class="h9-tempo" data-tempo="1" aria-pressed="'+on+'">'+TM_SVG+'<span><b>Tempo mau</b><small>'+esc(sub)+'</small></span><i class="sw" aria-hidden="true"></i></button>');
+    if(on&&fora){ const p=el.querySelector('.h9-modo-d'); if(p) p.insertAdjacentHTML('beforeend','<span class="tm-d">Tempo mau: as sessões em casa entram à hora do campo, em silêncio, sem passes à parede e sem saltos; a ida e o regresso viram estudo. O resto do dia não muda.</span>'); }
+  };
+}
+{ const _v12Hoje=renderHoje;
+  renderHoje=function(){
+    _v12Hoje.apply(this,arguments);
+    DIAS.forEach(k=>{ const b=document.querySelector('#days [data-dia="'+k+'"]'); if(!b) return; const on=tempoMau(dateFor(k));
+      b.classList.toggle('d-chuva',on); if(on&&!b.querySelector('.chv')){ b.insertAdjacentHTML('beforeend','<i class="chv" aria-hidden="true"></i><span class="sr12">, tempo mau</span>'); b.title=(b.title?b.title+' · ':'')+'tempo mau'; } });
+    const D=WEEK[st.dia]; if(!D||!D.chuva) return;
+    const items=D.blocos.filter(b=>b.m.indexOf(st.modo)>=0); const lis=[...document.querySelectorAll('#tl li.blk')];
+    if(lis.length!==items.length) return;
+    items.forEach((b,i)=>{ if(!b.chuva) return; const ttl=lis[i].querySelector('.ttl'); if(ttl) ttl.insertAdjacentHTML('beforeend','<span class="tag chv">tempo mau</span>'); });
+  };
+}
+document.addEventListener('click',e=>{
+  const t=e.target; if(!(t instanceof Element)) return;
+  const bt=t.closest('[data-tempo]'); if(!bt) return;
+  e.stopPropagation();
+  const foc=document.activeElement===bt, ds=dateFor(st.dia);
+  store.set('tempo:'+ds,tempoMau(ds)?null:'mau');
+  renderHoje(); try{ if(typeof renderSemana==='function') renderSemana(); }catch(err){}
+  if(foc){ const nb=document.querySelector('.h9-tempo'); if(nb) nb.focus({preventScroll:true}); }
+},true);
+syncWeek();
 
 renderHoje(); renderCk(); renderSemana(); renderSess(); renderActs(); renderSinal(); renderCrescer(); renderRecs(); renderSlog();
 
