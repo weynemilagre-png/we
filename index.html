@@ -824,6 +824,31 @@ svg.loadc .lc-l{font:500 10.5px var(--body);fill:var(--muted)}
 .fx13{margin:6px 0 10px}
 .temas li.now{font-weight:700}
 .fz13 .fase p{margin:6px 0 0}
+/* v13.1: as 13 áreas e a luz verde do dia máximo */
+.rel13 .k{font-weight:800;margin:12px 0 4px}
+.rel13-sum{margin:2px 0 4px}
+.rel13 ul{list-style:none;margin:0;padding:0}
+.rel13 ul li{padding:8px 0;border-top:1px solid var(--line);font-size:14.5px;line-height:1.45}
+.rel13 ul li:first-child{border-top:0}
+.rel13 .ficha{margin:6px 0 0}
+.f131>summary{font-size:14.5px;font-weight:600}
+.rel13-all{margin-top:12px}
+.rel13-all>summary{font-weight:700;cursor:pointer}
+.rel13-a{padding:9px 0;border-top:1px solid var(--line)}
+.rel13-a:first-of-type{border-top:0}
+.rel13-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-weight:700}
+.rel13-t{font-size:14px;line-height:1.45;margin-top:4px;overflow-wrap:anywhere}
+.tag131{font-size:12px;font-weight:700;padding:2px 8px;border-radius:99px;background:var(--surface2);white-space:nowrap}
+.tag131.melhor{background:color-mix(in srgb,var(--g) 25%,var(--surface2))}
+.tag131.pior{background:color-mix(in srgb,var(--r) 25%,var(--surface2))}
+.tag131.sem{color:var(--muted)}
+.ok131{color:var(--g)}
+.luz131{border-left:4px solid var(--y);margin:8px 0 4px}
+.luz131.ok{border-left-color:var(--g)}
+.luz131>b{font-size:16px}
+.luz131 p{margin:4px 0 2px}
+.luz131 .g13{margin-bottom:2px}
+.sdq p{margin:4px 0 0}
 /* INSTALAR */
 .install{display:flex;gap:10px;align-items:center;background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--court);border-radius:10px;padding:10px 8px 10px 12px;margin:0 0 12px;font-size:15px}
 .install[hidden]{display:none}
@@ -853,6 +878,7 @@ a.btn{display:inline-block;text-decoration:none}
   <p class="k k-lvl">Como está o corpo hoje</p>
   <div class="modes" id="modes"></div>
   <p class="modeline" id="modeline"></p>
+  <div id="h-luz"></div>
   <details class="box" id="checkin">
     <summary>Check-in de 30 segundos: que nível é hoje?</summary>
     <div class="ck" id="ck"></div>
@@ -926,6 +952,8 @@ a.btn{display:inline-block;text-decoration:none}
   <div id="f13"></div>
   <h3>Avaliação</h3>
   <div id="av13"></div>
+  <h3>As 13 áreas: onde estás</h3>
+  <div id="rel13"></div>
   <h3>Testes de cabeça</h3>
   <div id="qz13"></div>
   <h3>Trilho competitivo</h3>
@@ -1850,6 +1878,9 @@ a.btn{display:inline-block;text-decoration:none}
     <tr><td>Domingo</td><td><span class="int10 int-jogo">Jogo</span></td><td>Competição, com a rotina pré-jogo antes e a revisão do jogo no fim.</td></tr>
   </tbody></table>
   <p>Recuperação, mobilidade, sono e preparação ficam sempre que são precisos, com objetivo e estrutura, mas não contam como treino de intensidade. Dois dias máximos nunca ficam seguidos, e os níveis Pesado e Mínimo continuam para os dias de pouco sono, dor ou carga a subir depressa: é inteligência, não falta de exigência.</p>
+  <h3>Luz verde para a sessão máxima</h3>
+  <p>A quarta só é máxima quando o dia o permite. No Hoje, antes de sair, a app mostra cinco condições: o check-in do dia no nível Normal; o protocolo de saúde preenchido e, no check-in, dentro do que a tua equipa definiu; a carga dos últimos 7 dias até 1,5 vezes a média das 4 semanas anteriores; nada de dor forte, doença ou dia Mínimo nas 48 horas antes; e alguém que sabe onde estás e a que horas voltas, com um adulto presente nos sprints lançados. Se faltar uma, a sessão faz-se no nível Pesado: os mesmos exercícios, sem esforços máximos.</p>
+  <p class="small muted">O limite de 1,5 é uma regra prudente, não uma linha exata: os estudos sobre o rácio de carga não estão de acordo entre si. Serve para não juntar uma semana muito acima do normal ao dia mais exigente.</p>
   <h3>O que é intenso em cada tipo de treino</h3>
   <table class="st"><thead><tr><th>Treino</th><th>Intensidade quer dizer</th><th>Quando parar ou baixar</th></tr></thead><tbody>
     <tr><td>Velocidade</td><td>100% em cada repetição, até 10 s, com descanso completo (cerca de 1 min por 10 m)</td><td>Uma repetição sai visivelmente mais lenta: o bloco acaba</td></tr>
@@ -6412,7 +6443,7 @@ function valido(k,v){
   if(t==='tipo') return v===null||(typeof v==='string'&&/^(escola|livre|ferias|feriado)$/.test(v));
   if(t==='tempo') return v===null||v==='mau';
   if(t==='fase13') return !!v&&typeof v==='object'&&typeof v.f==='number'&&v.f>=1&&v.f<=4&&(v.h===undefined||Array.isArray(v.h));
-  if(t==='clube13') return !!v&&typeof v==='object'&&Array.isArray(v.p)&&v.p.length<=6&&v.p.every(x=>typeof x==='boolean');
+  if(t==='clube13') return !!v&&typeof v==='object'&&Array.isArray(v.p)&&v.p.length<=CLUBE13.length&&v.p.every(x=>typeof x==='boolean')&&(v.v===undefined||v.v===2);
   if(t==='obj9d') return Array.isArray(v)&&v.length<=3&&v.every(x=>typeof x==='boolean');
   if(t==='arquivo') return !!v&&typeof v==='object'&&!!v.dados&&typeof v.dados==='object'&&!Array.isArray(v.dados);
   return !!v&&typeof v==='object'&&!Array.isArray(v);
@@ -8467,7 +8498,7 @@ document.addEventListener('click',e=>{
     else if(a==='up'){ if(F.f<4&&gates13(F.f).every(x=>x.ok)) faseSet13(F.f+1); }
     else if(a==='down'){ if(g.dataset.arm!=='1'){ g.dataset.arm='1'; g.textContent='Recuar mesmo? Toca outra vez'; setTimeout(()=>{ if(g.isConnected){ g.dataset.arm=''; g.textContent='Recuar uma fase'; } },3000); return; } if(F.f>1) faseSet13(F.f-1); }
     render13Evol(); try{ renderHoje(); }catch(err){} return; }
-  const c=t.closest('[data-clube13]'); if(c){ const C=store.get('clube13',{p:[]}); const i=+c.dataset.clube13; C.p=C.p||[]; C.p[i]=!C.p[i]; store.set('clube13',{p:C.p.slice(0,6).map(Boolean)}); render13Evol(); return; }
+  const c=t.closest('[data-clube13]'); if(c){ const C=store.get('clube13',{p:[]}); const i=+c.dataset.clube13; C.p=C.p||[]; C.p[i]=!C.p[i]; store.set('clube13',{v:2,p:C.p.slice(0,CLUBE13.length).map(Boolean)}); render13Evol(); return; }
 });
 
 /* ---------- Evolução: fase, avaliação, testes de cabeça e trilho competitivo ---------- */
@@ -8495,8 +8526,10 @@ function fase13HTML(){
   if(F.f>1) h+=' <button class="linkbtn" data-fase13="down">Recuar uma fase</button><p class="small muted">Recuar é para depois de uma lesão, de uma paragem longa ou de critérios que deixaram de se cumprir.</p>';
   return h+'</div>';
 }
-const CLUBE13=['Lista de 3 a 5 clubes perto de casa com equipa no teu escalão (o site da associação de futebol da tua zona e o zerozero.pt mostram as equipas)','Contacto com o coordenador da formação de cada um: quem és, a posição, a disponibilidade e o pedido de um treino à experiência','Vídeo de 2 a 3 minutos e a ficha com os teus testes, prontos a enviar','Treino à experiência marcado','Treino à experiência feito: perguntaste o que melhorar e escreveste no diário','Inscrição tratada pelo clube na federação (se já estiveste inscrito noutro país, o pedido demora semanas: começa logo que o clube disser que sim)'];
-function comp13HTML(){
+const CLUBE13=['Lista de 3 a 5 clubes perto de casa com equipa no teu escalão (o site da associação de futebol da tua zona e o zerozero.pt mostram as equipas)','Contacto com o coordenador da formação de cada um: quem és, a posição, a disponibilidade e o pedido de um treino à experiência','Vídeo de 2 a 3 minutos e a ficha com os teus testes, prontos a enviar','Documentos da inscrição juntos já, antes de haver clube: identificação e nacionalidade tuas e dos teus pais, comprovativo de morada, matrícula na escola e, se os pais estiverem separados, o documento da guarda. Sem nacionalidade portuguesa, junta também o que mostra porque a família veio viver para Portugal (por exemplo, o contrato de trabalho de um dos pais)','Treino à experiência marcado','Treino à experiência feito: perguntaste o que melhorar e escreveste no diário','Inscrição tratada pelo clube na federação. Para menores de 18 anos sem nacionalidade portuguesa, ou já inscritos num clube de outro país, a FIFA tem, em regra, de autorizar antes da inscrição: o clube faz o pedido pela federação e só é aceite em casos previstos, como a família ter vindo viver para Portugal por razões que não são o futebol. Pode levar semanas: entrega os documentos no dia em que o clube disser que sim'];
+function migClube131(){ const C=store.get('clube13',null); if(C&&C.v!==2&&Array.isArray(C.p)){ const p=C.p; store.set('clube13',{v:2,p:[p[0],p[1],p[2],false,p[3],p[4],p[5]].map(Boolean)}); } }
+migClube131();
+function comp13HTML(){ migClube131();
   const C=store.get('clube13',{p:[]}), p=C.p||[], ds=today13();
   const j=jogos13(), op=opoSess13().length, ow=opoSemanas13(ds);
   let h='<div class="card cp13"><p>A entrada num clube e o jogo fazem parte do processo desde a fase 1, não ficam para o fim. Sozinho treinas a execução; a decisão contra adversários que reagem, o jogo coletivo e o ritmo competitivo só aparecem com outros.</p>';
@@ -8637,6 +8670,146 @@ FASES.forEach((f,i)=>{ const x=FASES13[i]; if(!x) return; Object.assign(f,{n:'Fa
   if(ACT10.jogo){ ACT10.jogo.crit=CR.jogo[0]; ACT10.jogo.ind=CR.jogo[1]; }
 })();
 renderHero=(function(prev){ return function(D,date,bi,c){ prev.apply(this,arguments); const j=document.querySelector('#h9 .jr11:not(.eve)'); if(j&&!/fase/.test(j.textContent)&&/ciclo/.test(j.textContent)) j.textContent=j.textContent.replace(' · ciclo',' · fase '+faseN13()+' · ciclo'); }; })(renderHero);
+
+/* ================= v13.1: as 13 áreas da avaliação, luz verde para o dia máximo e inscrição no clube =================
+   Do texto do Project Weyne: "referências iniciais, objetivos e avaliações posteriores: onde estou, o que melhorei e o
+   que ainda preciso de desenvolver" (12); "um dia de intensidade máxima, quando adequado à carga total e à recuperação"
+   (9); "nada de cargas máximas sem avaliação e supervisão" (13). */
+const AREAS131=[
+ {a:'Primeiro toque',t:['rec20'],ex:['rec-orientada','primeiro-toque-4','toque-pressao']},
+ {a:'Precisão de passe',t:['pass10d','pass10e','passlongo'],ex:['passe-alvo','passe-longo','passe-primeira']},
+ {a:'Pé não dominante',t:['parede60f','parede60'],wf:true,ex:['pe-fraco-bloco','casa-pe-fraco','passe-alvo']},
+ {a:'Condução',t:['slalom','custo'],ex:['conducao-direcao','conducao-velocidade','conducao-ritmo']},
+ {a:'Drible',t:['drible4','v1jogo'],ex:['drible-defensor','drible-portas','fintas-base']},
+ {a:'Finalização',t:['final10'],ex:['final-rececao','final-conducao','final-2pes']},
+ {a:'Aceleração',t:['sp10','sp20'],ex:['aceleracao','cod']},
+ {a:'Velocidade',t:['lanc20'],ex:['vel-max']},
+ {a:'Resistência',t:['motor','rsam'],ex:['aerobio-4x4','intermitente','rsa']},
+ {a:'Coordenação',t:['malab','comp5','equil'],ex:['coordenacao','malabarismo','equilibrio']},
+ {a:'Scanning',t:['scan10','olhares'],ex:['scan-receber','visao-periferica','casa-orientacao']},
+ {a:'Tomada de decisão',t:['decq','decjogo'],ex:['decisao-portas','ler-jogo','antecipacao-video']},
+ {a:'Compreensão tática',t:['tatq'],ex:['tema-tatico','analise-jogador','video-proprio']},
+ {a:'Agilidade',t:['s505e','s505d'],ex:['agil-reativa','cod'],extra:true},
+ {a:'Potência',t:['salto'],ex:['plio'],extra:true},
+ {a:'Mobilidade',t:['joelho'],ex:['mob-rotina'],extra:true}
+];
+/* os critérios de passagem de fase (gates13), teste a teste */
+const ALVO131={comp5:{1:5,2:5,3:5},scan10:{1:6,2:8,3:8},tatq:{1:60,2:75,3:85},rec20:{2:16},pass10d:{2:8},pass10e:{2:8},decq:{2:70},olhares:{2:6,3:8},v1jogo:{3:40},decjogo:{3:70}};
+const WF131={1:0.70,2:0.80,3:0.85};
+const MAX131={'em 10':10,'em 20':20,'em 5':5,'%':100};
+const CUSTO131={id:'custo',n:'Custo da bola (slalom com bola menos sem bola)',u:'s',low:true};
+function def131(id){ return id==='custo'?CUSTO131:(recDef(id)||T13.find(x=>x.id===id)||null); }
+function marg131(id){ return id==='custo'?0.3:(MARGEM[id]||0); }
+function serie131(id){
+  if(id==='custo'){ const b=serie131('slalom'), s=serie131('slalom0'); return b.map(x=>{ const y=s.find(z=>z.d===x.d); return y?{d:x.d,v:Math.round((x.v-y.v)*100)/100}:null; }).filter(Boolean); }
+  return recGet(id).filter(x=>x&&x.d>=V13_INI&&typeof x.v==='number').slice().sort((x,y)=>x.d<y.d?-1:(x.d>y.d?1:0));
+}
+function alvo131(id,f,ref){
+  const A=ALVO131[id], D=def131(id)||{};
+  if(A){ for(let g=Math.min(f,3);g<=3;g++) if(A[g]!=null) return {v:A[g],fase:g,manter:false};
+         for(let g=3;g>=1;g--) if(A[g]!=null) return {v:A[g],fase:g,manter:true}; }
+  if(ref==null) return null;
+  let v=D.low?ref-marg131(id):ref+marg131(id); const mx=MAX131[D.u]; if(mx!=null) v=Math.min(v,mx);
+  return {v:Math.round(v*100)/100,prox:true};
+}
+function ler131(id,f){
+  const a=serie131(id), D=def131(id)||{}; if(!a.length) return {id:id,D:D,n:0};
+  const ref=a[0], last=a[a.length-1], m=marg131(id), T=alvo131(id,f,ref.v);
+  const ok=T?(D.low?last.v<=T.v:last.v>=T.v):null;
+  let k='ref'; if(a.length>1){ const d=D.low?ref.v-last.v:last.v-ref.v; k=d>m?'melhor':(d<-m?'pior':'igual'); }
+  return {id:id,D:D,n:a.length,ref:ref,last:last,T:T,ok:ok,k:k};
+}
+function wf131(ultimo){
+  const g=id=>{ const a=serie131(id); return a.length?(ultimo?a[a.length-1].v:a[0].v):null; };
+  const e=g('pass10e'), d=g('pass10d'), f=g('parede60f'), al=g('parede60'), r=[];
+  if(e!=null&&d) r.push(Math.min(1,e/d)); if(f!=null&&al) r.push(Math.min(1,f/al));
+  return r.length?Math.round(r.reduce((x,y)=>x+y,0)/r.length*100)/100:null;
+}
+const KTXT131={melhor:'melhorou',pior:'piorou',igual:'igual',ref:'referência feita',sem:'por medir'};
+function area131(A,f){
+  const L=A.t.map(id=>ler131(id,f)), med=L.filter(x=>x.n>0);
+  const st={A:A,L:L,med:med.length>0,melhor:med.some(x=>x.k==='melhor'),pior:med.some(x=>x.k==='pior'),
+    abaixo:med.some(x=>x.T&&!x.T.prox&&x.T.fase<=f&&x.ok===false),parado:med.some(x=>x.n>1&&x.k==='igual')&&!med.some(x=>x.k==='melhor')};
+  if(A.wf){ const w0=wf131(false), w1=wf131(true); st.wf=[w0,w1]; if(w1!=null&&f<=3&&w1<WF131[Math.min(f,3)]) st.abaixo=true; }
+  st.score=st.pior?3:(st.abaixo?2:(st.parado?1:0));
+  st.k=!st.med?'sem':(st.pior?'pior':(st.melhor?'melhor':(med.some(x=>x.n>1)?'igual':'ref')));
+  return st;
+}
+function linha131(x){
+  const u=x.D.u||'', fr=v=>fmtRec(v,u)+(u==='%'?'%':(u?' '+u:''));
+  if(!x.n) return '<div class="rel13-t"><span class="muted">'+esc(x.D.n||x.id)+': ainda sem registo.</span></div>';
+  let h=esc(x.D.n||x.id)+': '+fr(x.ref.v)+' <span class="muted">('+fmtDM(x.ref.d)+')</span>';
+  if(x.n>1) h+=' → <b>'+fr(x.last.v)+'</b> <span class="muted">('+fmtDM(x.last.d)+')</span>';
+  if(x.T){ const sg=x.D.low?'≤ ':'≥ ';
+    h+='<br><span class="muted">Objetivo '+(x.T.prox?'da próxima avaliação':(x.T.manter?'a manter':'da fase '+x.T.fase))+': '+sg+fr(x.T.v)+'</span>'+(x.ok?' <b class="ok131">✓</b>':''); }
+  return '<div class="rel13-t">'+h+'</div>';
+}
+function ficha131(id){ const f=libGet(id); if(!f||!C13[id]) return ''; return '<details class="ficha f131"><summary>'+esc(C13[id].n)+'</summary><div class="fx">'+fichaFields(f)+'</div></details>'; }
+function rel131HTML(){
+  const f=faseN13(), S=AREAS131.map(A=>area131(A,f)), core=S.filter(s=>!s.A.extra);
+  const medidas=core.filter(s=>s.med).length, mel=S.filter(s=>s.melhor), pri=core.filter(s=>s.score>0).sort((a,b)=>b.score-a.score).slice(0,3);
+  let h='<div class="card rel13"><p class="rel13-sum"><b>Medidas: '+medidas+' de 13 áreas</b> · melhoraste de verdade em '+mel.length+' · '+core.filter(s=>s.abaixo).length+' abaixo do critério da fase '+f+'</p>';
+  h+='<div class="k">O que melhoraste</div>';
+  if(mel.length) h+='<ul>'+mel.map(s=>{ const x=s.L.find(y=>y.k==='melhor'); return '<li><b>'+esc(s.A.a)+'</b>: '+esc(x.D.n||x.id)+', '+fmtRec(x.ref.v,x.D.u)+' → '+fmtRec(x.last.v,x.D.u)+' '+esc(x.D.u||'')+'</li>'; }).join('')+'</ul>';
+  else h+='<p class="small muted">'+(medidas?'Ainda sem duas medições do mesmo teste acima da margem de erro: a comparação aparece na reavaliação do fim do ciclo.':'Ainda sem testes: a referência faz-se nas semanas 1 e 2.')+'</p>';
+  h+='<div class="k">O que ainda tens de desenvolver</div>';
+  if(pri.length) h+='<ul>'+pri.map(s=>{ const why=s.pior?'piorou desde a referência':(s.abaixo?'abaixo do critério da fase '+f:'igual depois de duas medições: primeiro cumprir as sessões, depois mudar uma variável');
+      return '<li><b>'+esc(s.A.a)+'</b> · '+why+'<br><span class="small muted">Treina-se em (toca para abrir a ficha):</span>'+s.A.ex.filter(id=>C13[id]).map(ficha131).join('')+'</li>'; }).join('')+'</ul>';
+  else h+='<p class="small muted">'+(medidas?'Nenhuma área a piorar nem abaixo do critério da fase: mantém o plano e sobe os degraus.':'Aparece depois da avaliação de referência.')+'</p>';
+  const resto=core.filter(s=>s.score>0&&pri.indexOf(s)<0); if(resto.length) h+='<p class="small muted"><b>Também a trabalhar:</b> '+resto.map(s=>esc(s.A.a)).join(', ')+'.</p>';
+  const sem=core.filter(s=>!s.med); if(sem.length&&medidas) h+='<p class="small muted"><b>Por medir:</b> '+sem.map(s=>esc(s.A.a)).join(', ')+'.</p>';
+  h+='<details class="rel13-all"><summary>As 13 áreas, teste a teste</summary>';
+  const bloco=(s)=>'<div class="rel13-a"><div class="rel13-h"><span>'+esc(s.A.a)+'</span><span class="tag131 '+s.k+'">'+KTXT131[s.k]+'</span></div>'+s.L.map(linha131).join('')+
+     (s.wf&&(s.wf[0]!=null)?'<div class="rel13-t">Índice do pé fraco: '+fmtNum(s.wf[0].toFixed(2))+(s.wf[1]!=null&&s.wf[1]!==s.wf[0]?' → <b>'+fmtNum(s.wf[1].toFixed(2))+'</b>':'')+'<br><span class="muted">Objetivo da fase '+Math.min(f,3)+': ≥ '+fmtNum(WF131[Math.min(f,3)].toFixed(2))+' (1 = os dois pés iguais)</span>'+(s.wf[1]!=null&&s.wf[1]>=WF131[Math.min(f,3)]?' <b class="ok131">✓</b>':'')+'</div>':'')+'</div>';
+  h+=core.map(bloco).join('')+'<div class="k">Também medido</div>'+S.filter(s=>s.A.extra).map(bloco).join('')+'</details>';
+  h+='<p class="small muted">Referência é a primeira marca da jornada; melhorou ou piorou só conta quando a diferença passa a margem de erro do teste, dentro dela é igual. O objetivo é o critério da fase quando existe; nos outros testes, bater a referência por mais do que a margem.</p></div>';
+  return h;
+}
+render13Evol=(function(prev){ return function(){ prev.apply(this,arguments); const el=$('#rel13'); if(el) el.innerHTML=rel131HTML(); }; })(render13Evol);
+
+/* ---------- prontidão: saúde e carga no check-in, luz verde para a sessão máxima ---------- */
+function prot131(){ const S=saude(); return !!(S.antes||S.manha||S.durante||S.depois||S.noite||S.levar); }
+const SD131=[['ok','Dentro do que a tua equipa definiu para treinar'],['aj','Preciso do ajuste do protocolo antes de começar'],['nao','Fora do que definiram: hoje não treino a sério']];
+renderCk=(function(prev){ return function(){ prev.apply(this,arguments);
+  const v=store.get('ck:'+dateFor(st.dia),null)||{}, r=$('#ck-res'); if(!r) return;
+  r.insertAdjacentHTML('beforebegin','<fieldset class="q dorq sdq"><legend>Saúde, pelo protocolo da tua equipa</legend>'+SD131.map(o=>'<label><input type="radio" name="o-sd" id="o-sd-'+o[0]+'" value="'+o[0]+'"'+(v.sd===o[0]?' checked':'')+'> '+o[1]+'</label>').join('')+
+    (prot131()?'':'<p class="small muted">O teu protocolo de saúde ainda está vazio. <button class="linkbtn" data-sub="perfil">Preencher com a tua equipa</button></p>')+'</fieldset>');
+  calcCk(); }; })(renderCk);
+calcCk=(function(prev){ return function(){ prev.apply(this,arguments); if(!ckData||ckData.doente) return;
+  const rank={g:0,y:1,r:2}; let m=ckModo; const extra=[]; const cap=(x,msg)=>{ if(rank[x]>rank[m]) m=x; extra.push(msg); };
+  const el=document.querySelector('input[name="o-sd"]:checked'), sd=el?el.value:'';
+  const ds=dateFor(st.dia), D=dayFor(ds);
+  if(sd==='aj') cap('y','Saúde: faz o ajuste do protocolo e treina sem esforços máximos.');
+  if(sd==='nao') cap('r','Saúde fora do que a tua equipa definiu: segue o protocolo. Só depois de voltares ao que eles definiram, e se o protocolo deixar, a versão mínima.');
+  if(D&&D.int==='max'&&!prot131()) cap('y','Sem o protocolo de saúde preenchido, a sessão máxima espera: hoje sem esforços máximos. Preenche-o com a tua equipa em Mais, O teu perfil.');
+  const L=loadRatio(ds); if(L.r!==null&&L.r>1.5) cap('y','A carga dos últimos 7 dias está '+Math.round((L.r-1)*100)+'% acima da média das 4 semanas anteriores: hoje sem esforços máximos.');
+  ckModo=m; ckData.sd=sd;
+  if(!extra.length) return; const r=$('#ck-res'); if(!r) return;
+  const base=(r.innerHTML.split('<br>')[1]||'').trim(), ok='Tudo em ordem: dia completo.';
+  r.innerHTML='<b>'+(m==='g'?'🟢':m==='y'?'🟡':'🔴')+' '+MODES[m].n+'</b><br>'+(base&&base!==ok?base+' ':'')+esc(extra.join(' '));
+}; })(calcCk);
+function luz131(ds){
+  const ck=store.get('ck:'+ds,null), L=loadRatio(ds), G=[];
+  G.push({t:'Check-in do dia feito, com o nível Normal 🟢',v:ck?(ck.modo==='g'?'feito':'feito: '+MODES[ck.modo||'g'].n):'por fazer',ok:!!(ck&&ck.modo==='g')});
+  G.push({t:'Protocolo de saúde preenchido e, no check-in, dentro do que a tua equipa definiu',v:!prot131()?'protocolo por preencher':(ck&&ck.sd==='ok'?'sim':'por responder no check-in'),ok:prot131()&&!!(ck&&ck.sd==='ok')});
+  G.push({t:'Carga dos últimos 7 dias até 1,5 vezes a média das 4 semanas anteriores',v:L.r===null?'ainda sem 4 semanas de registos':'rácio '+fmtNum(Math.round(L.r*100)/100),ok:L.r===null||L.r<=1.5});
+  const ant=[1,2].map(i=>addDays(ds,-i)).filter(d=>d>=V13_INI), mau=ant.filter(d=>{ const c=store.get('ck:'+d,null); return store.get('modo:'+d,'g')==='r'||(c&&(c.dor===2||c.doente)); });
+  G.push({t:'Sem dor forte, doença ou dia Mínimo nas últimas 48 horas',v:mau.length?'houve a '+mau.map(fmtDM).join(' e '):'sim',ok:!mau.length});
+  const s=!!store.get('luz131:'+ds,false);
+  G.push({t:'Alguém sabe onde estás e a que horas voltas; nos sprints lançados, um adulto presente',v:s?'sim':'confirma antes de sair',ok:s,man:true});
+  return G;
+}
+function luz131HTML(){
+  const ds=dateFor(st.dia), D=dayFor(ds); if(!D||D.int!=='max') return '';
+  const G=luz131(ds), ok=G.every(x=>x.ok);
+  return '<div class="card luz131'+(ok?' ok':'')+'"><b>'+(ok?'🟢 Luz verde para a sessão máxima':'🟡 Sessão máxima: ainda não')+'</b><p class="small">'+(ok?'Cada esforço a 100%, recuperação completa, e paras quando a velocidade cair.':'Até estar tudo ✓, faz a sessão no nível Pesado: os mesmos exercícios, sem esforços máximos.')+'</p>'+
+    '<ul class="g13">'+G.map((x,i)=>'<li class="'+(x.ok?'ok':'')+'"><span class="g13-i" aria-hidden="true">'+(x.ok?'✓':'○')+'</span><span>'+esc(x.t)+'<br><span class="small muted">'+esc(x.v)+'</span>'+(x.man?' <button class="linkbtn" data-luz131="'+ds+'">'+(x.ok?'desmarcar':'confirmar')+'</button>':'')+(i===0&&!x.ok?' <button class="linkbtn" data-ck131>abrir o check-in</button>':'')+'</span></li>').join('')+'</ul></div>';
+}
+renderHoje=(function(prev){ return function(){ prev.apply(this,arguments); const el=$('#h-luz'); if(el) el.innerHTML=luz131HTML(); }; })(renderHoje);
+document.addEventListener('click',e=>{ const t=e.target; if(!(t instanceof Element)) return;
+  const b=t.closest('[data-luz131]'); if(b){ const k='luz131:'+b.dataset.luz131; store.set(k,!store.get(k,false)); const el=$('#h-luz'); if(el) el.innerHTML=luz131HTML(); return; }
+  if(t.closest('[data-ck131]')){ const c=$('#checkin'); if(c){ c.open=true; c.scrollIntoView({block:'start'}); } }
+});
 
 renderHoje(); renderCk(); renderSemana(); renderSess(); renderActs(); renderSinal(); renderCrescer(); renderRecs(); renderSlog();
 
